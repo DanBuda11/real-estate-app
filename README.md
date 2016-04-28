@@ -27,3 +27,4 @@ I have been involved in real estate in different capacities for a while, and whi
 * Online applications for available rental properties
 * Additional helpful info such as school info, link to sex offender registry
 
+[Trello Link] (https://trello.com/b/R882AM3Y/real-estate-website)
