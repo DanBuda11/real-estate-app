@@ -29,4 +29,4 @@ I have been involved in real estate in different capacities for over 10 years, a
 * Rentals page adds online application forms that are emailed to me when submitted; accepts credit card payments for applicationf fees
 
 ## Additional Project Information/Links
-[Trello User Stories] (https://trello.com/b/R882AM3Y/real-estate-website)
+* [Trello User Stories] (https://trello.com/b/R882AM3Y/real-estate-website)
