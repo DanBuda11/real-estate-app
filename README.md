@@ -31,4 +31,4 @@ I have been involved in real estate in different capacities for over 10 years, a
 ## Additional Project Information/Links
 * [Trello User Stories] (https://trello.com/b/R882AM3Y/real-estate-website)
 * [Dan's LinkedIn] (https://www.linkedin.com/in/danbuda)
-* [Dan's Twitter} (https://twitter.com/danielbuda)
+* [Dan's Twitter] (https://twitter.com/danielbuda)
