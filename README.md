@@ -35,5 +35,7 @@ I have been involved in real estate in different capacities for over 10 years, a
 * [User App Pages 2 Mobile Mockups] (./User-App-2-Mobile.html)
 * [User App Listings & Rentals Mobile Mockups] (./Listings-Rentals-Mobile.html)
 * [User App Home Search Mobile Mockups] (./Home-Search-Mobile.html)
+
+## Contact Dan 
 * [Dan's LinkedIn] (https://www.linkedin.com/in/danbuda)
 * [Dan's Twitter] (https://twitter.com/danielbuda)
