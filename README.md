@@ -33,11 +33,11 @@ I have been involved in real estate in different capacities for over 10 years, a
 
 ## Additional Project Information/Links
 * [Trello User Stories] (https://trello.com/b/R882AM3Y/real-estate-website)
-* [Admin & Dashboard Mobile Mockups] (./Admin-Dashboard-Mobile.html)
-* [User App Pages 1 Mobile Mockups] (./User-App-1-Mobile.html)
+* [Admin & Dashboard Mobile Mockups] (./Admin-Dashboard-Mobile.png)
+* [User App Pages 1 Mobile Mockups] (./User-App-1-Mobile.png)
 * [User App Pages 2 Mobile Mockups] (./User-App-2-Mobile.html)
-* [User App Listings & Rentals Mobile Mockups] (./Listings-Rentals-Mobile.html)
-* [User App Home Search Mobile Mockups] (./Home-Search-Mobile.html)
+* [User App Listings & Rentals Mobile Mockups] (./Listings-Rentals-Mobile.png)
+* [User App Home Search Mobile Mockups] (./Home-Search-Mobile.png)
 
 ## Contact Dan 
 * [Dan's LinkedIn] (https://www.linkedin.com/in/danbuda)
