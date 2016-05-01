@@ -31,6 +31,16 @@ I have been involved in real estate in different capacities for over 10 years, a
 ## Models
 ![](./Data-Models.png)
 
+## APIs & Library Possibilities
+* Zillow API for home searches & potentially neighborhood information & housing market data
+* Yelp Neighborhood API for neighborhood information
+* Dropbox, FileStack or Google API for photo storage & rendering
+* Perk, knex, React, react-router, Backbone collections & models, normalize.css, Node
+* Facebook API for embedding Facebook posts
+* YouTube Api for embedding video
+* GreatSchools API for school information
+* Google Maps API for mapping property locations
+
 ## Additional Project Information/Links
 * [Trello User Stories] (https://trello.com/b/R882AM3Y/real-estate-website)
 * [Admin & Dashboard Mobile Mockups] (./Admin-Dashboard-Mobile.png)
