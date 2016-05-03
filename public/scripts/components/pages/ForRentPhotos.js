@@ -3,7 +3,10 @@ import React from 'react';
 export default React.createClass({
 	render: function() {
 		return (
-			<h1>Seller Page</h1>
+			<div>
+				<h1>Rntal Photos Page</h1>
+				<p>Put breadcrumbs here</p>
+			</div>
 			);
 	}
 });

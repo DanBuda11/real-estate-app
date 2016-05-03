@@ -4,10 +4,13 @@ exports.up = function(knex, Promise) {
 		t.dateTime('createdAt').notNull();
 		t.dateTime('updatedAt').nullable();
 		t.dateTime('deletedAt').nullable();
-
-		t.string('firstName').nullable();
-		t.string('lastName').nullable();
-		t.string('email').nullable();
+		t.string('userName').notNull();
+		t.string('firstName').notNull();
+		t.string('lastName').notNull();
+		t.integer('phone').notNull();
+		t.string('email').notNull();
+		t.string('bio', 500).nullable().defaultTo('This User has not entered a bio.');
+		t.string('image').nullable();
 	});
 };
 
