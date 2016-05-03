@@ -1,4 +1,4 @@
-# Real Estate App
+# Home Finder Lite
 ## Why This Project
 I have been involved in real estate in different capacities for over 10 years, and during the 4+ years of that time span I have acted in the capcacity of a Realtor, and the 7 years I have spent as a real estate investor, I have been increasingly disappointed by the lack of innovation in real estate technology. While this project is in no way going to reshape the MLS, I hope that it shows that, at least in a relatively simple way with limited functionality, that the digital tools for a Realtor, both in a digital marketing capacity as well as when listing properties for sale or rent, can be simple, useful and powerful.
 
@@ -31,23 +31,20 @@ I have been involved in real estate in different capacities for over 10 years, a
 ## Models
 ![](./Data-Models.png)
 
-## APIs & Library Possibilities
-* Zillow API for home searches & potentially neighborhood information & housing market data
-* Yelp Neighborhood API for neighborhood information
-* Dropbox, FileStack or Google API for photo storage & rendering
-* Perk, knex, React, react-router, Backbone collections & models, normalize.css, Node
-* Facebook API for embedding Facebook posts
-* YouTube Api for embedding video
-* GreatSchools API for school information
-* Google Maps API for mapping property locations
+## Wireframes
+### Mobile
+![](./Mockups_Mobile_Home_Dashboard.png)
+![](./Mockups_Mobile_Listings_Rentals.png)
+
+## Libraries & APIs
+### Version 1.0
+* FileStack for photo storage and linking to app
+* Perk framework including Knex, React, Backbone, Underscore
+### Future Versions
+* APIs for neighborhood information, housing market data, crime statistics, school info, property location
 
 ## Additional Project Information/Links
 * [Trello User Stories] (https://trello.com/b/R882AM3Y/real-estate-website)
-* [Admin & Dashboard Mobile Mockups] (./Admin-Dashboard-Mobile.png)
-* [User App Pages 1 Mobile Mockups] (./User-App-1-Mobile.png)
-* [User App Pages 2 Mobile Mockups] (./User-App-2-Mobile.html)
-* [User App Listings & Rentals Mobile Mockups] (./Listings-Rentals-Mobile.png)
-* [User App Home Search Mobile Mockups] (./Home-Search-Mobile.png)
 
 ## Contact Dan 
 * [Dan's LinkedIn] (https://www.linkedin.com/in/danbuda)
