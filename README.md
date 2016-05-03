@@ -11,6 +11,7 @@ I have been involved in real estate in different capacities for over 10 years, a
 * Any user can see all current listings & rentals and contact the listing agent, view more details about the property, and view any photos associated with listing
 * Fully responsive
 * Photos for properties linked from an outside source (FileStack)
+
 ### Future Versions
 * Additional information about Real Estate Agent including broker info, social media accounts & links, required industry disclosures
 * Ability to download an application for a rental listing
