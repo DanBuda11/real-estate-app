@@ -71,6 +71,7 @@
     "pushpin": "git+https://github.com/alarner/pushpin.git",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
+    "react-router": "^2.4.0",
     "request": "^2.69.0",
     "serve-favicon": "~2.3.0",
     "simple-ssh": "^0.8.9",
