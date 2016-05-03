@@ -21,6 +21,7 @@ I have been involved in real estate in different capacities for over 10 years, a
 * Embedded social media posts on Agent info page
 * Client tesimonials to populate on Agent info page
 * Online application forms for rental listings that are emailed to the listing agent
+* Ability to filter listing search results based on search criteria
 
 ## Models
 ![](./Data-Models.png)
