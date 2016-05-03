@@ -34,7 +34,7 @@ I have been involved in real estate in different capacities for over 10 years, a
 ### Version 1.0
 * FileStack for photo storage and linking to app
 * Perk framework including Knex, React, Backbone, Underscore
-* 
+
 ### Future Versions
 * APIs for neighborhood information, housing market data, crime statistics, school info, property location
 
