@@ -5,9 +5,10 @@ export default React.createClass({
 	render: function() {
 		return (
 			<div>
+				<a href="/">Home</a><i class="fa fa-angle-right"></i><a href="/forrent">Rentals</a>
 				<h1>Rental Details Page</h1>
 				<Link to="/forrent/details/photos">Photos Page</Link>
-				<p>Put breadcrumbs here</p>
+				
 			</div>
 			);
 	}

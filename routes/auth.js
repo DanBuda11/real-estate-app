@@ -109,6 +109,7 @@ router.post('/register', validateLocalCredentials, function(req, res, next) {
 				let newUser = new UserModel({
 					firstName: req.body.firstName,
 					lastName: req.body.lastName,
+					phone: req.body.phone,
 					email: req.body.email
 				});
 				newUser.save(null, {transacting: t})
@@ -138,6 +139,7 @@ router.post('/register', validateLocalCredentials, function(req, res, next) {
 				.then(t.commit)
 				.then(function() {
 					req.logIn(savedUser, err => {
+						console.log(err);
 						if(err) {
 							res.error.add('auth.UNKNOWN');
 							res.error.send('/auth/login');
@@ -153,6 +155,7 @@ router.post('/register', validateLocalCredentials, function(req, res, next) {
 					});
 				})
 				.catch(function(err) {
+					console.log(err);
 					t.rollback();
 					res.error.add('auth.UNKNOWN');
 					res.error.send('/auth/register');

@@ -51,13 +51,13 @@ passportSetup(app);
 
 /* 1. ROUTES are loaded here */
 
-// let api = require('./routes/api1');
+let api = require('./routes/api1');
 let index = require('./routes/index');
 let auth = require('./routes/auth');
 
 /* 2. ROUTES are added here */
 
-// app.use('/api/v1/', api);
+app.use('/api/v1/', api);
 app.use('/auth', auth);
 app.use('/', index);
 

@@ -1,5 +1,5 @@
 require('./User');
-require('.RentalPhoto');
+require('./RentalPhoto');
 
 module.exports = bookshelf.model('Rental', {
 	tableName: 'rentals',

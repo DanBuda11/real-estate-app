@@ -5,6 +5,7 @@ export default React.createClass({
 	render: function() {
 		return (
 			<div>
+				<a href="/">Home</a>
 				<h1>Dashboard Main</h1>
 				<h2>Manage Listings</h2>
 				<Link to="/dashboard/newlisting">New Listing</Link>
@@ -12,7 +13,6 @@ export default React.createClass({
 				<h2>Manage Rentals</h2>
 				<Link to="/dashboard/newrental">New Rental</Link>
 				<Link to="/dashboard/editrental">Edit Rental</Link>
-				<p>Put breadcrumbs here</p>
 			</div>
 			);
 	}

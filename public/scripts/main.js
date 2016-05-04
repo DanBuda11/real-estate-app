@@ -16,6 +16,9 @@ import NewListing from './components/pages/NewListing';
 import EditListing from './components/pages/EditListing';
 import NewRental from './components/pages/NewRental';
 import EditRental from './components/pages/EditRental';
+import FindAgent from './components/pages/FindAgent';
+import AgentDetails from './components/pages/AgentDetails';
+import AgentListings from './components/pages/AgentListings';
 
 const router = (
 	<Router history={browserHistory}>
@@ -27,12 +30,15 @@ const router = (
 			<Route path="/forrent/details" component={ForRentDetails} />
 			<Route path="/forsale/details/photos" component={ForSalePhotos} />
 			<Route path="/forrent/details/photos" component={ForRentPhotos} />
-			<Route path="/register" component={Register} />
+			<Route path="/auth/register" component={Register} />
 			<Route path="/dashboard" component={Dashboard} />
 			<Route path="/dashboard/newlisting" component={NewListing} />
 			<Route path="/dashboard/editlisting" component={EditListing} />
 			<Route path="/dashboard/newrental" component={NewRental} />
 			<Route path="/dashboard/editrental" component={EditRental} />
+			<Route path="/findagent" component={FindAgent} />
+			<Route path="/findagent/details" component={AgentDetails} />
+			<Route path="/findagent/details/listings" component={AgentListings} />
 		</Route>
 	</Router>
 );
