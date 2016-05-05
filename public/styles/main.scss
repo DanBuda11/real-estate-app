@@ -1,4 +1,6 @@
 @import 'variables';
+@import 'node_modules/rayon/src/styles/rayon';
+@import 'node_modules/rayon/src/styles/theme';
 
 a {
 	text-decoration: none;
@@ -32,7 +34,11 @@ h1 {
 	border: 1px solid #000;
 	background-color: #fff;
 	margin-bottom: 0.5em;
-	width: 90%
+	width: 90%;
 	margin: 0 auto;
 	padding: 0.3em;
+}
+
+.logInForm {
+	display: none;
 }
