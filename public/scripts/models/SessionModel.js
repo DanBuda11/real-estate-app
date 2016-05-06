@@ -1,6 +1,6 @@
 import Backbone from 'backbone';
 
-export default Backbone.Model.extend({
+const SessionModel = Backbone.Model.extend({
 	defaults:{
 		createdAt: null,
 		updatedAt: null,
@@ -15,3 +15,5 @@ export default Backbone.Model.extend({
 	urlRoot: '/api/v1/user',
 	idAttribute: 'id'
 });
+
+export default new SessionModel(window.user);

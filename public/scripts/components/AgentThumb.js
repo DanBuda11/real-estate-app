@@ -9,10 +9,9 @@ export default React.createClass({
 				</div>
 				<div>
 					<ul>
-						<li>{this.props.address}</li>
-						<li>{this.props.rentSale}</li>
-						<li>{this.props.price}</li>
-						<li>{this.props.firstName}</li>
+						<li>{this.props.firstName} {this.props.lastName}</li>
+						<li>{this.props.phone}</li>
+						<li>{this.props.email}</li>
 					</ul>
 				</div>
 			</div>
