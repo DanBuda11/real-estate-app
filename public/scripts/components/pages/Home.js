@@ -1,90 +1,26 @@
 import React from 'react';
 import {Link} from 'react-router';
-import $ from 'jquery';
 import Rayon from 'rayon';
 
 export default React.createClass({
-	getInitialState: function() {
-		return {
-			regModalVisible: false,
-			logModalVisible: false
-		};
-	},
 	render: function() {
 		return (
 			<div className="homeContainer">
-				<h1>Home Finder Lite</h1>
-				<div className="homeBox">
-					<Link to="/forsale">Find a Home for Sale</Link>
+				<div className="homeBoxes">
+					<div className="homeBox">
+						<Link className="homeBoxLink" to="/forsale">Find a Home for Sale</Link>
+					</div>
+					<div className="homeBox">
+						<Link className="homeBoxLink" to="/forrent">Find a Home for Rent</Link>
+					</div>
+					<div className="homeBox">
+						<Link className="homeBoxLink" to="/findagent">Find an Agent</Link>
+					</div>
 				</div>
-				<div className="homeBox">
-					<Link to="/forrent">Find a Home for Rent</Link>
-				</div>
-				<div className="homeBox">
-					<Link to="/findagent">Find an Agent</Link>
-				</div>
-				<a className="homeBox" onClick={this.regOpenModal}>Register</a>
-				<Rayon className="regForm" isOpen={this.state.regModalVisible} onClose={this.regCloseModal}>
-					<form action="/auth/register" method="post">
-						<div>
-							<input type="text" placeholder="first name" name="firstName"/>
-						</div>
-						<div>
-							<input type="text" placeholder="last name" name="lastName"/>
-						</div>
-						<div>
-							<input type="text" placeholder="phone" name="phone"/>
-						</div>
-						<div>
-							<input type="email" placeholder="email" name="email"/>
-						</div>
-						<div>
-							<input type="text" placeholder="bio" name="bio"/>
-						</div>
-						<div>
-							<input type="password" placeholder="password" name="password"/>
-						</div>
-						<button>Register</button>
-					</form>
-					<button onClick={this.regCloseModal}>Cancel</button>
-				</Rayon>
-				<a className="homeBox" onClick={this.logOpenModal}>Login</a>
-				<Rayon className="loginForm" isOpen={this.state.logModalVisible} onClose={this.logCloseModal}>
-					<form action="auth/login" method="post">
-						<div>
-							<input type="email" placeholder="email" name="email"/>
-						</div>
-						<div>
-							<input type="password" placeholder="password" name="password"/>
-						</div>
-						<button>Log in</button>
-					</form>
-					<button onClick={this.logCloseModal}>Cancel</button>
-				</Rayon>
 				<input type="filepicker" data-fp-apikey="AWEM8RWC9TUScrspS0Rdiz"
 				onchange="alert(event.fpfile.url)" />
 			</div>
 			);
-	},
-	regOpenModal: function() {
-		this.setState({
-			regModalVisible: true
-		});
-	},
-	regCloseModal: function() {
-		this.setState({
-			regModalVisible: false
-		});
-	},
-	logOpenModal: function() {
-		this.setState({
-			logModalVisible: true
-		});
-	},
-	logCloseModal: function() {
-		this.setState({
-			logModalVisible: false
-		});
 	}
 });
 

@@ -4,6 +4,7 @@ exports.up = function(knex, Promise) {
   		t.dateTime('createdAt').notNull();
 		t.dateTime('updatedAt').nullable();
 		t.dateTime('deletedAt').nullable();
+		t.string('rentSale').notNull().defaultTo('For Sale');
 		t.string('address').nullable();
 		t.string('price').unsigned().nullable();
 		t.integer('beds').unsigned().nullable();

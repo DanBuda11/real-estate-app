@@ -4,7 +4,7 @@
 
 a {
 	text-decoration: none;
-	color: $proj-slate;
+	// color: #FFF;
 	text-align: center;
 }
 
@@ -13,32 +13,88 @@ h1 {
 }
 
 .header {
-	background-color: $proj-slate;
+	background-color: #3C579D;
 	border-bottom: 1px solid #000;
 }
 
-#app {
-	background-color: $proj-tan;
-}
-
 .footer {
-	background-color: $proj-slate;
+	background-color: $slateGrey;
 	border-top: 1px solid #000;
+	color: #FFF;
 }
 
 .homeContainer {
-	width: 100%
+	width: 100%;
+	height: 40em;
+	background-image: url(./../images/foyer-blue.jpg);
+	background-repeat: no-repeat;
+	// background-position: center;
+	background-size: cover;
+	padding-top: 5em;
+}
+
+.homeBoxes {
+	width: 60%;
+	margin: 0 auto;
+	padding: 2em;
+	background: rgba(255,255,255,0.5);
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+    overflow: hidden;
+    border-radius: 0.3em;
 }
 
 .homeBox {
 	border: 1px solid #000;
-	background-color: #fff;
+	background-color: $lGrey;
 	margin-bottom: 0.5em;
-	width: 90%;
-	margin: 0 auto;
 	padding: 0.3em;
+	text-align: center;
+	border-radius: 0.3em;
+
+	.homeBoxLink {
+		color: #000;
+	}
 }
 
 .logInForm {
 	display: none;
+}
+
+.navBar {
+	background-color: $slateGrey;
+	color: #FFF;
+	overflow: hidden;
+}
+
+.navLinks {
+	float: right;
+}
+
+.navLink {
+	margin-right: 2em;
+}
+
+.navLeft {
+	margin-left: 2em;
+}
+
+.logoDiv {
+	float: left;
+
+	.homeFinderLogo {
+		float: left;
+	}
+
+	.homeFinderName {
+		float: right;
+	}
+}
+
+.footerText {
+	text-align: center;
+	font-weight: lighter;
+}
+
+.dashBoardDiv {
+	background-color: $lGrey;
 }

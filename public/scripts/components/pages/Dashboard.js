@@ -4,7 +4,7 @@ import {Link} from 'react-router';
 export default React.createClass({
 	render: function() {
 		return (
-			<div>
+			<div className="dashBoardDiv">
 				<a href="/">Home</a>
 				<h1>Dashboard Main</h1>
 				<h2>Manage Listings</h2>
