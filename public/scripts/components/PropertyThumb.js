@@ -5,7 +5,7 @@ import {browserHistory} from 'react-router';
 export default React.createClass({
 	render: function() {
 		return (
-			<div onClick={this.goDetails}>
+			<div onClick={this.goDetails} className="propThumb">
 				<div>
 					<img src=""/>
 				</div>

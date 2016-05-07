@@ -48,7 +48,7 @@ export default React.createClass({
 				);
 		});
 		return (
-			<div>
+			<div className="listingPage">
 				<a href="/">Home</a>
 				<h1>Listings Main Page</h1>
 				<SearchBar />

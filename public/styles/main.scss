@@ -102,3 +102,20 @@ h1 {
 .dashBoardDiv {
 	background-color: $lGrey;
 }
+
+.listingPage {
+	background-image: url(./../images/slateonblue.png);
+}
+
+.propThumb {
+	width: 60%;
+	border: 1px solid #000;
+	background-color: $lGrey;
+	margin-bottom: 0.5em;
+	padding: 0.3em;
+	border-radius: 0.3em;
+}
+
+.propThumb:hover {
+	background-color: orange;
+}
