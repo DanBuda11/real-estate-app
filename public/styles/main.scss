@@ -61,9 +61,10 @@ h1 {
 }
 
 .navBar {
-	background-color: $slateGrey;
+	background-color: none;
 	color: #FFF;
 	overflow: hidden;
+	position: absolute;
 }
 
 .navLinks {
@@ -72,6 +73,7 @@ h1 {
 
 .navLink {
 	margin-right: 2em;
+	text-shadow: 1px 1px 2px black;
 }
 
 .navLeft {
@@ -83,10 +85,12 @@ h1 {
 
 	.homeFinderLogo {
 		float: left;
+		text-shadow: 1px 1px 2px black;
 	}
 
 	.homeFinderName {
 		float: right;
+		text-shadow: 1px 1px 2px black;
 	}
 }
 

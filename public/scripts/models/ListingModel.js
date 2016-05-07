@@ -15,8 +15,12 @@ export default Backbone.Model.extend({
 		type: '',
 		stories: '',
 		year: '',
-		images: []
+		images: [],
+		user: {}
 	},
 	urlRoot: '/api/v1/listing',
+	url: function() {
+		return `${this.urlRoot}/${this[this.idAttribute]}?withRelated[0]=user`;
+	},
 	idAttribute: 'id'
 });

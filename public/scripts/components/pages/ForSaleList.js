@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
 import Listings from './../../collections/ListingCollection';
-import AgentCollection from './../../collections/AgentCollection';
 import PropertyThumb from './../PropertyThumb.js';
 import SearchBar from './../SearchBar.js';
 
@@ -43,7 +42,9 @@ export default React.createClass({
 					year={listing.get('year')}
 					userId={listing.get('userId')}
 					rentSale={listing.get('rentSale')}
-					firstName={listing.get('user').firstName} />
+					firstName={listing.get('user').firstName}
+					lastName={listing.get('user').lastName}
+					 />
 				);
 		});
 		return (

@@ -25,7 +25,7 @@ const router = (
 			<IndexRoute component={Home} />
 			<Route path="/forsale" component={ForSaleList} />
 			<Route path="/forrent" component={ForRentList} />
-			<Route path="/forsale/details" component={ForSaleDetails} />
+			<Route path="/forsale/:listingId/details" component={ForSaleDetails} />
 			<Route path="/forrent/details" component={ForRentDetails} />
 			<Route path="/forsale/details/photos" component={ForSalePhotos} />
 			<Route path="/forrent/details/photos" component={ForRentPhotos} />
