@@ -17,8 +17,6 @@ export default React.createClass({
 						<Link className="homeBoxLink" to="/findagent">Find an Agent</Link>
 					</div>
 				</div>
-				<input type="filepicker" data-fp-apikey="AWEM8RWC9TUScrspS0Rdiz"
-				onchange="alert(event.fpfile.url)" />
 			</div>
 			);
 	}

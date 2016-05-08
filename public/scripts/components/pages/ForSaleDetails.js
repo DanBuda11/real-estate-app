@@ -9,16 +9,12 @@ export default React.createClass({
 	},
 	componentDidMount: function() {
 		this.state.listing.on('change', this.update);
-		this.state.listing.fetch(
-			
-			
-		);
-
+		this.state.listing.fetch();
 	},
 	render: function() {
 		console.log(this.state.listing);
 		return (
-			<div>
+			<div>ß
 				<a href="/">Home</a><i className="fa fa-angle-right"></i><a href="/forsale">Listings</a>
 				<h1>Listings Details Page</h1>
 				<div className="propDetailsBlock">
@@ -30,7 +26,6 @@ export default React.createClass({
 					</ul>
 				</div>
 				<Link to="/forsale/details/photos">Photos Page</Link>
-				
 			</div>
 			);
 	},

@@ -29,6 +29,7 @@ export default React.createClass({
 							<h3 className="homeFinderName navLeft">Home Finder Lite</h3>
 						</div>
 						<div className="navLinks">
+							<a className="navLink" onClick={this.dashboard}>Dashboard</a>
 							<a className="navLink" onClick={this.logout}>Sign Out</a>
 						</div>
 					</div>
@@ -209,5 +210,8 @@ export default React.createClass({
 				browserHistory.push('/');
 			}
 		});
+	},
+	dashboard: function() {
+		browserHistory.push('/dashboard');
 	}
 });
