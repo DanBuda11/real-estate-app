@@ -85,7 +85,8 @@ h1 {
 
 	.homeFinderLogo {
 		float: left;
-		text-shadow: 1px 1px 2px black;
+		filter: drop-shadow(1px 1px 2px black);
+		height: 4em;
 	}
 
 	.homeFinderName {
@@ -104,18 +105,24 @@ h1 {
 }
 
 .listingPage {
-	background-image: url(./../images/slateonblue.png);
+	// background-image: url(./../images/slateonblue.png);
+	background-color: #6699FF;
 }
 
 .propThumb {
 	width: 60%;
 	border: 1px solid #000;
 	background-color: $lGrey;
-	margin-bottom: 0.5em;
+	margin: 0 auto 0.5em auto;
 	padding: 0.3em;
 	border-radius: 0.3em;
 }
 
 .propThumb:hover {
 	background-color: orange;
+}
+
+.searchBar {
+	width: 50%;
+	margin: 0 auto;
 }

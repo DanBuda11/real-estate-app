@@ -25,7 +25,7 @@ export default React.createClass({
 				<div>
 					<div className="navBar">
 						<div className="logoDiv">
-							<h3 className="homeFinderLogo navLeft">Logo Goes Here</h3>
+							<img src="./../../images/homefinder_logo.png" className="homeFinderLogo navLeft" />
 							<h3 className="homeFinderName navLeft">Home Finder Lite</h3>
 						</div>
 						<div className="navLinks">
@@ -75,7 +75,7 @@ export default React.createClass({
 				<div>
 					<div className="navBar">
 						<div className="logoDiv">
-							<h3 className="homeFinderLogo navLeft">Logo Goes Here</h3>
+							<img src="./../../images/homefinder_logo.png" className="homeFinderLogo navLeft" />
 							<h3 className="homeFinderName navLeft">Home Finder Lite</h3>
 						</div>
 						<div className="navLinks">

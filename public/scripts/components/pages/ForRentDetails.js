@@ -1,15 +1,33 @@
 import React from 'react';
 import {Link} from 'react-router';
+import Listing from './../../models/ListingModel';
 
 export default React.createClass({
+	getInitialState: function() {
+		let listing = new Listing({id: this.orops.params.listingId});
+		return {listing: listing};
+	},
+	componentDidMount: function() {
+		this.state.listing.on('change', this.update);
+		this.state.listing.fetch();
+	},
 	render: function() {
 		return (
 			<div>
 				<a href="/">Home</a><i className="fa fa-angle-right"></i><a href="/forrent">Rentals</a>
 				<h1>Rental Details Page</h1>
-				<Link to="/forrent/details/photos">Photos Page</Link>
-				
+				<div className="propDetailsBlock">
+					<ul>
+						<li>{this.state.listing.get('address')}</li>
+						<li>{this.state.listing.get('rentSale')}</li>
+						<li>${this.state.listing.get('price')}</li>
+						<li>Posted By: {this.state.listing.get('user').firstName} {this.state.listing.get('user').lastName}</li>
+					</ul>
+				</div>	
 			</div>
 			);
+	},
+	update: function(listing) {
+		this.setState({listing: listing});
 	}
 });

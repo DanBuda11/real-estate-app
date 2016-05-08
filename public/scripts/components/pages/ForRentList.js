@@ -10,7 +10,11 @@ export default React.createClass({
 	},
 	componentDidMount: function() {
 		Rentals.on('update', this.updateRentals);
-		Rentals.fetch();
+		Rentals.fetch({
+			data: {
+				withRelated: ['user']
+			}
+		});
 	},
 	updateRentals: function() {
 		this.setState({Rentals: Rentals});
@@ -29,17 +33,20 @@ export default React.createClass({
 					acres={rental.get('acres')}
 					type={rental.get('type')}
 					stories={rental.get('stories')}
-					year={rental.get('year')} />
+					year={rental.get('year')} 
+					userId={rental.get('userid')}
+					rentSale={rental.get('rentSale')}
+					firstName={rental.get('user').firstName}
+					lastName={rental.get('user').lastName}
+						/>
 				);
 		});
 		return (
-			<div>
+			<div className="listingPage">
 				<a href="/">Home</a>
 				<h1>Rentals Main Page</h1>
 				<SearchBar />
 				{rentals}
-				<Link to="/forrent/details/">Details Page</Link>
-				
 			</div>
 			);
 	}

@@ -53,7 +53,6 @@ export default React.createClass({
 				<h1>Listings Main Page</h1>
 				<SearchBar />
 				{listings}
-				<Link to="/forsale/details">Details Page</Link>
 			</div>
 			);
 	}
