@@ -9,14 +9,7 @@ export default React.createClass({
 	},
 	componentDidMount: function() {
 		Agents.on('update', this.updateAgents);
-		Agents.fetch({
-			success: function() {
-				console.log('agent success', arguments);
-			},
-			error: function() {
-				console.log('agent error');
-			}
-		});
+		Agents.fetch();
 	},
 	updateAgents: function() {
 		this.setState({Agents: Agents});
@@ -40,7 +33,7 @@ export default React.createClass({
 				<a className="breadCrumbs crumbOne" href="/">Home</a>
 				<h1>Find an Agent</h1>
 				{agents}
-				<Link to="/findagent/details">Agent Details</Link>
+				<Link to="/findagent/:agentId/details">Agent Details</Link>
 				
 			</div>
 			);

@@ -3,7 +3,8 @@ import Listing from './../../models/ListingModel';
 
 export default React.createClass({
 	getInitialState: function() {
-		let listing = new Listing({id: this.props.params.listingId});
+		let listing = new Listing({id: this.props.params.listingId,
+			user: {}});
 		return {listing: listing};
 	},
 	componentDidMount: function() {

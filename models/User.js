@@ -5,12 +5,12 @@ module.exports = bookshelf.model('User', {
 	tableName: 'users',
 	hasTimestamps: ['createdAt', 'updatedAt', 'deletedAt'],
 	authentication: function() {
-		this.hasMany('Authentication', 'userId');
+		return this.hasMany('Authentication', 'userId');
 	},
 	listing: function() {
-		this.hasMany('Listing', 'userId');
+		return this.hasMany('Listing', 'userId');
 	},
 	rental: function() {
-		this.hasMany('Rental', 'userId');
+		return this.hasMany('Rental', 'userId');
 	}
 });

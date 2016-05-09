@@ -7,7 +7,7 @@ module.exports = bookshelf.model('Listing', {
 	user: function() {
 		return this.belongsTo('User', 'userId');
 	},
-	photo: function() {
-		this.hasMany('ListingPhoto', 'listingId');
+	images: function() {
+		return this.hasMany('ListingPhoto', 'listingId');
 	}
 });

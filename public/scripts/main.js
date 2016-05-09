@@ -36,8 +36,8 @@ const router = (
 			<Route path="/dashboard/newrental" component={NewRental} />
 			<Route path="/dashboard/editrental" component={EditRental} />
 			<Route path="/findagent" component={FindAgent} />
-			<Route path="/findagent/details" component={AgentDetails} />
-			<Route path="/findagent/details/listings" component={AgentListings} />
+			<Route path="/findagent/:agentId/details" component={AgentDetails} />
+			<Route path="/findagent/:agentId/details/listings" component={AgentListings} />
 		</Route>
 	</Router>
 );

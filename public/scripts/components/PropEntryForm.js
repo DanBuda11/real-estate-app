@@ -1,9 +1,10 @@
 import React from 'react';
-import ListingCollection from './../collections/ListingCollection.js';
 
 export default React.createClass({
 	getInitialState: function() {
-		return {formData: {}};
+		return {
+			formData: {}
+		};
 	},
 	componentDidMount: function() {
 		// check this.props.type to deteremine where to make the ajax request
@@ -12,16 +13,17 @@ export default React.createClass({
 	render: function() {
 		return(
 		<div className="propEntryForm">
-			<form onChange={this.formChange}>
-				<div className="propFormInput"><input type="text" placeholder="Address" value={this.state.formData.address} ref="address"/>	
-					<input type="text" placeholder="Price" value={this.state.formData.price} ref="price"/>
-					<input type="text" placeholder="Beds" value={this.state.formData.beds} ref="beds"/>
-					<input type="text" placeholder="Baths" value={this.state.formData.baths} ref="baths"/>
-					<input type="text" placeholder="Square Feet" value={this.state.formData.sqft} ref="sqft"/>
-					<input type="text" placeholder="Acres" value={this.state.formData.acres} ref="acres"/>
-					<input type="text" placeholder="Property Type" value={this.state.formData.type} ref="type"/>
-					<input type="text" placeholder="Stories" value={this.state.formData.stories} ref="stories"/>
-					<input type="text" placeholder="Year Built" value={this.state.formData.year} ref="year"/>
+			<form onChange={this.props.formChange}>
+				<div className="propFormInput">
+					<input type="text" placeholder="Address" value={this.props.model.get('address')} ref="address"/>	
+					<input type="text" placeholder="Price" value={this.props.model.get('price')} ref="price"/>
+					<input type="text" placeholder="Beds" value={this.props.model.get('beds')} ref="beds"/>
+					<input type="text" placeholder="Baths" value={this.props.model.get('baths')} ref="baths"/>
+					<input type="text" placeholder="SqFt" value={this.props.model.get('sqft')} ref="sqft"/>
+					<input type="text" placeholder="Acres" value={this.props.model.get('acres')} ref="acres"/>
+					<input type="text" placeholder="Type" value={this.props.model.get('type')} ref="type"/>
+					<input type="text" placeholder="Stories" value={this.props.model.get('stories')} ref="stories"/>
+					<input type="text" placeholder="Year" value={this.props.model.get('year')} ref="year"/>
 				</div>
 				<div className="propFormButtons">
 					<input type="button" onClick={this.clearForm} value="Clear"/>
@@ -32,40 +34,19 @@ export default React.createClass({
 		</div>
 		);
 	},
-	formChange: function() {
-		this.setState({formData: {
-     		address: this.refs.address.value,
-     		price: this.refs.price.value,
-     		beds: this.refs.beds.value,	
-     		baths: this.refs.baths.value,
-     		sqft: this.refs.sqft.value,
-     		acres: this.refs.acres.value,
-     		type: this.refs.type.value,
-     		stories: this.refs.stories.value,
-     		year: this.refs.year.value
-    }});
+	handleSubmit: function(e) {
+		e.preventDefault();
+		this.props.model.save({userId: window.user.id});
 	},
 	clearForm: function() {
-		this.setState({formData: {}});
-	},
-	handleSubmit: function(e) {
-		console.log(this.state.formData);
-		e.preventDefault();
-    	ListingCollection.save({
-    		address: this.refs.address.value,
-     		price: this.refs.price.value,
-     		beds: this.refs.beds.value,	
-     		baths: this.refs.baths.value,
-     		sqft: this.refs.sqft.value,
-     		acres: this.refs.acres.value,
-     		type: this.refs.type.value,
-     		stories: this.refs.stories.value,
-     		year: this.refs.year.value
-    	});
+		this.refs.address.value = '';
+		this.refs.price.value = '';
+		this.refs.beds.value = '';
+		this.refs.baths.value = '';
+		this.refs.sqft.value = '';
+		this.refs.acres.value = '';
+		this.refs.type.value = '';
+		this.refs.stories.value = '';
+		this.refs.year.value = '';
 	}
 });
-
-// fetch data 
-// this.props.params for route
-// react router documentation
-// if statements for which route to plug into fetch call
