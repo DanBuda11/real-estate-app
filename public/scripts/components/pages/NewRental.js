@@ -8,8 +8,8 @@ export default React.createClass({
 	},
 	render: function() {
 		return (
-			<div>
-				<a href="/">Home</a><i className="fa fa-angle-right"></i><a href="/dashboard">Dashboard</a>
+			<div className="dashboardDiv pageDiv">
+				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/dashboard">Dashboard</a>
 				<h1>Create New Rental</h1>
 				<PropEntryForm model={this.state.rental} />
 				<input type="filepicker" data-fp-apikey="AWEM8RWC9TUScrspS0Rdiz" onchange={this.picSubmit} />

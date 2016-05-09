@@ -11,20 +11,23 @@ export default React.createClass({
 	},
 	render: function() {
 		return(
-		<div>
+		<div className="propEntryForm">
 			<form onChange={this.formChange}>
-				<input type="text" placeholder="Address" value={this.state.formData.address} ref="address"/>	
-				<input type="text" placeholder="Price" value={this.state.formData.price} ref="price"/>
-				<input type="text" placeholder="Beds" value={this.state.formData.beds} ref="beds"/>
-				<input type="text" placeholder="Baths" value={this.state.formData.baths} ref="baths"/>
-				<input type="text" placeholder="Square Feet" value={this.state.formData.sqft} ref="sqft"/>
-				<input type="text" placeholder="Acres" value={this.state.formData.acres} ref="acres"/>
-				<input type="text" placeholder="Property Type" value={this.state.formData.type} ref="type"/>
-				<input type="text" placeholder="Stories" value={this.state.formData.stories} ref="stories"/>
-				<input type="text" placeholder="Year Built" value={this.state.formData.year} ref="year"/>
-				<input type="button" onClick={this.clearForm} value="Clear"/>
-				<input type="button" onCLick={this.deleteHouse} value="Delete" />
-				<input type="button" onClick={this.handleSubmit} value="Submit"/>
+				<div className="propFormInput"><input type="text" placeholder="Address" value={this.state.formData.address} ref="address"/>	
+					<input type="text" placeholder="Price" value={this.state.formData.price} ref="price"/>
+					<input type="text" placeholder="Beds" value={this.state.formData.beds} ref="beds"/>
+					<input type="text" placeholder="Baths" value={this.state.formData.baths} ref="baths"/>
+					<input type="text" placeholder="Square Feet" value={this.state.formData.sqft} ref="sqft"/>
+					<input type="text" placeholder="Acres" value={this.state.formData.acres} ref="acres"/>
+					<input type="text" placeholder="Property Type" value={this.state.formData.type} ref="type"/>
+					<input type="text" placeholder="Stories" value={this.state.formData.stories} ref="stories"/>
+					<input type="text" placeholder="Year Built" value={this.state.formData.year} ref="year"/>
+				</div>
+				<div className="propFormButtons">
+					<input type="button" onClick={this.clearForm} value="Clear"/>
+					<input type="button" onCLick={this.deleteHouse} value="Delete" />
+					<input type="button" onClick={this.handleSubmit} value="Submit"/>
+				</div>
 			</form>
 		</div>
 		);

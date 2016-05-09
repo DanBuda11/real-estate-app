@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router';
 import Listing from './../../models/ListingModel';
 
 export default React.createClass({
@@ -12,20 +11,30 @@ export default React.createClass({
 		this.state.listing.fetch();
 	},
 	render: function() {
-		console.log(this.state.listing);
 		return (
-			<div>ß
-				<a href="/">Home</a><i className="fa fa-angle-right"></i><a href="/forsale">Listings</a>
-				<h1>Listings Details Page</h1>
+			<div className="listingPage pageDiv">
+				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/forsale">Listings</a>
+				<h1>Details for {this.state.listing.get('address')}</h1>
+				<div className="detailsPhoto">
+					<img src="http://www.fillmurray.com/200/200"/>
+				</div>
+				<div className="morePhotos">
+					<a href="#">View All Photos</a>
+				</div>
 				<div className="propDetailsBlock">
 					<ul>
-						<li>{this.state.listing.get('address')}</li>
 						<li>{this.state.listing.get('rentSale')}</li>
 						<li>${this.state.listing.get('price')}</li>
-						<li>Posted By: {this.state.listing.get('user').firstName} {this.state.listing.get('user').lastName}</li>
+						<li>{this.state.listing.get('beds')} Bedrooms</li>
+						<li>{this.state.listing.get('baths')} Bathrooms</li>
+						<li>{this.state.listing.get('sqft')} Square Feet</li>
+						<li>{this.state.listing.get('acres')} Acres</li>
+						<li>{this.state.listing.get('type')}</li>
+						<li>{this.state.listing.get('stories')} Story</li>
+						<li>Built in {this.state.listing.get('year')}</li>
+						<li>Offered By: {this.state.listing.get('user').firstName} {this.state.listing.get('user').lastName}</li>
 					</ul>
 				</div>
-				<Link to="/forsale/details/photos">Photos Page</Link>
 			</div>
 			);
 	},

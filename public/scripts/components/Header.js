@@ -25,8 +25,12 @@ export default React.createClass({
 				<div>
 					<div className="navBar">
 						<div className="logoDiv">
-							<img src="./../../images/homefinder_logo.png" className="homeFinderLogo navLeft" />
-							<h3 className="homeFinderName navLeft">Home Finder Lite</h3>
+							<a href="/">
+								<img src="./../../images/homefinder_logo.png" className="homeFinderLogo navLeft" />
+							</a>
+							<a href="/">
+								<h3 className="homeFinderName navLeft">Home Finder Lite</h3>
+							</a>
 						</div>
 						<div className="navLinks">
 							<a className="navLink" onClick={this.dashboard}>Dashboard</a>

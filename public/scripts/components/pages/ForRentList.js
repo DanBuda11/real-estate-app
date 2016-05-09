@@ -42,8 +42,8 @@ export default React.createClass({
 				);
 		});
 		return (
-			<div className="listingPage">
-				<a href="/">Home</a>
+			<div className="listingPage pageDiv">
+				<a className="breadCrumbs crumbOne" href="/">Home</a>
 				<h1>Rentals Main Page</h1>
 				<SearchBar />
 				{rentals}

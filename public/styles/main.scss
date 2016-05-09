@@ -2,62 +2,14 @@
 @import 'node_modules/rayon/src/styles/rayon';
 @import 'node_modules/rayon/src/styles/theme';
 
-a {
-	text-decoration: none;
-	// color: #FFF;
-	text-align: center;
-}
-
 h1 {
 	text-align: center;
-}
-
-.header {
-	background-color: #3C579D;
-	border-bottom: 1px solid #000;
-}
-
-.footer {
-	background-color: $slateGrey;
-	border-top: 1px solid #000;
 	color: #FFF;
+	text-shadow: 1px 1px 2px #000;
 }
 
-.homeContainer {
-	width: 100%;
-	height: 40em;
-	background-image: url(./../images/foyer-blue.jpg);
-	background-repeat: no-repeat;
-	// background-position: center;
-	background-size: cover;
-	padding-top: 5em;
-}
-
-.homeBoxes {
-	width: 60%;
-	margin: 0 auto;
-	padding: 2em;
-	background: rgba(255,255,255,0.5);
-    box-shadow: 1px 2px 4px rgba(0,0,0,0.3);
-    overflow: hidden;
-    border-radius: 0.3em;
-}
-
-.homeBox {
-	border: 1px solid #000;
-	background-color: $lGrey;
-	margin-bottom: 0.5em;
-	padding: 0.3em;
-	text-align: center;
-	border-radius: 0.3em;
-
-	.homeBoxLink {
-		color: #000;
-	}
-}
-
-.logInForm {
-	display: none;
+a {
+	text-decoration: none;
 }
 
 .navBar {
@@ -65,48 +17,129 @@ h1 {
 	color: #FFF;
 	overflow: hidden;
 	position: absolute;
+	width: 100%;
+
+	.logoDiv {
+		float: left;
+
+		a:visited {
+			color: #FFF;
+		}
+
+		.homeFinderLogo {
+			float: left;
+			height: 4em;
+		}
+
+		.homeFinderName {
+			float: right;
+			text-shadow: 1px 1px 2px #000;
+		}
+
+		.navLeft {
+			margin-left: 1em;
+			margin-top: 0.6em;
+			line-height: 3.2em;
+		}
+	}
+
+	.navLinks {
+		float: right;
+		line-height: 5em;
+
+		.navLink {
+			margin-right: 2em;
+			text-shadow: 1px 1px 2px #000;
+		}
+	}
 }
 
-.navLinks {
-	float: right;
+.pageDiv {
+	padding-top: 6em;
 }
 
-.navLink {
-	margin-right: 2em;
-	text-shadow: 1px 1px 2px black;
+.breadCrumbs {
+	margin-right: 0.5em;
 }
 
-.navLeft {
+.crumbOne {
 	margin-left: 2em;
 }
 
-.logoDiv {
-	float: left;
+.regForm {
 
-	.homeFinderLogo {
-		float: left;
-		filter: drop-shadow(1px 1px 2px black);
-		height: 4em;
-	}
-
-	.homeFinderName {
-		float: right;
-		text-shadow: 1px 1px 2px black;
-	}
 }
 
-.footerText {
-	text-align: center;
-	font-weight: lighter;
+.loginForm {
+
 }
 
-.dashBoardDiv {
-	background-color: $lGrey;
+.homeContainer {
+	width: 100%;
+	height: 40em;
+	background-image: url(./../images/foyer-blue.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-top: 5em;
+
+	.homeBoxes {
+		width: 60%;
+		margin: 0 auto;
+		padding: 2em;
+		background: rgba(255,255,255,0.5);
+    	box-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+    	overflow: hidden;
+   		border-radius: 0.3em;
+   		margin-top: 10em;
+
+		.homeBox {
+			border: 1px solid #000;
+			background-color: $lGrey;
+			margin-bottom: 0.5em;
+			padding: 0.3em;
+			text-align: center;
+			border-radius: 0.3em;
+
+			.homeBoxLink {
+				color: #000;
+			}
+		}
+	}
 }
 
 .listingPage {
-	// background-image: url(./../images/slateonblue.png);
-	background-color: #6699FF;
+	background-color: $backBlue;
+	overflow: hidden;
+	width: 100%;
+
+	.detailsPhoto {
+		margin: 0 auto;
+		width: 200px;
+	}
+
+	.morePhotos {
+		width: 200px;
+		margin: 0 auto;
+	}
+}
+
+.fa-angle-right {
+	margin-right: 0.5em;
+}
+
+.detailsPhoto {
+
+}
+
+.propDetailsBlock {
+
+	ul {
+		list-style: none;
+	}
+}
+
+.dashboardDiv {
+	background-color: $lGrey;
 }
 
 .propThumb {
@@ -116,13 +149,54 @@ h1 {
 	margin: 0 auto 0.5em auto;
 	padding: 0.3em;
 	border-radius: 0.3em;
+	clear: both;
+	overflow: hidden;
+
+	.thumbImg {
+		float: left;
+		height: 100px;
+	}
+
+	.thumbInfo {
+		margin-left: 1em;
+		float: left;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+	}
 }
 
 .propThumb:hover {
-	background-color: orange;
+	background-color: $orange;
 }
 
 .searchBar {
 	width: 50%;
 	margin: 0 auto;
+}
+
+.propEntryForm {
+
+	.propFormInput {
+
+	}
+
+	.propFormButtons {
+		
+	}
+}
+
+.footer {
+	background-color: $slateGrey;
+	border-top: 1px solid #000;
+	color: #FFF;
+
+	.footerText {
+		text-align: center;
+		font-weight: lighter;
+		padding: 1em 0;
+		margin: 0;
+	}
 }

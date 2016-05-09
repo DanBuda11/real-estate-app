@@ -36,8 +36,8 @@ export default React.createClass({
 				);
 		});
 		return (
-			<div>
-				<a href="/">Home</a>
+			<div className="listingPage pageDiv">
+				<a className="breadCrumbs crumbOne" href="/">Home</a>
 				<h1>Find an Agent</h1>
 				{agents}
 				<Link to="/findagent/details">Agent Details</Link>

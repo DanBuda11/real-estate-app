@@ -20,13 +20,16 @@ export default React.createClass({
 				withRelated: ['user']
 			}
 		});
+		console.log('this.state.Listings: ', this.state.Listings);
 	},
 	updateListings: function() {
 		this.setState({Listings: Listings});
+		console.log('newest one: ', this.state.Listings);
 	},
 	render: function() {
 		const listings = this.state.Listings.map((listing, i, array) => {
-			console.log(listing);
+			console.log('listing: ', listing);
+			console.log('listings: ', listings);
 			return (
 				<PropertyThumb
 					key={listing.get('id')}
@@ -48,8 +51,8 @@ export default React.createClass({
 				);
 		});
 		return (
-			<div className="listingPage">
-				<a href="/">Home</a>
+			<div className="listingPage pageDiv">
+				<a className="breadCrumbs crumbOne" href="/">Home</a>
 				<h1>Listings Main Page</h1>
 				<SearchBar />
 				{listings}
