@@ -14,13 +14,16 @@ export default Backbone.Model.extend({
 		acres: '',
 		type: '',
 		stories: '',
-		year: '',
-		images: [],
-		user: {}
+		year: ''
 	},
 	urlRoot: '/api/v1/listing',
 	url: function() {
-		return `${this.urlRoot}/${this[this.idAttribute]}?withRelated[0]=user`;
+		let urlSuffix = `/${this[this.idAttribute]}?withRelated[0]=user`;
+		if (this[this.idAttribute]) {
+			return `${this.urlRoot}${urlSuffix}`;
+		} else {
+			return `${this.urlRoot}`;
+		}
 	},
 	idAttribute: 'id'
 });

@@ -7,48 +7,44 @@ export default React.createClass({
 	getInitialState: function() {
 		return {
 			listing: new ListingModel(),
-			listings: listings
+			listings: listings,
+			editingPropId: null
 		};
 	},
 	componentDidMount: function() {
 		listings.on('update', this.updateListings);
 		listings.fetch();
-		// console.log('this.state.listings: ', this.state.listings);
-		// console.log('this.state.listings: ',this.state.listings);
-		// console.log('this.state.listings.');
-		// listings.on('update', () => {
-		// 	this.setState({listings: listings});
-		// 	console.log('listings set state: ', listings);
-		// });
-		// listings.fetch();
-		// console.log('listings fetch: ', listings.);
 	},
 	updateListings: function() {
 		this.setState({listings: listings});
-		// console.log('newest one: ', this.state.listings);
 	},
 	render: function() {
-		// console.log(this.state.listings);
-		console.log('user: ', window.user.id);
 		const userListings = this.state.listings.filter((val, i, array) => {
 			if(val.get('userId') === window.user.id) {
 				return true;
 			} else {
 				return false;
 			}
-		// console.log('userListings: ', userListings);
-			// if (val.get('userId') === window.user.id){
-			// // if (listing.get('userId') === window.user.id) {
-			// 	return true;
-			// } else {
-			// 	return false;
-			// }
 		}).map((val, i, array) => {
 			return (
-				<option value={val.get('address')} key={i}>{val.get('address')}</option>
+				<option
+					label={val.get('address')}
+					key={i}
+					value={val.get('id')}
+					rentSale={val.get('rentSale')}
+					price={val.get('price')}
+					beds={val.get('beds')}
+					baths={val.get('baths')}
+					sqft={val.get('sqft')}
+					acres={val.get('acres')}
+					type={val.get('type')}
+					stories={val.get('stories')}
+					year={val.get('year')}
+					>
+					{val.get('address')}
+				</option>
 				);
 			});
-		console.log('userListings: ', userListings);
 		return (
 			<div className="dashboardDiv pageDiv">
 				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/dashboard">Dashboard</a>
@@ -57,7 +53,8 @@ export default React.createClass({
 									<option value="pick">Choose Listing to Edit</option>
 									{userListings}
 								</select>
-				<PropEntryForm model={this.state.listing} />
+				<PropEntryForm model={this.state.listing}
+					formChange={this.formChange} />
 				<input type="filepicker" data-fp-apikey="AWEM8RWC9TUScrspS0Rdiz" onchange={this.picSubmit} />
 			</div>
 			);
@@ -68,7 +65,15 @@ export default React.createClass({
 				console.log(Blob.url);
 			});
 	},
-	fillForm: function() {
-		
+	fillForm: function(e) {
+		this.setState({
+			listing: this.state.listings.get(e.target.value)
+		});
+	},
+	formChange: function(e) {
+		this.state.listing.set(e.target.placeholder.toLowerCase(), e.target.value);
+		this.setState({
+			listing: this.state.listing
+		});
 	}
 });

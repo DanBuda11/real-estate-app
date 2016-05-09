@@ -3,7 +3,7 @@ require('./Rental');
 module.exports = bookshelf.model('RentalPhoto', {
 	tableName: 'rental-photos',
 	hasTimestamps: ['createdAt', 'updatedAt', 'deletedAt'],
-	user: function() {
+	rental: function() {
 		return this.belongsTo('Rental', 'rentalId');
 	}
 });
