@@ -1,7 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router';
 import Rentals from './../../collections/RentalCollection';
-import PropertyThumb from './../PropertyThumb.js';
+import PropertyThumb from './../PropertyThumbRent.js';
 import SearchBar from './../SearchBar.js';
 
 export default React.createClass({

@@ -26,9 +26,9 @@ const router = (
 			<Route path="/forsale" component={ForSaleList} />
 			<Route path="/forrent" component={ForRentList} />
 			<Route path="/forsale/:listingId/details" component={ForSaleDetails} />
-			<Route path="/forrent/details" component={ForRentDetails} />
-			<Route path="/forsale/details/photos" component={ForSalePhotos} />
-			<Route path="/forrent/details/photos" component={ForRentPhotos} />
+			<Route path="/forrent/:listingId/details" component={ForRentDetails} />
+			<Route path="/forsale/:listingId/details/photos" component={ForSalePhotos} />
+			<Route path="/forrent/:listingId/details/photos" component={ForRentPhotos} />
 			<Route path="/auth/register" component={Register} />
 			<Route path="/dashboard" component={Dashboard} />
 			<Route path="/dashboard/newlisting" component={NewListing} />
@@ -43,9 +43,3 @@ const router = (
 );
 
 ReactDOM.render(router, document.getElementById('app'));
-			// <Route path="/stories/:categoryId" component={CategoryPage} onEnter={requireAuth}/>
-			// <Route path="/stories" component={Stories} onEnter={requireAuth}/>
-			// <Route path="/stories/:storyId/details" component={Details} onEnter={requireAuth}/>
-			// <Route path="/stories/:storyId/read" component={Read} onEnter={requireAuth}/>
-			// <Route path="/login" component={Login}/>
-			// <Route path="/add-user" component={Admin}/>

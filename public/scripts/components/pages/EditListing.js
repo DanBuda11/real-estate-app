@@ -7,12 +7,12 @@ export default React.createClass({
 	getInitialState: function() {
 		return {
 			listing: new ListingModel(),
-			listings: listings,
-			editingPropId: null
+			listings: listings
 		};
 	},
 	componentDidMount: function() {
 		listings.on('update', this.updateListings);
+		this.state.listing.on('change', this.updateListings);
 		listings.fetch();
 	},
 	updateListings: function() {
@@ -39,8 +39,7 @@ export default React.createClass({
 					acres={val.get('acres')}
 					type={val.get('type')}
 					stories={val.get('stories')}
-					year={val.get('year')}
-					>
+					year={val.get('year')}>
 					{val.get('address')}
 				</option>
 				);
@@ -54,7 +53,9 @@ export default React.createClass({
 									{userListings}
 								</select>
 				<PropEntryForm model={this.state.listing}
-					formChange={this.formChange} />
+					formChange={this.formChange}
+					formSubmit={this.formSubmit}
+					clearForm={this.clearForm} />
 				<input type="filepicker" data-fp-apikey="AWEM8RWC9TUScrspS0Rdiz" onchange={this.picSubmit} />
 			</div>
 			);
@@ -71,9 +72,19 @@ export default React.createClass({
 		});
 	},
 	formChange: function(e) {
-		this.state.listing.set(e.target.placeholder.toLowerCase(), e.target.value);
+		console.log('formChange', e.target.dataset.key, e.target.value);
+		this.state.listing.set(e.target.dataset.key, e.target.value);
 		this.setState({
 			listing: this.state.listing
 		});
+	},
+	formSubmit: function(e) {
+		e.preventDefault();
+		this.state.listing.save({userId: window.user.id}, {
+			success: this.clearForm
+		});
+	},
+	clearForm: function() {
+		this.state.listing.clear();
 	}
 });

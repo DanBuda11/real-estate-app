@@ -13,5 +13,13 @@ export default Backbone.Model.extend({
 		image: ''
 	},
 	urlRoot: '/api/v1/user',
+	url: function() {
+		let urlSuffix = `/${this[this.idAttribute]}`;
+		if(this[this.idAttribute]) {
+			return `${this.urlRoot}${urlSuffix}`;
+		} else {
+			return `${this.urlRoot}`;
+		}
+	},
 	idAttribute: 'id'
 });

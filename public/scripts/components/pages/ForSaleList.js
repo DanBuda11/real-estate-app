@@ -1,6 +1,6 @@
 import React from 'react';
 import Listings from './../../collections/ListingCollection';
-import PropertyThumb from './../PropertyThumb.js';
+import PropertyThumb from './../PropertyThumbSale.js';
 import SearchBar from './../SearchBar.js';
 
 export default React.createClass({
@@ -14,7 +14,6 @@ export default React.createClass({
 				withRelated: ['user']
 			}
 		});
-		console.log('this.state.Listings: ', this.state.Listings);
 	},
 	updateListings: function() {
 		this.setState({Listings: Listings});

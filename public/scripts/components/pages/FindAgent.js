@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router';
 import Agents from './../../collections/AgentCollection';
 import AgentThumb from './../AgentThumb';
 
@@ -33,8 +32,6 @@ export default React.createClass({
 				<a className="breadCrumbs crumbOne" href="/">Home</a>
 				<h1>Find an Agent</h1>
 				{agents}
-				<Link to="/findagent/:agentId/details">Agent Details</Link>
-				
 			</div>
 			);
 	}

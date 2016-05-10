@@ -1,24 +1,26 @@
 import React from 'react';
 import PropEntryForm from './../PropEntryForm';
 import RentalModel from './../../models/RentalModel';
-import rentals from './../../collections/RentalCollection';
+import listings from './../../collections/RentalCollection';
 
 export default React.createClass({
 	getInitialState: function() {
 		return{
-			rental: new RentalModel(),
-			rentals: rentals
+			listing: new RentalModel(),
+			listings: listings,
+			editingPropId: null
 		};
 	},
 	componentDidMount: function() {
-		rentals.on('update', this.updateRentals);
-		rentals.fetch();
+		listings.on('update', this.updateListings);
+		this.state.listing.on('change', this.updateListings);
+		listings.fetch();
 	},
-	updateRentals: function() {
-		this.setState({rentals: rentals});
+	updateListings: function() {
+		this.setState({listings: listings});
 	},
 	render: function() {
-		const userRentals = this.state.rentals.filter((val, i, array) => {
+		const userListings = this.state.listings.filter((val, i, array) => {
 			if(val.get('userId') === window.user.id) {
 				return true;
 			} else {
@@ -26,7 +28,21 @@ export default React.createClass({
 			}
 		}).map((val, i, array) => {
 			return (
-				<option value={val.get('address')} key={i}>{val.get('address')}</option>
+				<option 
+					label={val.get('address')}
+					key={i}
+					value={val.get('id')}
+					rentSale={val.get('rentSale')}
+					price={val.get('price')}
+					beds={val.get('beds')}
+					baths={val.get('baths')}
+					sqft={val.get('sqft')}
+					acres={val.get('acres')}
+					type={val.get('type')}
+					stories={val.get('stories')}
+					year={val.get('year')}>
+					{val.get('address')}
+				</option>
 			);
 		});
 		return (
@@ -35,9 +51,12 @@ export default React.createClass({
 				<h1>Edit Rental</h1>
 				<select name="editdropdown" onChange={this.fillForm}>
 					<option value="pick">Choose Rental to Edit</option>
-					{userRentals}
+					{userListings}
 				</select>
-				<PropEntryForm model={this.state.rental}/>
+				<PropEntryForm model={this.state.listing}
+					formChange={this.formChange}
+					formSubmit={this.formSubmit}
+					clearForm={this.clearForm}/>
 				<input type="filepicker" data-fp-apikey="AWEM8RWC9TUScrspS0Rdiz" onchange={this.picSubmit} />
 			</div>
 			);
@@ -48,7 +67,24 @@ export default React.createClass({
 			console.log(Blob.url);
 			});
 	},
-	fillForm: function() {
-
+	fillForm: function(e) {
+		this.setState({
+			listing: this.state.listings.get(e.target.value)
+		});
+	},
+	formChange: function(e) {
+		this.state.listing.set(e.target.dataset.key, e.target.value);
+		this.setState({
+			listing: this.state.listing
+		});
+	},
+	formSubmit: function(e) {
+		e.preventDefault();
+		this.state.listing.save({userId: window.user.id}, {
+			success: this.clearForm
+		});
+	},
+	clearForm: function() {
+		this.state.listing.clear();
 	}
 });

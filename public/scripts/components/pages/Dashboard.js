@@ -1,12 +1,25 @@
 import React from 'react';
 import {Link} from 'react-router';
 import Rayon from 'rayon';
+import SessionModel from './../../models/SessionModel';
+import users from './../../collections/AgentCollection';
 
 export default React.createClass({
 	getInitialState: function() {
 		return {
-			profileModalVisible: false
+			profileModalVisible: false,
+			user: SessionModel,
+			users: users,
+			editingPropId: null
 		};
+	},
+	componentDidMount: function() {
+		users.on('update', this.updateUsers);
+		this.state.users.on('change', this.updateUsers);
+		users.fetch();
+	},
+	updateUsers: function() {
+		this.setState({users: users});
 	},
 	render: function() {
 		return (
@@ -23,26 +36,23 @@ export default React.createClass({
 					<a onClick={this.profileOpenModal}>Edit Profile</a>
 				</div>
 				<Rayon className="profileForm" isOpen={this.state.profileModalVisible} onClose={this.profileCloseModal}>
-					<form onSubmit={this.profileUpdate}>
+					<form onChange={this.formChange} onSubmit={this.formSubmit}>
 						<div>
-							<input type="text" placeholder="first name" name="firstName" ref="firstName"/>
+							<input type="text" placeholder="First Name" data-key="firstName" defaultValue={this.state.user.get('firstName')} ref="firstName"/>
 						</div>
 						<div>
-							<input type="text" placeholder="last name" name="lastName" ref="lastName"/>
+							<input type="text" placeholder="Last Name" data-key="lastName" defaultValue={this.state.user.get('lastName')} ref="lastName"/>
 						</div>
 						<div>
-							<input type="text" placeholder="phone" name="phone" ref="phone"/>
+							<input type="text" placeholder="Phone" data-key="phone" defaultValue={this.state.user.get('phone')} ref="phone"/>
 						</div>
 						<div>
-							<input type="email" placeholder="email" name="email" ref="email"/>
+							<input type="email" placeholder="Email" data-key="email" defaultValue={this.state.user.get('email')} ref="email"/>
 						</div>
 						<div>
-							<input type="text" placeholder="bio" name="bio" ref="bio"/>
+							<input type="text" placeholder="Bio" data-key="bio" defaultValue={this.state.user.get('bio')} ref="bio"/>
 						</div>
-						<div>
-							<input type="password" placeholder="password" name="password" ref="password"/>
-						</div>
-						<button>Register</button>
+						<button>Update</button>
 					</form>
 					<button onClick={this.profileCloseModal}>Cancel</button>
 				</Rayon>
@@ -59,8 +69,16 @@ export default React.createClass({
 			profileModalVisible: false
 		});
 	},
-	profileUpdate: function() {
-
+	formChange: function(e) {
+		// console.log(e.target.dataset.key);
+		this.state.user.set(e.target.dataset.key, e.target.value);
+		this.setState({
+			user: this.state.user
+		});
+	},
+	formSubmit: function(e) {
+		e.preventDefault();
+		this.state.user.save(null, {success: this.profileCloseModal});
 	}
 });
 

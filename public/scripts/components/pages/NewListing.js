@@ -12,6 +12,7 @@ export default React.createClass({
 	},
 	componentDidMount: function() {
 		listings.on('update', this.updateListings);
+		this.state.listing.on('change', this.updateListings);
 		listings.fetch();
 	},
 	updateListings: function() {
@@ -24,7 +25,8 @@ export default React.createClass({
 				<h1>Create New Listing</h1>
 				<PropEntryForm model={this.state.listing}
 					formChange={this.formChange}
-					
+					formSubmit={this.formSubmit}
+					clearForm={this.clearForm}
 					 />
 				<input type="filepicker" data-fp-apikey="AWEM8RWC9TUScrspS0Rdiz" onchange={this.picSubmit} />
 			</div>
@@ -37,9 +39,20 @@ export default React.createClass({
   		});
 	},
 	formChange: function(e) {
-		this.state.listing.set(e.target.placeholder.toLowerCase(), e.target.value);
+		this.state.listing.set(e.target.dataset.key, e.target.value);
 		this.setState({
 			listing: this.state.listing
 		});
+	},
+	formSubmit: function(e) {
+		e.preventDefault();
+		this.state.listing.save({userId: window.user.id}, {
+			success: this.clearForm
+		});
+		console.log('formSubmit');
+	},
+	clearForm: function() {
+		console.log('clearForm');
+		this.state.listing.clear();
 	}
 });

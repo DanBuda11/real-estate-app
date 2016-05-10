@@ -25,9 +25,7 @@ export default React.createClass({
 						<li>Phone: {this.state.agent.get('phone')}</li>
 						<li>Email: {this.state.agent.get('email')}</li>
 					</ul>
-
 				</div>
-				<Link to="/findagent/:agentId/details/listings">See Agent's Listings</Link>
 			</div>
 			);
 	},

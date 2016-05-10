@@ -20,7 +20,7 @@ export default React.createClass({
 					<img src="http://www.fillmurray.com/200/200"/>
 				</div>
 				<div className="morePhotos">
-					<a href="#">View All Photos</a>
+					<a href={`/forsale/${this.state.listing.get('id')}/details/photos`}>View All Photos</a>
 				</div>
 				<div className="propDetailsBlock">
 					<ul>
@@ -34,6 +34,7 @@ export default React.createClass({
 						<li>{this.state.listing.get('stories')} Story</li>
 						<li>Built in {this.state.listing.get('year')}</li>
 						<li>Offered By: {this.state.listing.get('user').firstName} {this.state.listing.get('user').lastName}</li>
+						<li>Phone: {this.state.listing.get('user').phone} Email: {this.state.listing.get('user').email}</li>
 					</ul>
 				</div>
 			</div>
