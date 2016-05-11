@@ -11,7 +11,7 @@ export default React.createClass({
 		Listings.on('update', this.updateListings);
 		Listings.fetch({
 			data: {
-				withRelated: ['user']
+				withRelated: ['user', 'images']
 			}
 		});
 	},
@@ -20,6 +20,8 @@ export default React.createClass({
 	},
 	render: function() {
 		const listings = this.state.Listings.map((listing, i, array) => {
+						console.log(listing.get('images'));
+
 		return (
 			<PropertyThumb
 				key={listing.get('id')}
@@ -37,7 +39,9 @@ export default React.createClass({
 				rentSale={listing.get('rentSale')}
 				firstName={listing.get('user').firstName}
 				lastName={listing.get('user').lastName}
+				images={listing.get('images')}
 				 />
+				
 			);
 		});
 		return (

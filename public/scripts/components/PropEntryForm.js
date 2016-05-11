@@ -17,7 +17,7 @@ export default React.createClass({
 	render: function() {
 		let deleteButton = null;
 		if (this.props.model.id) {
-			deleteButton = <input type="button" onCLick={this.props.deleteHouse} value="Delete" />;
+			deleteButton = <input type="button" onClick={this.props.deleteConfirm} value="Delete" />;
 		}
 		return(
 		<div className="propEntryForm">

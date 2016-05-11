@@ -12,7 +12,7 @@ export default React.createClass({
 	},
 	componentDidMount: function() {
 		listings.on('update', this.updateListings);
-		this.state.listing.on('change', this.updateListings);
+		// this.state.listing.on('change', this.updateListings);
 		listings.fetch();
 	},
 	updateListings: function() {
@@ -55,7 +55,8 @@ export default React.createClass({
 				<PropEntryForm model={this.state.listing}
 					formChange={this.formChange}
 					formSubmit={this.formSubmit}
-					clearForm={this.clearForm} />
+					clearForm={this.clearForm}
+					deleteConfirm={this.deleteConfirm} />
 				<input type="filepicker" data-fp-apikey="AWEM8RWC9TUScrspS0Rdiz" onchange={this.picSubmit} />
 			</div>
 			);
@@ -86,5 +87,14 @@ export default React.createClass({
 	},
 	clearForm: function() {
 		this.state.listing.clear();
+	},
+	deleteConfirm: function() {
+		this.state.listing.destroy();
+
+	},
+	deleteHouse: function() {
+		console.log('delete clicked');
+		console.log(this.state.listing.id);
+
 	}
 });

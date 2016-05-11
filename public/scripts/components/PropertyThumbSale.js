@@ -4,10 +4,11 @@ import {browserHistory} from 'react-router';
 
 export default React.createClass({
 	render: function() {
+		console.log('hi', this.props.images);
 		return (
 			<div onClick={this.goDetails} className="propThumb">
 				<div>
-					<img className="thumbImg" src="http://www.fillmurray.com/200/200"/>
+					<img className="thumbImg" src={this.props.images[0].url}/>
 				</div>
 				<div className="thumbInfo">
 					<ul>

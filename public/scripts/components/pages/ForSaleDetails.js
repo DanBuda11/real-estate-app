@@ -4,20 +4,27 @@ import Listing from './../../models/ListingModel';
 export default React.createClass({
 	getInitialState: function() {
 		let listing = new Listing({id: this.props.params.listingId,
-			user: {}});
+			user: {},
+			images: []
+			});
 		return {listing: listing};
 	},
 	componentDidMount: function() {
 		this.state.listing.on('change', this.update);
-		this.state.listing.fetch();
+		this.state.listing.fetch({
+			data: {
+				withRelated: ['user', 'images']
+			}
+		});
 	},
 	render: function() {
+		console.log(this.state.listing.get('images'));
 		return (
 			<div className="listingPage pageDiv">
 				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/forsale">Listings</a>
 				<h1>Details for {this.state.listing.get('address')}</h1>
 				<div className="detailsPhoto">
-					<img src="http://www.fillmurray.com/200/200"/>
+					{this.state.listing.get('images')[0] ? (<img src={this.state.listing.get('images')[0].url} />) : ''}
 				</div>
 				<div className="morePhotos">
 					<a href={`/forsale/${this.state.listing.get('id')}/details/photos`}>View All Photos</a>

@@ -17,13 +17,13 @@ export default Backbone.Model.extend({
 		year: ''
 	},
 	urlRoot: '/api/v1/listing',
-	url: function() {
-		let urlSuffix = `/${this[this.idAttribute]}?withRelated[0]=user`;
-		if (this[this.idAttribute]) {
-			return `${this.urlRoot}${urlSuffix}`;
-		} else {
-			return `${this.urlRoot}`;
-		}
-	},
+	// url: function() {
+	// 	let urlSuffix = `/${this[this.idAttribute]}?withRelated[0]=user&`;
+	// 	if (this[this.idAttribute]) {
+	// 		return `${this.urlRoot}${urlSuffix}`;
+	// 	} else {
+	// 		return `${this.urlRoot}`;
+	// 	}
+	// },
 	idAttribute: 'id'
 });

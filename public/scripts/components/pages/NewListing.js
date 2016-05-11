@@ -13,7 +13,7 @@ export default React.createClass({
 			listings: listings,
 			url: '',
 			photo: new Photo(),
-			photos: photos
+			photos: []
 		};
 	},
 	componentDidMount: function() {
@@ -70,9 +70,15 @@ export default React.createClass({
 		console.log('clearForm');
 		this.state.listing.clear();
 	},
-	savePhotos: function() {
+	savePhotos: function(listing) {
 		console.log('savePhotos running');
-		this.state.photos[0].save();
+		let photoModels = this.state.photos.map((photo, i , array) => {
+			return {url: photo.url, listingId:listing.id}; 
+		});
+		photoModels.forEach((photo, i, array)=> {
+			photos.create(photo);
+		});
+
 		// for (i=0; i< this.state.photos.length; i++) {
 			//save each photo to the database using the listingId createed by submitting the new listing
 		//where are the photos being saved to? server link?
