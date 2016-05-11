@@ -15,6 +15,6 @@
 			window.user = <%- user ? JSON.stringify(user) : '{}' %>;
 		</script>
 		<script type="text/javascript" src="<%= env === 'development' ? '/scripts/bundle.js' : '/scripts/bundle.min.js?'+version %>"></script>
-		<script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
+		<!-- <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script> -->
 	</body>
 </html>

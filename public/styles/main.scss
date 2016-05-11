@@ -1,3 +1,5 @@
+// Look at airbnb search for design
+
 @import 'variables';
 @import 'node_modules/rayon/src/styles/rayon';
 @import 'node_modules/rayon/src/styles/theme';
@@ -5,19 +7,21 @@
 h1 {
 	text-align: center;
 	color: #FFF;
-	text-shadow: 1px 1px 2px #000;
 }
 
 a {
 	text-decoration: none;
 }
 
+a:visited {
+	color: $buttonBlue;
+}
+
 .navBar {
-	background-color: none;
+	background-color: $slateGrey;
 	color: #FFF;
-	overflow: hidden;
-	position: absolute;
 	width: 100%;
+	overflow: hidden;
 
 	.logoDiv {
 		float: left;
@@ -33,7 +37,6 @@ a {
 
 		.homeFinderName {
 			float: right;
-			text-shadow: 1px 1px 2px #000;
 		}
 
 		.navLeft {
@@ -49,7 +52,6 @@ a {
 
 		.navLink {
 			margin-right: 2em;
-			text-shadow: 1px 1px 2px #000;
 		}
 	}
 }

@@ -1,3 +1,4 @@
+import filepicker from 'filepicker-js';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router, Route, browserHistory, IndexRoute} from 'react-router';
@@ -17,7 +18,8 @@ import NewRental from './components/pages/NewRental';
 import EditRental from './components/pages/EditRental';
 import FindAgent from './components/pages/FindAgent';
 import AgentDetails from './components/pages/AgentDetails';
-import AgentListings from './components/pages/AgentListings';
+
+filepicker.setKey('AWEM8RWC9TUScrspS0Rdiz');
 
 const router = (
 	<Router history={browserHistory}>
@@ -37,7 +39,6 @@ const router = (
 			<Route path="/dashboard/editrental" component={EditRental} />
 			<Route path="/findagent" component={FindAgent} />
 			<Route path="/findagent/:agentId/details" component={AgentDetails} />
-			<Route path="/findagent/:agentId/details/listings" component={AgentListings} />
 		</Route>
 	</Router>
 );

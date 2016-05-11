@@ -3,6 +3,7 @@ import Rayon from 'rayon';
 import session from './../models/SessionModel';
 import {browserHistory} from 'react-router';
 import $ from 'jquery';
+import filepicker from 'filepicker-js';
 
 export default React.createClass({
 	getInitialState: function() {
@@ -60,6 +61,7 @@ export default React.createClass({
 							<button>Register</button>
 						</form>
 						<button onClick={this.regCloseModal}>Cancel</button>
+						<button onClick={this.picSubmit}>Choose Profile Photo</button>
 					</Rayon>
 					<Rayon className="loginForm" isOpen={this.state.logModalVisible} onClose={this.logCloseModal}>
 						<form action="auth/login" method="post">
@@ -115,6 +117,7 @@ export default React.createClass({
 							<button>Register</button>
 						</form>
 						<button onClick={this.regCloseModal}>Cancel</button>
+						<button onClick={this.picSubmit}>Choose Profile Photo</button>
 					</Rayon>
 					<Rayon className="loginForm" isOpen={this.state.logModalVisible} onClose={this.logCloseModal}>
 						<form onSubmit={this.login}>
@@ -221,5 +224,15 @@ export default React.createClass({
 	},
 	dashboard: function() {
 		browserHistory.push('/dashboard');
+	},
+	picSubmit: function() {
+		filepicker.pick({
+			conversions: ['crop', 'rotate'],
+			cropRatio: 1,
+			cropForce: true,
+			mimeType: 'image/*'},
+			(Blob) => {
+				this.setState({profilePic: Blob.url});
+			});
 	}
 });

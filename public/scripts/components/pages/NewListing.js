@@ -1,13 +1,19 @@
 import React from 'react';
 import PropEntryForm from './../PropEntryForm';
 import ListingModel from './../../models/ListingModel';
+import filepicker from 'filepicker-js';
 import listings from './../../collections/ListingCollection';
+import Photo from './../../models/PhotoModel';
+import photos from './../../collections/PhotoCollection';
 
 export default React.createClass({
 	getInitialState: function() {
 		return {
 			listing: new ListingModel(),
-			listings: listings
+			listings: listings,
+			url: '',
+			photo: new Photo(),
+			photos: photos
 		};
 	},
 	componentDidMount: function() {
@@ -28,14 +34,22 @@ export default React.createClass({
 					formSubmit={this.formSubmit}
 					clearForm={this.clearForm}
 					 />
-				<input type="filepicker" data-fp-apikey="AWEM8RWC9TUScrspS0Rdiz" onchange={this.picSubmit} />
+				<button onClick ={this.picSubmit}>Choose Photos</button>
 			</div>
 			);
 	},
 	picSubmit: function() {
-		filepicker.pick(
-  			function(Blob){
-    		console.log(Blob.url);
+		filepicker.pickMultiple(
+			{
+			maxFiles: 10,
+			conversions: ['crop', 'rotate'],
+			cropRatio: 1,
+			cropForce: true,
+			mimetype: 'image/*'},
+  			(Blob) => {
+  			// console.log(Blob);
+  			console.log('photo url in blob: ',Blob[0].url);
+    		this.setState({photos: Blob});
   		});
 	},
 	formChange: function(e) {
@@ -47,12 +61,22 @@ export default React.createClass({
 	formSubmit: function(e) {
 		e.preventDefault();
 		this.state.listing.save({userId: window.user.id}, {
-			success: this.clearForm
+			// need to grab newly created listingId
+			success: this.savePhotos
 		});
 		console.log('formSubmit');
 	},
 	clearForm: function() {
 		console.log('clearForm');
 		this.state.listing.clear();
+	},
+	savePhotos: function() {
+		console.log('savePhotos running');
+		this.state.photos[0].save();
+		// for (i=0; i< this.state.photos.length; i++) {
+			//save each photo to the database using the listingId createed by submitting the new listing
+		//where are the photos being saved to? server link?
 	}
 });
+
+// <input type="filepicker" data-fp-apikey="AWEM8RWC9TUScrspS0Rdiz" onClick={this.picSubmit} />
