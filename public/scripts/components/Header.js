@@ -1,7 +1,7 @@
 import React from 'react';
 import Rayon from 'rayon';
 import session from './../models/SessionModel';
-import {browserHistory} from 'react-router';
+import {browserHistory, Link} from 'react-router';
 import $ from 'jquery';
 import filepicker from 'filepicker-js';
 
@@ -23,8 +23,8 @@ export default React.createClass({
 	render: function() {
 		if (this.state.user.get('id')) {
 			return (
-				<div>
-					<div className="navBar">
+				<div className="navBar">
+					<div>
 						<div className="logoDiv">
 							<a href="/">
 								<img src="/images/homefinder_logo.png" className="homeFinderLogo navLeft" />
@@ -34,11 +34,17 @@ export default React.createClass({
 							</a>
 						</div>
 						<div className="navLinks">
+							<span className="leftNavItem">Find</span>
+							<Link className="navLink" to="/listings">Home</Link>
+							<span className="divider">|</span>
+							<Link className="navLink" to="/agents">Agent</Link>
+							<span className="leftNavItem">Agents</span>
 							<a className="navLink" onClick={this.dashboard}>Dashboard</a>
+							<span className="divider">|</span>
 							<a className="navLink" onClick={this.logout}>Sign Out</a>
 						</div>
 					</div>
-					<Rayon className="regForm" isOpen={this.state.regModalVisible} onClose={this.regCloseModal}>
+					<Rayon className="regForm" isOpen={this.state.regModalVisible} onClose={this.regCloseModal} bodyClass="rayon-no-overflow">
 						<form action="/auth/register" method="post">
 							<div>
 								<input type="text" placeholder="first name" name="firstName"/>
@@ -47,13 +53,13 @@ export default React.createClass({
 								<input type="text" placeholder="last name" name="lastName"/>
 							</div>
 							<div>
-								<input type="text" placeholder="phone" name="phone"/>
+								<input type="text" placeholder="555-555-5555" name="phone"/>
 							</div>
 							<div>
-								<input type="email" placeholder="email" name="email"/>
+								<input type="email" placeholder="email@example.com" name="email"/>
 							</div>
 							<div>
-								<input type="text" placeholder="bio" name="bio"/>
+								<textarea placeholder="bio (500 character max)" name="bio"/>
 							</div>
 							<div>
 								<input type="password" placeholder="password" name="password"/>
@@ -63,10 +69,10 @@ export default React.createClass({
 						<button onClick={this.regCloseModal}>Cancel</button>
 						<button onClick={this.picSubmit}>Choose Profile Photo</button>
 					</Rayon>
-					<Rayon className="loginForm" isOpen={this.state.logModalVisible} onClose={this.logCloseModal}>
+					<Rayon className="loginForm" isOpen={this.state.logModalVisible} onClose={this.logCloseModal} bodyClass="rayon-no-overflow">
 						<form action="auth/login" method="post">
 							<div>
-								<input type="email" placeholder="email" name="email"/>
+								<input type="email" placeholder="email@example.com" name="email"/>
 							</div>
 							<div>
 								<input type="password" placeholder="password" name="password"/>
@@ -79,8 +85,8 @@ export default React.createClass({
 				);
 		} else {
 			return (
-				<div>
-					<div className="navBar">
+				<div className="navBar">
+					<div>
 						<div className="logoDiv">
 							<a href="/">
 								<img src="./../../images/homefinder_logo.png" className="homeFinderLogo navLeft" />
@@ -90,11 +96,17 @@ export default React.createClass({
 							</a>
 						</div>
 						<div className="navLinks">
-							<a className="navLink" onClick={this.regOpenModal}>Sign Up</a>
-							<a className="navLink" onClick={this.logOpenModal}>Sign In</a>
+							<span className="leftNavItem">Find</span>
+							<Link className="navLink" to="/listings">Home</Link>
+							<span className="divider">|</span>
+							<Link className="navLink" to="/agents">Agent</Link>
+							<span className="leftNavItem">Agents</span>
+							<a className="navLink" href="#" onClick={this.regOpenModal}>Sign Up</a>
+							<span className="divider">|</span>
+							<a className="navLink" href="#" onClick={this.logOpenModal}>Sign In</a>
 						</div>
 					</div>
-					<Rayon className="regForm" isOpen={this.state.regModalVisible} onClose={this.regCloseModal}>
+					<Rayon className="regForm" isOpen={this.state.regModalVisible} onClose={this.regCloseModal} bodyClass="rayon-no-overflow">
 						<form onSubmit={this.register}>
 							<div>
 								<input type="text" placeholder="first name" name="firstName" ref="firstName"/>
@@ -103,13 +115,13 @@ export default React.createClass({
 								<input type="text" placeholder="last name" name="lastName" ref="lastName"/>
 							</div>
 							<div>
-								<input type="text" placeholder="phone" name="phone" ref="phone"/>
+								<input type="text" placeholder="555-555-5555" name="phone" ref="phone"/>
 							</div>
 							<div>
-								<input type="email" placeholder="email" name="email" ref="email"/>
+								<input type="email" placeholder="email@example.com" name="email" ref="email"/>
 							</div>
 							<div>
-								<input type="text" placeholder="bio" name="bio" ref="bio"/>
+								<textarea placeholder="bio (500 character max)" name="bio" ref="bio"/>
 							</div>
 							<div>
 								<input type="password" placeholder="password" name="password" ref="password"/>
@@ -119,10 +131,10 @@ export default React.createClass({
 						<button onClick={this.regCloseModal}>Cancel</button>
 						<button onClick={this.picSubmit}>Choose Profile Photo</button>
 					</Rayon>
-					<Rayon className="loginForm" isOpen={this.state.logModalVisible} onClose={this.logCloseModal}>
+					<Rayon className="loginForm" isOpen={this.state.logModalVisible} onClose={this.logCloseModal} bodyClass="rayon-no-overflow">
 						<form onSubmit={this.login}>
 							<div>
-								<input type="email" placeholder="email" name="email" ref="email"/>
+								<input type="email" placeholder="email@example.com" name="email" ref="email"/>
 							</div>
 							<div>
 								<input type="password" placeholder="password" name="password" ref="password"/>
@@ -184,7 +196,8 @@ export default React.createClass({
 			}
 		});
 	},
-	regOpenModal: function() {
+	regOpenModal: function(e) {
+		e.preventDefault();
 		this.setState({
 			regModalVisible: true
 		});
@@ -210,7 +223,7 @@ export default React.createClass({
 		});
 				console.log(this.state.user);
 
-	},
+	},		
 	logout: function(e) {
 		e.preventDefault();
 		$.ajax({

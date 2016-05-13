@@ -21,6 +21,10 @@ export default React.createClass({
 		this.state.listing.on('change', this.updateListings);
 		listings.fetch();
 	},
+	componentWillUnmount: function() {
+		listings.off('update');
+		this.state.listing.off('change');
+	},
 	updateListings: function() {
 		this.setState({listings: listings});
 	},

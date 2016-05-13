@@ -1,4 +1,4 @@
-import React from 'react';
+	import React from 'react';
 import PropEntryForm from './../PropEntryForm';
 import ListingModel from './../../models/ListingModel';
 import listings from './../../collections/ListingCollection';
@@ -11,9 +11,12 @@ export default React.createClass({
 		};
 	},
 	componentDidMount: function() {
-		listings.on('update', this.updateListings);
-		// this.state.listing.on('change', this.updateListings);
+		listings.on('update change', this.updateListings);
+		// this.state.listings.on('change', this.updateListings);
 		listings.fetch();
+	},
+	componentWillUnmount: function() {
+		listings.off('update change');
 	},
 	updateListings: function() {
 		this.setState({listings: listings});
@@ -39,7 +42,8 @@ export default React.createClass({
 					acres={val.get('acres')}
 					type={val.get('type')}
 					stories={val.get('stories')}
-					year={val.get('year')}>
+					year={val.get('year')}
+					blurb={val.get('blurb')}>
 					{val.get('address')}
 				</option>
 				);

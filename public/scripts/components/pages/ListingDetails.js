@@ -5,7 +5,7 @@ export default React.createClass({
 	getInitialState: function() {
 		let listing = new Listing({id: this.props.params.listingId,
 			user: {},
-			images: []
+			photos: []
 			});
 		return {listing: listing};
 	},
@@ -13,21 +13,24 @@ export default React.createClass({
 		this.state.listing.on('change', this.update);
 		this.state.listing.fetch({
 			data: {
-				withRelated: ['user', 'images']
+				withRelated: ['user', 'photos']
 			}
 		});
 	},
+	componentWillUnmount: function() {
+		this.state.listing.off('change');
+	},
 	render: function() {
-		console.log(this.state.listing.get('images'));
+		console.log(this.state.listing.get('photos'));
 		return (
 			<div className="listingPage pageDiv">
-				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/forsale">Listings</a>
+				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/listings">Listings</a>
 				<h1>Details for {this.state.listing.get('address')}</h1>
 				<div className="detailsPhoto">
-					{this.state.listing.get('images')[0] ? (<img src={this.state.listing.get('images')[0].url} />) : ''}
+					{this.state.listing.get('photos')[0] ? (<img src={this.state.listing.get('photos')[0].url} />) : ''}
 				</div>
 				<div className="morePhotos">
-					<a href={`/forsale/${this.state.listing.get('id')}/details/photos`}>View All Photos</a>
+					<a href={`/listings/${this.state.listing.get('id')}/details/photos`}>View All Photos</a>
 				</div>
 				<div className="propDetailsBlock">
 					<ul>
@@ -40,6 +43,7 @@ export default React.createClass({
 						<li>{this.state.listing.get('type')}</li>
 						<li>{this.state.listing.get('stories')} Story</li>
 						<li>Built in {this.state.listing.get('year')}</li>
+						<li>{this.state.listing.get('blurb')}</li>
 						<li>Offered By: {this.state.listing.get('user').firstName} {this.state.listing.get('user').lastName}</li>
 						<li>Phone: {this.state.listing.get('user').phone} Email: {this.state.listing.get('user').email}</li>
 					</ul>

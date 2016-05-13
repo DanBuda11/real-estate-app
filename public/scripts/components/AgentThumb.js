@@ -19,6 +19,6 @@ export default React.createClass({
 			);
 	},
 	goDetails: function(e) {
-		browserHistory.push(`/findagent/${this.props.id}/details`);
+		browserHistory.push(`/agents/${this.props.id}/details`);
 	}
 });

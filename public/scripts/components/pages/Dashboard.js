@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import Rayon from 'rayon';
 import SessionModel from './../../models/SessionModel';
-import users from './../../collections/AgentCollection';
+import users from './../../collections/UserCollection';
 
 export default React.createClass({
 	getInitialState: function() {
@@ -18,6 +18,9 @@ export default React.createClass({
 		this.state.users.on('change', this.updateUsers);
 		users.fetch();
 	},
+	componentWillUnmount: function() {
+		users.off('update');
+	},
 	updateUsers: function() {
 		this.setState({users: users});
 	},
@@ -30,9 +33,6 @@ export default React.createClass({
 					<h2>Manage Listings</h2>
 					<Link to="/dashboard/newlisting">New Listing</Link>
 					<Link to="/dashboard/editlisting">Edit Listing</Link>
-					<h2>Manage Rentals</h2>
-					<Link to="/dashboard/newrental">New Rental</Link>
-					<Link to="/dashboard/editrental">Edit Rental</Link>
 					<a onClick={this.profileOpenModal}>Edit Profile</a>
 				</div>
 				<Rayon className="profileForm" isOpen={this.state.profileModalVisible} onClose={this.profileCloseModal}>

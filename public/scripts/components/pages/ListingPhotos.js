@@ -13,10 +13,13 @@ export default React.createClass({
 		this.state.listing.on('change', this.update);
 		this.state.listing.fetch();
 	},
+	componentWillUnmount: function() {
+		this.state.listing.off('change');
+	},
 	render: function() {
 		return (
 			<div className="listingPage pageDiv">
-				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/forsale">Listings</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href={`/forsale/${this.state.listing.get('id')}/details`}>Details</a>
+				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/listings">Listings</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href={`/listings/${this.state.listing.get('id')}/details`}>Details</a>
 				<h1>Photos for {this.state.listing.get('address')}</h1>
 			</div>
 			);

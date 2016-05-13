@@ -7,13 +7,10 @@ export default React.createClass({
 			<div className="homeContainer">
 				<div className="homeBoxes">
 					<div className="homeBox">
-						<Link className="homeBoxLink" to="/forsale">Buy a Home</Link>
+						<Link className="homeBoxLink" to="/listings">Find a Home</Link>
 					</div>
 					<div className="homeBox">
-						<Link className="homeBoxLink" to="/forrent">Rent a Home</Link>
-					</div>
-					<div className="homeBox">
-						<Link className="homeBoxLink" to="/findagent">Find an Agent</Link>
+						<Link className="homeBoxLink" to="/agents">Find an Agent</Link>
 					</div>
 				</div>
 			</div>

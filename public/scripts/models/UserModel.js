@@ -10,7 +10,7 @@ export default Backbone.Model.extend({
 		phone: '',
 		email: '',
 		bio: '',
-		image: ''
+		photo: ''
 	},
 	urlRoot: '/api/v1/user',
 	url: function() {

@@ -3,7 +3,6 @@ exports.up = function(knex, Promise) {
 		t.increments('id').unsigned().primary();
 		t.dateTime('createdAt').notNull();
 		t.dateTime('updatedAt').nullable();
-
 		t.string('type').notNull();
 		t.string('identifier').notNull();
 		t.string('password').nullable();

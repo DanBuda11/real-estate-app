@@ -14,7 +14,8 @@ export default Backbone.Model.extend({
 		acres: '',
 		type: '',
 		stories: '',
-		year: ''
+		year: '',
+		blurb: ''
 	},
 	urlRoot: '/api/v1/listing',
 	// url: function() {

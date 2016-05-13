@@ -14,6 +14,7 @@ exports.up = function(knex, Promise) {
 		t.string('type').nullable();
 		t.integer('stories').unsigned().nullable();
 		t.integer('year').unsigned().nullable();
+		t.string('blurb', 500).nullable().defaultTo('This listing has no description.');
 		t.integer('userId')
 			.unsigned()
 			.notNull()

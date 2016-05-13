@@ -10,7 +10,7 @@ const SessionModel = Backbone.Model.extend({
 		phone: '',
 		email: '',
 		bio: '',
-		image: ''
+		photo: ''
 	},
 	urlRoot: '/api/v1/user',
 	idAttribute: 'id'

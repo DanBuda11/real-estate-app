@@ -1,5 +1,5 @@
 require('./User');
-require('./ListingPhoto');
+require('./Photo');
 
 module.exports = bookshelf.model('Listing', {
 	tableName: 'listings',
@@ -7,7 +7,7 @@ module.exports = bookshelf.model('Listing', {
 	user: function() {
 		return this.belongsTo('User', 'userId');
 	},
-	images: function() {
-		return this.hasMany('ListingPhoto', 'listingId');
+	photos: function() {
+		return this.hasMany('Photo', 'listingId');
 	}
 });

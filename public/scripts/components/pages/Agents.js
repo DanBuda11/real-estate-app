@@ -1,5 +1,5 @@
 import React from 'react';
-import Agents from './../../collections/AgentCollection';
+import Agents from './../../collections/UserCollection';
 import AgentThumb from './../AgentThumb';
 
 export default React.createClass({
@@ -9,6 +9,9 @@ export default React.createClass({
 	componentDidMount: function() {
 		Agents.on('update', this.updateAgents);
 		Agents.fetch();
+	},
+	componentWillUnmount: function() {
+		Agents.off('update');
 	},
 	updateAgents: function() {
 		this.setState({Agents: Agents});
@@ -24,7 +27,7 @@ export default React.createClass({
 					phone={agent.get('phone')}
 					email={agent.get('email')}
 					bio={agent.get('bio')}
-					image={agent.get('image')} />
+					photo={agent.get('photo')} />
 				);
 		});
 		return (

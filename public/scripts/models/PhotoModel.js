@@ -8,7 +8,7 @@ export default Backbone.Model.extend({
 		url: '',
 		listingId: ''
 	},
-	urlRoot: '/api/v1/listingphoto',
+	urlRoot: '/api/v1/photo',
 	url: function() {
 		let urlSuffix = `/${this[this.idAttribute]}?withRelated[0]=listing`;
 		if (this[this.idAttribute]) {
