@@ -52,6 +52,9 @@ export default React.createClass({
 						<div>
 							<input type="text" placeholder="Bio" data-key="bio" defaultValue={this.state.user.get('bio')} ref="bio"/>
 						</div>
+						<div>
+							<textarea placeholder="bio (500 character max)" name="bio"/>
+						</div>
 						<button>Update</button>
 					</form>
 					<button onClick={this.profileCloseModal}>Cancel</button>

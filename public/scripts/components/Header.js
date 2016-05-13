@@ -62,6 +62,15 @@ export default React.createClass({
 								<textarea placeholder="bio (500 character max)" name="bio"/>
 							</div>
 							<div>
+								<input type="text" placeholder="http://" name="facebook"/>
+							</div>
+							<div>
+								<input type="text" placeholder="email@example.com" name="email"/>
+							</div>
+							<div>
+								<input type="text" placeholder="email@example.com" name="email"/>
+							</div>
+							<div>
 								<input type="password" placeholder="password" name="password"/>
 							</div>
 							<button>Register</button>

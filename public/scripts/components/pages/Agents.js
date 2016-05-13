@@ -27,7 +27,10 @@ export default React.createClass({
 					phone={agent.get('phone')}
 					email={agent.get('email')}
 					bio={agent.get('bio')}
-					photo={agent.get('photo')} />
+					photo={agent.get('photo')}
+					facebook={agent.get('facebook')}
+					linkedin={agent.get('linkedin')}
+					twitter={agent.get('twitter')} />
 				);
 		});
 		return (
