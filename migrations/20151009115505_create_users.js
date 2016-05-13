@@ -10,6 +10,9 @@ exports.up = function(knex, Promise) {
 		t.string('email').notNull();
 		t.string('bio', 500).nullable().defaultTo('This User has not entered a bio.');
 		t.string('image').nullable();
+		t.string('facebook').nullable();
+		t.string('twitter').nullable();
+		t.string('linkedin').nullable();
 	});
 };
 
