@@ -49,11 +49,12 @@ export default React.createClass({
 				<a className="breadCrumbs crumbOne" href="/">Home</a>
 				<h1>Listings Main Page</h1>
 				<div className="searchBar">
-					<select name="listingsSort" onChange={this.sortListings}>
-						<option>Choose Sort Option</option>
+					<select name="listingsSort" id="listingSort" onChange={this.sortListings}>
+						<option>Show All</option>
 						<option>For Sale Only</option>
 						<option>For Rent Only</option>
-						<option value="price">By Price</option>
+						<option value="price">By Price High to Low</option>
+						<option value="price">By Price Low to High</option>
 						<option value="beds">By Bedrooms</option>
 						<option value="baths">By Bathrooms</option>
 						<option value="sqft">By Square Feet</option>
@@ -69,24 +70,17 @@ export default React.createClass({
 	},
 	sortListings: function(e) {
 		e.preventDefault();
-		Listings.comparator = (listing) => {
-			return listing.get(e.target.value);
-		};
-		Listings.sort();
-		this.forceUpdate();
-
-
-// var alphabetical = books.sortBy(function(book) {
-//   return book.author.get("name").toLowerCase();
-// });
-
-
-		// _.sortBy(this.state.Listings, e.target.value);
-		// .sort(function(left, right) {
-  //     var a = left.criteria;
-  //     var b = right.criteria;
-  //     if (a !== b) {
-  //       if (a > b || a === void 0) return 1;
-  //       if (a < b || b === void 0) return -1;
+		let newSort = document.getElementById('listingSort');
+		if (newSort.options[newSort.selectedIndex].text === 'By Price High to Low') {
+			console.log('this should run the high to low price function');
+		} else if (newSort.options[newSort.selectedIndex].text === 'By Price Low to High') {
+			console.log('this should run the low to high price function');
+		} else if (newSort.options[newSort.selectedIndex].text === 'For Sale Only') {
+			console.log('this should run the for sale only function');
+		} else if (newSort.options[newSort.selectedIndex].text === 'For Rent Only') {
+			console.log('this should run the for rent only function');
+		} else {
+			console.log('this should show all the listings');
+		}
       }
 });

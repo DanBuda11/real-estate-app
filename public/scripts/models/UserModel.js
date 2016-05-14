@@ -10,7 +10,7 @@ export default Backbone.Model.extend({
 		phone: '',
 		email: '',
 		bio: '',
-		photo: '',
+		image: '',
 		facebook: '',
 		linkedin: '',
 		twitter: ''

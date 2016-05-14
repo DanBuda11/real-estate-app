@@ -27,7 +27,7 @@ export default React.createClass({
 					phone={agent.get('phone')}
 					email={agent.get('email')}
 					bio={agent.get('bio')}
-					photo={agent.get('photo')}
+					image={agent.get('image')}
 					facebook={agent.get('facebook')}
 					linkedin={agent.get('linkedin')}
 					twitter={agent.get('twitter')} />

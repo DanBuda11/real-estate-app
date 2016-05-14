@@ -69,6 +69,7 @@ export default React.createClass({
 			success: this.savePhotos
 		});
 		console.log('formSubmit');
+		this.clearForm();
 	},
 	clearForm: function() {
 		console.log('clearForm');

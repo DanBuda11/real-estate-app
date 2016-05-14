@@ -6,7 +6,7 @@ export default React.createClass({
 		return (
 			<div onClick={this.goDetails} className="propThumb">
 				<div>
-					<img className="thumbImg" src="http://www.fillmurray.com/200/200"/>
+					<img className="thumbImg" src={this.props.image}/>
 				</div>
 				<div className="thumbInfo">
 					<ul>

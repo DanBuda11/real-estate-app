@@ -1,13 +1,15 @@
-	import React from 'react';
+import React from 'react';
 import PropEntryForm from './../PropEntryForm';
 import ListingModel from './../../models/ListingModel';
 import listings from './../../collections/ListingCollection';
+import Rayon from 'rayon';
 
 export default React.createClass({
 	getInitialState: function() {
 		return {
 			listing: new ListingModel(),
-			listings: listings
+			listings: listings,
+			delModalVisible: false
 		};
 	},
 	componentDidMount: function() {
@@ -62,6 +64,11 @@ export default React.createClass({
 					clearForm={this.clearForm}
 					deleteConfirm={this.deleteConfirm} />
 				<input type="filepicker" data-fp-apikey="AWEM8RWC9TUScrspS0Rdiz" onchange={this.picSubmit} />
+				<Rayon className="delConfirm" isOpen={this.state.delModalVisible} onClose={this.delCloseModal} bodyClass="rayon-no-overflow">
+					<p>Are you sure you want to delete this listing?</p>
+					<button onClick={this.deleteListing}>Delete</button>
+					<button onClick={this.delCloseModal}>Cancel</button>
+				</Rayon>
 			</div>
 			);
 	},
@@ -93,12 +100,21 @@ export default React.createClass({
 		this.state.listing.clear();
 	},
 	deleteConfirm: function() {
-		this.state.listing.destroy();
-
+		this.delOpenModal();
 	},
-	deleteHouse: function() {
-		console.log('delete clicked');
-		console.log(this.state.listing.id);
-
+	delOpenModal: function() {
+		this.setState({
+			delModalVisible: true
+		});
+	},
+	deleteListing: function() {		
+		this.state.listing.destroy();
+		this.delCloseModal();
+		this.clearForm();
+	},
+	delCloseModal: function() {
+		this.setState({
+			delModalVisible: false
+		});
 	}
 });

@@ -110,7 +110,12 @@ router.post('/register', validateLocalCredentials, function(req, res, next) {
 					firstName: req.body.firstName,
 					lastName: req.body.lastName,
 					phone: req.body.phone,
-					email: req.body.email
+					email: req.body.email,
+					bio: req.body.bio,
+					image: req.body.image,
+					facebook: req.body.facebook,
+					twitter: req.body.twitter,
+					linkedin: req.body.linkedin
 				});
 				newUser.save(null, {transacting: t})
 				.then(function(user) {

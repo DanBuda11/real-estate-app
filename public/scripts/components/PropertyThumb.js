@@ -15,9 +15,6 @@ export default React.createClass({
 						<li>{this.props.address}</li>
 						<li>{this.props.rentSale}</li>
 						<li>${this.props.price}</li>
-						<li>{this.props.beds} Beds</li>						
-						<li>{this.props.sqft} Square Feet</li>
-						<li>{this.props.type}</li>
 						<li>Offered By: {this.props.firstName} {this.props.lastName}</li>
 					</ul>
 				</div>

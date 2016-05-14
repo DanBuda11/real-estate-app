@@ -52,7 +52,7 @@ export default React.createClass({
 					<span>Year Built:</span>
 					<input type="text" placeholder="Year Built" data-key="year" value={this.props.model.get('year')} ref="year"/>
 					<span>Description:</span>
-					<textarea placeholder="Description" data-key="blurb" value={this.props.model.get('blurb')} ref="blurb" />
+					<input type="textarea" placeholder="Description" data-key="blurb" value={this.props.model.get('blurb')} ref="blurb" />
 				</div>
 				<div className="propFormButtons">
 					<input type="button" onClick={this.props.clearForm} value="Clear"/>

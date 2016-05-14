@@ -26,8 +26,8 @@ export default React.createClass({
 			<div className="listingPage pageDiv">
 				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/listings">Listings</a>
 				<h1>Details for {this.state.listing.get('address')}</h1>
-				<div className="detailsPhoto">
-					{this.state.listing.get('photos')[0] ? (<img src={this.state.listing.get('photos')[0].url} />) : ''}
+				<div>
+					{this.state.listing.get('photos')[0] ? (<img  className="detailsPhoto" src={this.state.listing.get('photos')[0].url} />) : ''}
 				</div>
 				<div className="morePhotos">
 					<a href={`/listings/${this.state.listing.get('id')}/details/photos`}>View All Photos</a>

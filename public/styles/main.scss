@@ -21,10 +21,32 @@ a:visited {
 
 .navBar {
 	background-color: $slateGrey;
-	color: #FFF;
 	width: 100%;
 	overflow: hidden;
-	padding: 0 0.3em;
+
+	.hamburger {
+		float: right;
+		line-height: 5em;
+		margin-right: 1em;
+
+		.fa-bars {
+			cursor: pointer;
+			vertical-align: middle;
+			color: #FFF;
+		}
+
+		.mobile-menu {
+			display: none;
+			background-color: #FFF;
+		}
+	}
+
+	.regForm {
+
+		span {
+			color: #000;
+		}
+	}
 
 	.logoDiv {
 		float: left;
@@ -41,12 +63,11 @@ a:visited {
 		.homeFinderName {
 			float: right;
 			font-weight: lighter;
+			display: none;
 		}
 
 		.navLeft {
-			margin-left: 1em;
-			margin-top: 0.6em;
-			line-height: 3.2em;
+			margin: 0.5em 0 0 1em;
 		}
 	}
 
@@ -54,6 +75,7 @@ a:visited {
 		float: right;
 		line-height: 5em;
 		margin-right: 1em;
+		display: none;
 
 		span {
 			margin-right: 0.3em;
@@ -61,6 +83,7 @@ a:visited {
 
 		.leftNavItem {
 			margin-left: 2em;
+			color: #FFF;
 		}
 
 		.navLink {
@@ -69,6 +92,7 @@ a:visited {
 
 		.divider {
 			margin: 0 0.3em;
+			color: #FFF;
 		}
 	}
 }
@@ -83,7 +107,7 @@ a:visited {
 }
 
 .pageDiv {
-	padding-top: 6em;
+	padding-top: 1em;
 }
 
 .breadCrumbs {
@@ -92,10 +116,6 @@ a:visited {
 
 .crumbOne {
 	margin-left: 2em;
-}
-
-.regForm {
-
 }
 
 .loginForm {
@@ -110,29 +130,43 @@ a:visited {
 	background-size: cover;
 	overflow: hidden;
 
+	.welcomeBox {
+
+		.homeFinderNameMobile {
+			color: #fff;
+			padding: 1em 0;
+			text-align: center;
+		}
+
+		.welcome {
+			color: #FFF;
+			text-align: center;
+		}
+	}
+
 	.homeBoxes {
-		width: 60%;
+		width: 65%;
 		margin: 0 auto;
-		padding: 2em;
-		background: rgba(255,255,255,0.5);
+		padding: 1.7em;
+		background: rgba(255,255,255,0.4);
     	box-shadow: 1px 2px 4px rgba(0,0,0,0.3);
     	overflow: hidden;
    		border-radius: 0.3em;
-   		margin-top: 8em;
+   		margin-top: 2em;
 
-		.homeBox {
-			border: 1px solid #000;
-			background-color: $lGrey;
-			margin-bottom: 0.5em;
-			padding: 0.3em;
+		.homeBoxLink {
+			color: #fff;
+			background-color: $buttonBlue;;
+			margin: 0.3em auto;
+			padding: 0.7em;
 			text-align: center;
 			border-radius: 0.3em;
-
-			.homeBoxLink {
-				color: #000;
-			}
+			cursor: pointer;
+			border: none;
+			width: 100%;
 		}
 	}
+	
 }
 
 .listingPage {
@@ -142,7 +176,8 @@ a:visited {
 
 	.detailsPhoto {
 		margin: 0 auto;
-		width: 200px;
+		width: 80%;
+		display: block;
 	}
 
 	.morePhotos {
@@ -153,10 +188,6 @@ a:visited {
 
 .fa-angle-right {
 	margin-right: 0.5em;
-}
-
-.detailsPhoto {
-
 }
 
 .propDetailsBlock {
@@ -171,23 +202,21 @@ a:visited {
 }
 
 .propThumb {
-	width: 60%;
-	border: 1px solid #000;
-	background-color: $lGrey;
+	width: 80%;
+	background-color: #FFF;
 	margin: 0 auto 0.5em auto;
 	padding: 0.3em;
-	border-radius: 0.3em;
 	clear: both;
 	overflow: hidden;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.25);
+	cursor: pointer;
 
 	.thumbImg {
-		float: left;
-		height: 100px;
+		width: 100%;
 	}
 
 	.thumbInfo {
 		margin-left: 1em;
-		float: left;
 	}
 
 	ul {
@@ -197,7 +226,7 @@ a:visited {
 }
 
 .propThumb:hover {
-	background-color: $orange;
+	background-color: #ccc;
 }
 
 .searchBar {
@@ -216,9 +245,17 @@ a:visited {
 	}
 }
 
+.bigPhotoBox {
+	width: 95%;
+	margin: 0 auto;
+
+	.bigPhoto {
+		width: 100%;
+	}
+}
+
 .footer {
 	background-color: $slateGrey;
-	border-top: 1px solid #000;
 	color: #FFF;
 
 	.footerText {
@@ -226,5 +263,36 @@ a:visited {
 		font-weight: lighter;
 		padding: 1em 0;
 		margin: 0;
+	}
+}
+
+@media (min-width: 500px) {
+
+	.navBar {
+
+		.logoDiv {
+
+			.homeFinderName {
+				display: block;
+			}
+		}
+
+		.hamburger {
+			display: none;
+		}
+
+		.navLinks {
+			display: block;
+		}
+	}
+
+	.homeContainer {
+
+		.welcomeBox {
+
+			.homeFinderNameMobile {
+				display: none;
+			}
+		}
 	}
 }

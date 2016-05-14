@@ -4,8 +4,7 @@
 		<title>Home Finder Lite</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" href="/favicon.ico"/>
-<!-- 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
- -->		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
 		<link rel="stylesheet" href="<%= env === 'development' ? '/styles/main.scss.css' : '/styles/main.scss.min.css?'+version %>" />
 
 	</head>
@@ -15,6 +14,5 @@
 			window.user = <%- user ? JSON.stringify(user) : '{}' %>;
 		</script>
 		<script type="text/javascript" src="<%= env === 'development' ? '/scripts/bundle.js' : '/scripts/bundle.min.js?'+version %>"></script>
-		<!-- <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script> -->
 	</body>
 </html>

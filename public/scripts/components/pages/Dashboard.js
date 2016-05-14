@@ -38,22 +38,36 @@ export default React.createClass({
 				<Rayon className="profileForm" isOpen={this.state.profileModalVisible} onClose={this.profileCloseModal}>
 					<form onChange={this.formChange} onSubmit={this.formSubmit}>
 						<div>
-							<input type="text" placeholder="First Name" data-key="firstName" defaultValue={this.state.user.get('firstName')} ref="firstName"/>
+							<span>First Name</span>
+							<input type="text" placeholder="Jon" data-key="firstName" defaultValue={this.state.user.get('firstName')} ref="firstName"/>
 						</div>
 						<div>
-							<input type="text" placeholder="Last Name" data-key="lastName" defaultValue={this.state.user.get('lastName')} ref="lastName"/>
+							<span>Last Name</span>
+							<input type="text" placeholder="Snow" data-key="lastName" defaultValue={this.state.user.get('lastName')} ref="lastName"/>
 						</div>
 						<div>
-							<input type="text" placeholder="Phone" data-key="phone" defaultValue={this.state.user.get('phone')} ref="phone"/>
+							<span>Phone</span>
+							<input type="text" placeholder="555-555-5555" data-key="phone" defaultValue={this.state.user.get('phone')} ref="phone"/>
 						</div>
 						<div>
-							<input type="email" placeholder="Email" data-key="email" defaultValue={this.state.user.get('email')} ref="email"/>
+							<span>Email</span>
+							<input type="email" placeholder="email@example.com" data-key="email" defaultValue={this.state.user.get('email')} ref="email"/>
+						</div>	
+						<div>
+							<span>Bio</span>
+							<textarea placeholder="Bio (500 character max)" data-key="bio" defaultValue={this.state.user.get('bio')} ref="bio"/>
 						</div>
 						<div>
-							<input type="text" placeholder="Bio" data-key="bio" defaultValue={this.state.user.get('bio')} ref="bio"/>
+							<span><i className="fa fa-facebook-square"></i></span>
+							<input type="text" placeholder="http://..." data-key="facebook" defaultValue={this.state.user.get('facebook')} ref="facebook"/>
 						</div>
 						<div>
-							<textarea placeholder="bio (500 character max)" name="bio"/>
+							<span><span><i className="fa fa-twitter-square"></i></span></span>
+							<input type="text" placeholder="http://..." data-key="twitter" defaultValue={this.state.user.get('twitter')} ref="twitter"/>
+						</div>
+						<div>
+							<span><i className="fa fa-linkedin-square"></i></span>
+							<input type="text" placeholder="http://..." data-key="linkedin" defaultValue={this.state.user.get('linkedin')} ref="linkedin"/>
 						</div>
 						<button>Update</button>
 					</form>

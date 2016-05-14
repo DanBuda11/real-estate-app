@@ -10,7 +10,7 @@ const SessionModel = Backbone.Model.extend({
 		phone: '',
 		email: '',
 		bio: '',
-		photo: '',
+		image: '',
 		facebook: '',
 		linkedin: '',
 		twitter: ''
