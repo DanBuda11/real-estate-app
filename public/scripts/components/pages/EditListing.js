@@ -55,20 +55,24 @@ export default React.createClass({
 			<div className="dashboardDiv pageDiv">
 				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/dashboard">Dashboard</a>
 				<h1>Edit Listing</h1>
-				<select name="editDropdown" onChange={this.fillForm}>
-									<option value="pick">Choose Listing to Edit</option>
-									{userListings}
-								</select>
+				<div className="editDropdownDiv">
+					<select className="editDropdown" name="editDropdown" onChange={this.fillForm}>
+						<option value="pick">Choose Listing to Edit</option>
+						{userListings}
+					</select>
+				</div>
 				<PropEntryForm model={this.state.listing}
 					formChange={this.formChange}
 					formSubmit={this.formSubmit}
 					clearForm={this.clearForm}
 					deleteConfirm={this.deleteConfirm}
 					picSubmit={this.picSubmit} />
-				<Rayon className="delConfirm" isOpen={this.state.delModalVisible} onClose={this.delCloseModal} bodyClass="rayon-no-overflow">
-					<p>Are you sure you want to delete this listing?</p>
-					<button onClick={this.deleteListing}>Delete</button>
-					<button onClick={this.delCloseModal}>Cancel</button>
+				<Rayon isOpen={this.state.delModalVisible} onClose={this.delCloseModal} bodyClass="rayon-no-overflow">
+					<div className="delConfirmBox">
+						<p>Are you sure you want to delete this listing?</p>
+						<button className="finalDelete" onClick={this.deleteListing}>Delete</button>
+						<button onClick={this.delCloseModal}>Cancel</button>
+					</div>
 				</Rayon>
 			</div>
 			);

@@ -23,7 +23,7 @@ export default React.createClass({
 				</div>
 				<div className="agentDetailsBlock">
 					<ul className="detailsList">
-						<li>{this.state.agent.get('bio')}</li>
+						<li>About {this.state.agent.get('firstName')}: {this.state.agent.get('bio')}</li>
 						<li>Phone: {this.state.agent.get('phone')}</li>
 						<li>Email: {this.state.agent.get('email')}</li>
 					</ul>

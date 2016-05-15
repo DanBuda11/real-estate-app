@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {browserHistory} from 'react-router';
 import Rayon from 'rayon';
 import SessionModel from './../../models/SessionModel';
 import users from './../../collections/UserCollection';
@@ -30,47 +30,55 @@ export default React.createClass({
 				<div className="dashboardDiv pageDiv">
 					<a className="breadCrumbs crumbOne" href="/">Home</a>
 					<h2>Agent Dashboard</h2>
-					<Link to="/dashboard/newlisting">New Listing</Link>
-					<Link to="/dashboard/editlisting">Edit Listing</Link>
-					<a onClick={this.profileOpenModal}>Edit Profile</a>
+					<div className="dashboardButtons">
+						<button className="dashboardButton" onClick={this.newListing}>New Listing</button>
+						<button className="dashboardButton" onClick={this.editListing}>Edit Listing</button>
+						<button className="dashboardButton" onClick={this.profileOpenModal}>Edit Profile</button>
+					</div>
 				</div>
 				<Rayon className="profileForm" isOpen={this.state.profileModalVisible} onClose={this.profileCloseModal}>
 					<form onChange={this.formChange} onSubmit={this.formSubmit}>
-						<div>
-							<span>First Name</span>
-							<input type="text" placeholder="Jon" data-key="firstName" defaultValue={this.state.user.get('firstName')} ref="firstName"/>
+						<div className="editProfileForm">
+							<div>
+								<span>First Name</span>
+								<input type="text" placeholder="Jon" data-key="firstName" defaultValue={this.state.user.get('firstName')} ref="firstName"/>
+							</div>
+							<div>
+								<span>Last Name</span>
+								<input type="text" placeholder="Snow" data-key="lastName" defaultValue={this.state.user.get('lastName')} ref="lastName"/>
+							</div>
+							<div>
+								<span>Phone</span>
+								<input type="text" placeholder="555-555-5555" data-key="phone" defaultValue={this.state.user.get('phone')} ref="phone"/>
+							</div>
+							<div>
+								<span>Email</span>
+								<input type="email" placeholder="email@example.com" data-key="email" defaultValue={this.state.user.get('email')} ref="email"/>
+							</div>	
+							<div>
+								<span>Bio</span>
+								<textarea placeholder="Bio (500 character max)" data-key="bio" defaultValue={this.state.user.get('bio')} ref="bio"/>
+							</div>
+							<div>
+								<span><i className="fa fa-facebook-square"></i></span>
+								<input type="text" placeholder="http://..." data-key="facebook" defaultValue={this.state.user.get('facebook')} ref="facebook"/>
+							</div>
+							<div>
+								<span><span><i className="fa fa-twitter-square"></i></span></span>
+								<input type="text" placeholder="http://..." data-key="twitter" defaultValue={this.state.user.get('twitter')} ref="twitter"/>
+							</div>
+							<div>
+								<span><i className="fa fa-linkedin-square"></i></span>
+								<input type="text" placeholder="http://..." data-key="linkedin" defaultValue={this.state.user.get('linkedin')} ref="linkedin"/>
+							</div>
+							<div className="updateButtonDiv">
+								<button>Update</button>
+							</div>
 						</div>
-						<div>
-							<span>Last Name</span>
-							<input type="text" placeholder="Snow" data-key="lastName" defaultValue={this.state.user.get('lastName')} ref="lastName"/>
-						</div>
-						<div>
-							<span>Phone</span>
-							<input type="text" placeholder="555-555-5555" data-key="phone" defaultValue={this.state.user.get('phone')} ref="phone"/>
-						</div>
-						<div>
-							<span>Email</span>
-							<input type="email" placeholder="email@example.com" data-key="email" defaultValue={this.state.user.get('email')} ref="email"/>
-						</div>	
-						<div>
-							<span>Bio</span>
-							<textarea placeholder="Bio (500 character max)" data-key="bio" defaultValue={this.state.user.get('bio')} ref="bio"/>
-						</div>
-						<div>
-							<span><i className="fa fa-facebook-square"></i></span>
-							<input type="text" placeholder="http://..." data-key="facebook" defaultValue={this.state.user.get('facebook')} ref="facebook"/>
-						</div>
-						<div>
-							<span><span><i className="fa fa-twitter-square"></i></span></span>
-							<input type="text" placeholder="http://..." data-key="twitter" defaultValue={this.state.user.get('twitter')} ref="twitter"/>
-						</div>
-						<div>
-							<span><i className="fa fa-linkedin-square"></i></span>
-							<input type="text" placeholder="http://..." data-key="linkedin" defaultValue={this.state.user.get('linkedin')} ref="linkedin"/>
-						</div>
-						<button>Update</button>
 					</form>
-					<button onClick={this.profileCloseModal}>Cancel</button>
+					<div className="updateCancelDiv">
+						<button onClick={this.profileCloseModal}>Cancel</button>
+					</div>
 				</Rayon>
 			</div>
 			);
@@ -95,6 +103,12 @@ export default React.createClass({
 	formSubmit: function(e) {
 		e.preventDefault();
 		this.state.user.save(null, {success: this.profileCloseModal});
+	},
+	newListing: function() {
+		browserHistory.push('/dashboard/newlisting');
+	},
+	editListing: function() {
+		browserHistory.push('/dashboard/editlisting');
 	}
 });
 

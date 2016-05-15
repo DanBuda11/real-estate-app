@@ -36,6 +36,7 @@ export default React.createClass({
 		return (
 			<div className="listingPage pageDiv">
 				<a className="breadCrumbs crumbOne" href="/">Home</a>
+				<h2>Agents</h2>
 				{agents}
 			</div>
 			);

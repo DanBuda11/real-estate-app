@@ -101,6 +101,12 @@ li {
 	}
 }
 
+.agentDetailsBlock {
+
+	.detailsList {
+		padding: 0;
+	}
+}
 .rayon-parent {
 	width: 100%;
 	height: 100%;
@@ -192,6 +198,7 @@ li {
 	.morePhotos {
 		width: 80%;
 		margin: 0 auto;
+		text-align: center;
 	}
 }
 
@@ -246,8 +253,57 @@ li {
 
 .propEntryForm {
 
+	.photoButtonDiv {
+		padding: 0 1em;
+
+		.photoButton {
+			padding: 1em;
+			width: 100%;
+			color: #fff;
+			background-color: $buttonBlue;;
+			margin: 0.1em;
+			// padding: 0.5em;
+			text-align: center;
+			border-radius: 0.3em;
+			cursor: pointer;
+			border: none;
+		}
+	}
+
 	form {
 		padding: 1em;
+
+		.propFormButtons {
+			width:100%;
+
+			input {
+				width: 100%;
+				color: #fff;
+				background-color: $buttonBlue;;
+				margin: 0.1em;
+				padding: 0.5em;
+				text-align: center;
+				border-radius: 0.3em;
+				cursor: pointer;
+				border: none;
+			}
+		}
+
+		.entryButtonDiv {
+			width:100%;
+
+			input {
+				width:100%;
+				color: #fff;
+				background-color: $buttonBlue;;
+				margin: 0.1em;
+				padding: 0.5em;
+				text-align: center;
+				border-radius: 0.3em;
+				cursor: pointer;
+				border: none;
+			}
+		}
 
 	.propFormInput {
 		width: 100%;
@@ -325,8 +381,13 @@ li {
 	}
 }
 
-.editDropdown {
+.editDropdownDiv {
+	width:88%;
+	padding: 1em;
 
+	.editDropdown {
+		width:100%;
+	}
 }
 
 .socialButtons {
@@ -341,6 +402,104 @@ li {
 .signOut {
 	cursor: pointer;
 }
+
+.rayon-spacer {
+	padding: 1em;
+}
+
+.delConfirmBox {
+	padding: 0.5em;
+
+	p {
+
+	}
+
+	button {
+		width:100%;
+		color: #fff;
+		background-color: $buttonBlue;;
+		margin: 0.1em;
+		padding: 0.5em;
+		text-align: center;
+		border-radius: 0.3em;
+		cursor: pointer;
+		border: none;
+	}
+
+	.finalDelete {
+		background-color: red;
+	}
+}
+
+.editProfileForm {
+	padding: 0.5em;
+
+	span {
+		font-size: 0.7em;
+		display: block;
+	}
+
+	input {
+		width: 100%;
+	}
+
+	textarea {
+		width: 100%;
+	}
+
+	.updateButtonDiv {
+		width:100%;
+
+		button {
+			width:100%;
+			color: #fff;
+			background-color: $buttonBlue;;
+			margin: 0.1em;
+			padding: 0.5em;
+			text-align: center;
+			border-radius: 0.3em;
+			cursor: pointer;
+			border: none;
+		}
+	}
+}
+
+.updateCancelDiv {
+	width: 93%;
+	padding: 0.4em 0.5em;
+	margin: 0 auto;
+
+	button {
+		width:100%;
+		color: #fff;
+		background-color: $buttonBlue;;
+		margin: 0.1em;
+		padding: 0.5em;
+		text-align: center;
+		border-radius: 0.3em;
+		cursor: pointer;
+		border: none;
+	}
+}
+
+.dashboardButtons {
+	width: 100%;
+	text-align: center;
+
+	.dashboardButton {
+		width:75%;
+		color: #fff;
+		background-color: $buttonBlue;;
+		margin: 1em 0;
+		padding: 0.5em;
+		text-align: center;
+		border-radius: 0.3em;
+		cursor: pointer;
+		border: none;
+	}
+}
+
+
 
 @media (min-width: 400px) {
 
@@ -364,6 +523,20 @@ li {
 		float: left;
 		clear: right;
 		margin: 1em 0.5em;
+	}
+
+	.detailsPhotoBox {
+		width: 50%;
+		margin: 0 auto;
+	}
+
+	.bigPhotoBox {
+
+		.bigPhoto {
+			width: 46%;
+			margin: 0.5em;
+			float: left;
+		}
 	}
 }
 
@@ -390,6 +563,15 @@ li {
 			.homeFinderNameMobile {
 				display: none;
 			}
+		}
+	}
+
+	.bigPhotoBox {
+
+		.bigPhoto {
+			width: 30%;
+			margin: 0.5em;
+			float: left;
 		}
 	}
 }

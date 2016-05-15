@@ -36,7 +36,7 @@ export default React.createClass({
 		return (
 			<div className="listingPage pageDiv">
 				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/listings">Listings</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href={`/listings/${this.state.listing.get('id')}/details`}>Details</a>
-				<h1>Photos for {this.state.listing.get('address')}</h1>
+				<h2>Photos for {this.state.listing.get('address')}</h2>
 				{listingPhotos}
 			</div>
 			);

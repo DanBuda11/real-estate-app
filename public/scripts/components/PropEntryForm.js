@@ -14,10 +14,13 @@ export default React.createClass({
 	render: function() {
 		let deleteButton = null;
 		if (this.props.model.id) {
-			deleteButton = <input type="button" onClick={this.props.deleteConfirm} value="Delete" />;
+			deleteButton = <input type="button" className="entryButton" onClick={this.props.deleteConfirm} value="Delete" />;
 		}
 		return(
 		<div className="propEntryForm">
+			<div className="photoButtonDiv">
+				<button className="photoButton" onClick={this.props.picSubmit}>Manage Photos</button>
+			</div>
 			<form onChange={this.props.formChange} onSubmit={this.props.formSubmit}>
 				<div className="propFormInput">
 					<div className="inputLine">
@@ -77,10 +80,11 @@ export default React.createClass({
 					</div>
 				</div>
 				<div className="propFormButtons">
-					<button onClick={this.props.picSubmit}>Choose Photos</button>
-					<input type="button" onClick={this.props.clearForm} value="Clear"/>
-					{deleteButton}
 					<input type="submit" value="Submit"/>
+				</div>
+				<div className="entryButtonDiv">
+					<input className="entryButton" type="button" onClick={this.props.clearForm} value="Clear"/>
+					{deleteButton}
 				</div>
 			</form>
 		</div>
