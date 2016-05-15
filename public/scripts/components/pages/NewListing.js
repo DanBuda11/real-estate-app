@@ -51,9 +51,14 @@ export default React.createClass({
 			cropForce: true,
 			mimetype: 'image/*'},
   			(Blob) => {
-  			// console.log(Blob);
+  				if (Blob === []) {
+  					Blob = ['https://www.drphillipscenter.org/resources/images/default.jpg'];
+  				} else {
+
+  			console.log('Blob no pics selected: ', Blob);
   			console.log('photo url in blob: ',Blob[0].url);
     		this.setState({photos: Blob});
+    	}
   		});
 	},
 	formChange: function(e) {

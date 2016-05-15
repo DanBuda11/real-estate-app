@@ -47,40 +47,47 @@ export default React.createClass({
 		return (
 			<div className="listingPage pageDiv">
 				<a className="breadCrumbs crumbOne" href="/">Home</a>
-				<h1>Listings Main Page</h1>
-				<div className="searchBar">
-					<select name="listingsSort" id="listingSort" onChange={this.sortListings}>
-						<option>Show All</option>
-						<option>For Sale Only</option>
-						<option>For Rent Only</option>
-						<option value="price">By Price High to Low</option>
-						<option value="price">By Price Low to High</option>
-						<option value="beds">By Bedrooms</option>
-						<option value="baths">By Bathrooms</option>
-						<option value="sqft">By Square Feet</option>
-					</select>
-					<button type="submit" onClick={this.clearSearch}>Reset Sort</button>
+				<h2>Home Listings</h2>
+				<div className="filterButtons">
+					<input type="button" className="filterButton" onClick={this.showRent} value="For Rent"></input>
+					<input type="button" className="filterButton" onClick={this.showSale} value="For Sale"></input>
+					<input type="button" className="filterButton" onClick={this.showAll} value="Show All"></input>
 				</div>
 				{listings}
 			</div>
 			);
 	},
-	clearSearch: function() {
-		Listings.fetch();
+	showRent: function() {
+		let rentListings = this.state.Listings.filter((listing, i , array) => {
+			console.log('listing.type: ', listing.type);
+			console.log('listing.get(type): ', listing.get('type'));
+			if (listing.get('rentSale') === 'For Rent') {
+				return true;
+			} else {
+				return false;
+			}		
+		});
+		console.log('rentListings: ', rentListings);
+		this.setState({
+			Listings: rentListings
+		});
 	},
-	sortListings: function(e) {
-		e.preventDefault();
-		let newSort = document.getElementById('listingSort');
-		if (newSort.options[newSort.selectedIndex].text === 'By Price High to Low') {
-			console.log('this should run the high to low price function');
-		} else if (newSort.options[newSort.selectedIndex].text === 'By Price Low to High') {
-			console.log('this should run the low to high price function');
-		} else if (newSort.options[newSort.selectedIndex].text === 'For Sale Only') {
-			console.log('this should run the for sale only function');
-		} else if (newSort.options[newSort.selectedIndex].text === 'For Rent Only') {
-			console.log('this should run the for rent only function');
-		} else {
-			console.log('this should show all the listings');
-		}
-      }
+	showSale: function() {
+		let rentListings = this.state.Listings.filter((listing, i , array) => {
+			console.log('listing.type: ', listing.type);
+			console.log('listing.get(type): ', listing.get('type'));
+			if (listing.get('rentSale') === 'For Sale') {
+				return true;
+			} else {
+				return false;
+			}		
+		});
+		console.log('rentListings: ', rentListings);
+		this.setState({
+			Listings: rentListings
+		});
+	},
+	showAll: function() {
+		Listings.fetch();
+	}
 });

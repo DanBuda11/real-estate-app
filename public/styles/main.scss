@@ -18,14 +18,19 @@ a:visited {
 	color: $backBlue;
 }
 
+li {
+	list-style: none;
+}
+
 .navBar {
 	background-color: $slateGrey;
 	width: 100%;
 	overflow: hidden;
+	padding: 0.6em 0;
 
 	.hamburger {
 		float: right;
-		line-height: 5em;
+		line-height: 4em;
 		margin-right: 1em;
 
 		.fa-bars {
@@ -66,13 +71,13 @@ a:visited {
 		}
 
 		.navLeft {
-			margin: 0.5em 0 0 1em;
+			margin-left: 1em;
 		}
 	}
 
 	.navLinks {
 		float: right;
-		line-height: 5em;
+		line-height: 4em;
 		margin-right: 1em;
 		display: none;
 
@@ -173,27 +178,25 @@ a:visited {
 	overflow: hidden;
 	width: 100%;
 
-	.detailsPhoto {
-		margin: 0 auto;
-		width: 80%;
-		display: block;
-	}
+	.detailsPhotoBox {
 
+		.detailsPhoto {
+			margin: 0 auto;
+			width: 80%;
+			display: block;
+			box-shadow: 2px 2px 2px rgba(0,0,0,0.25);
+
+		}
+	}
+	
 	.morePhotos {
-		width: 200px;
+		width: 80%;
 		margin: 0 auto;
 	}
 }
 
 .fa-angle-right {
 	margin-right: 0.5em;
-}
-
-.propDetailsBlock {
-
-	ul {
-		list-style: none;
-	}
 }
 
 .dashboardDiv {
@@ -216,22 +219,33 @@ a:visited {
 	}
 
 	.thumbInfo {
-		margin-left: 1em;
 
 		ul {
 			list-style: none;
 			padding: 0;
+			margin: 0.3em 0;
+
+			li {
+				margin: 0.2em 0;
+
+				p {
+					color: #000;
+				}
+			}
+
+			.rentColor {
+				color: $orange;
+			}
+
+			.saleColor {
+				color: $buttonBlue;
+			}
 		}
 	}
 }
 
 .propThumb:hover {
 	background-color: #ccc;
-}
-
-.searchBar {
-	width: 50%;
-	margin: 0 auto;
 }
 
 .propEntryForm {
@@ -261,6 +275,30 @@ a:visited {
 	}
 }
 
+.detailsList {
+
+	li {
+		margin-bottom: 0.4em;
+	}
+}
+
+.filterButtons {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 1em;
+
+		.filterButton {
+			color: #fff;
+			background-color: $buttonBlue;;
+			margin: 0.1em;
+			padding: 0.5em;
+			text-align: center;
+			border-radius: 0.3em;
+			cursor: pointer;
+			border: none;
+		}
+	}
+
 .bigPhotoBox {
 	width: 95%;
 	margin: 0 auto;
@@ -286,15 +324,25 @@ a:visited {
 
 }
 
-@media (min-width: 500px) {
+.socialButtons {
+	margin-bottom: 1em;
+	text-align: center;
+
+	.socialButton {
+		margin: 0 0.8em;
+	}
+}
+
+.signOut {
+	cursor: pointer;
+}
+
+@media (min-width: 400px) {
 
 	.navBar {
 
 		.logoDiv {
 
-			.homeFinderName {
-				display: block;
-			}
 		}
 
 		.hamburger {
@@ -304,6 +352,30 @@ a:visited {
 		.navLinks {
 			display: block;
 		}
+	}
+
+	.propThumb {
+		width: 45%;
+		float: left;
+		clear: right;
+		margin: 1em 0.5em;
+	}
+}
+
+@media (min-width: 600px) {
+
+	.navBar {
+
+		.logoDiv {
+
+			.homeFinderName {
+				display: block;
+			}
+		}
+	}
+	
+	.propThumb {
+		width: 30%;
 	}
 
 	.homeContainer {

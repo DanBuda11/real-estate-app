@@ -39,7 +39,7 @@ export default React.createClass({
 								<Link to="listings" onClick={this.burgerToggle}>Find a Home</Link>
 								<Link to="agents" onClick={this.burgerToggle}>Find an Agent</Link>
 								<Link to="dashboard" onClick={this.burgerToggle}>Dashboard</Link>
-								<a onClick={this.burgerLogout}>Logout</a> 
+								<a className="signOut" onClick={this.burgerLogout}>Sign Out</a> 
 							</div>
 						</div>
 						<div className="navLinks">
@@ -48,9 +48,9 @@ export default React.createClass({
 							<span className="divider">|</span>
 							<Link className="navLink" to="/agents">Agent</Link>
 							<span className="leftNavItem">Agents</span>
-							<a className="navLink" onClick={this.dashboard}>Dashboard</a>
+							<a className="navLink signOut" onClick={this.dashboard}>Dashboard</a>
 							<span className="divider">|</span>
-							<a className="navLink" onClick={this.logout}>Sign Out</a>
+							<a className="navLink signOut" onClick={this.logout}>Sign Out</a>
 						</div>
 					</div>
 				</div>

@@ -25,15 +25,16 @@ export default React.createClass({
 		return (
 			<div className="listingPage pageDiv">
 				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/listings">Listings</a>
-				<h1>Details for {this.state.listing.get('address')}</h1>
-				<div>
-					{this.state.listing.get('photos')[0] ? (<img  className="detailsPhoto" src={this.state.listing.get('photos')[0].url} />) : ''}
+				<h2>Details for {this.state.listing.get('address')}</h2>
+				<div className="detailsPhotoBox">
+					{this.state.listing.get('photos')[0] ? (<img  className="detailsPhoto" src={this.state.listing.get('photos')[0].url} />) : (<img  className="detailsPhoto" src='./../../images/no_image_avail.png' />)}
 				</div>
 				<div className="morePhotos">
-					<a href={`/listings/${this.state.listing.get('id')}/details/photos`}>View All Photos</a>
+					{this.state.listing.get('photos')[0] ? <a href={`/listings/${this.state.listing.get('id')}/details/photos`}>View All Photos</a> : ''}
+					
 				</div>
 				<div className="propDetailsBlock">
-					<ul>
+					<ul className="detailsList">
 						<li>{this.state.listing.get('rentSale')}</li>
 						<li>${this.state.listing.get('price')}</li>
 						<li>{this.state.listing.get('beds')} Bedrooms</li>

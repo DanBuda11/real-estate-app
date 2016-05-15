@@ -6,7 +6,7 @@ export default React.createClass({
 		return (
 			<div onClick={this.goDetails} className="propThumb">
 				<div>
-					<img className="thumbImg" src={this.props.image}/>
+					{this.props.image ? (<img className="thumbImg" src={this.props.image}/>) : (<img className="thumbImg" src='images/no_image_avail.png' />)}
 				</div>
 				<div className="thumbInfo">
 					<ul className="detailsInfo">
