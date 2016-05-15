@@ -5,9 +5,8 @@
 @import 'node_modules/rayon/src/styles/rayon';
 @import 'node_modules/rayon/src/styles/theme';
 
-h1 {
+h1, h2 {
 	text-align: center;
-	color: #FFF;
 }
 
 a {
@@ -115,7 +114,7 @@ a:visited {
 }
 
 .crumbOne {
-	margin-left: 2em;
+	margin-left: 1em;
 }
 
 .loginForm {
@@ -204,7 +203,7 @@ a:visited {
 .propThumb {
 	width: 80%;
 	background-color: #FFF;
-	margin: 0 auto 0.5em auto;
+	margin: 1em auto 0.5em auto;
 	padding: 0.3em;
 	clear: both;
 	overflow: hidden;
@@ -213,15 +212,16 @@ a:visited {
 
 	.thumbImg {
 		width: 100%;
+		display: block;
 	}
 
 	.thumbInfo {
 		margin-left: 1em;
-	}
 
-	ul {
-		list-style: none;
-		padding: 0;
+		ul {
+			list-style: none;
+			padding: 0;
+		}
 	}
 }
 
@@ -235,9 +235,25 @@ a:visited {
 }
 
 .propEntryForm {
+	width: 100%;
 
 	.propFormInput {
 
+		.inputLine {
+			width: 100%;
+
+			span {
+				font-size: 0.5em;
+				vertical-align: middle;
+				margin-right: 0.3em;
+				width: 15%;
+			}
+
+			input {
+				width: 80%;
+			}
+		}
+		
 	}
 
 	.propFormButtons {
@@ -264,6 +280,10 @@ a:visited {
 		padding: 1em 0;
 		margin: 0;
 	}
+}
+
+.editDropdown {
+
 }
 
 @media (min-width: 500px) {

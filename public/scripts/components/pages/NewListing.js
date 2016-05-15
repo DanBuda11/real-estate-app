@@ -32,13 +32,13 @@ export default React.createClass({
 		return (
 			<div className="dashboardDiv pageDiv">
 				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/dashboard">Dashboard</a>
-				<h1>Create New Listing</h1>
+				<h2>New Listing</h2>
 				<PropEntryForm model={this.state.listing}
 					formChange={this.formChange}
 					formSubmit={this.formSubmit}
 					clearForm={this.clearForm}
+					picSubmit={this.picSubmit}
 					 />
-				<button onClick ={this.picSubmit}>Choose Photos</button>
 			</div>
 			);
 	},

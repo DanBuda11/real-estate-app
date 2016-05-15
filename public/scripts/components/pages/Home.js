@@ -7,8 +7,7 @@ export default React.createClass({
 			<div className="homeContainer">
 				<div className="welcomeBox">
 					<h3 className="homeFinderNameMobile">Home Finder Lite</h3>
-					<p className="welcome">Your new home</p>
-					<p className="welcome">A few clicks away</p>
+					<p className="welcome">Welcome Home!</p>
 				</div>
 				<div className="homeBoxes">
 						<input type="button" className="homeBoxLink" onClick={this.toListings} value="Find a Home"></input>

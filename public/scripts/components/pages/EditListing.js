@@ -3,6 +3,7 @@ import PropEntryForm from './../PropEntryForm';
 import ListingModel from './../../models/ListingModel';
 import listings from './../../collections/ListingCollection';
 import Rayon from 'rayon';
+import filepicker from 'filepicker-js';
 
 export default React.createClass({
 	getInitialState: function() {
@@ -54,7 +55,7 @@ export default React.createClass({
 			<div className="dashboardDiv pageDiv">
 				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/dashboard">Dashboard</a>
 				<h1>Edit Listing</h1>
-				<select name="editdropdown" onChange={this.fillForm}>
+				<select name="editDropdown" onChange={this.fillForm}>
 									<option value="pick">Choose Listing to Edit</option>
 									{userListings}
 								</select>
@@ -62,8 +63,8 @@ export default React.createClass({
 					formChange={this.formChange}
 					formSubmit={this.formSubmit}
 					clearForm={this.clearForm}
-					deleteConfirm={this.deleteConfirm} />
-				<input type="filepicker" data-fp-apikey="AWEM8RWC9TUScrspS0Rdiz" onchange={this.picSubmit} />
+					deleteConfirm={this.deleteConfirm}
+					picSubmit={this.picSubmit} />
 				<Rayon className="delConfirm" isOpen={this.state.delModalVisible} onClose={this.delCloseModal} bodyClass="rayon-no-overflow">
 					<p>Are you sure you want to delete this listing?</p>
 					<button onClick={this.deleteListing}>Delete</button>
@@ -73,10 +74,18 @@ export default React.createClass({
 			);
 	},
 	picSubmit: function() {
-		filepicker.pick(
-			function(Blob){
-				console.log(Blob.url);
-			});
+		filepicker.pickMultiple(
+			{
+			maxFiles: 10,
+			conversions: ['crop', 'rotate'],
+			cropRatio: 1,
+			cropForce: true,
+			mimetype: 'image/*'},
+  			(Blob) => {
+  			// console.log(Blob);
+  			console.log('photo url in blob: ',Blob[0].url);
+    		this.setState({photos: Blob});
+  		});
 	},
 	fillForm: function(e) {
 		this.setState({

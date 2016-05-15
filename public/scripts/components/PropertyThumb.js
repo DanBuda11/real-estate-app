@@ -11,7 +11,7 @@ export default React.createClass({
 					<img className="thumbImg" src={this.props.photos[0].url}/>
 				</div>
 				<div className="thumbInfo">
-					<ul>
+					<ul className="detailsInfo">
 						<li>{this.props.address}</li>
 						<li>{this.props.rentSale}</li>
 						<li>${this.props.price}</li>

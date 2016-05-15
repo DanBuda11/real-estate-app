@@ -9,7 +9,7 @@ export default React.createClass({
 					<img className="thumbImg" src={this.props.image}/>
 				</div>
 				<div className="thumbInfo">
-					<ul>
+					<ul className="detailsInfo">
 						<li>{this.props.firstName} {this.props.lastName}</li>
 						<li>{this.props.phone}</li>
 						<li>{this.props.email}</li>

@@ -20,41 +20,64 @@ export default React.createClass({
 		<div className="propEntryForm">
 			<form onChange={this.props.formChange} onSubmit={this.props.formSubmit}>
 				<div className="propFormInput">
-					<span>Address:</span>
-					<input type="text" placeholder="Address" data-key="address" value={this.props.model.get('address')} ref="address"/>
-					<span>Price:</span>	
-					<input type="text" placeholder="Price" data-key="price" value={this.props.model.get('price')} ref="price"/>
-					<span>Bedrooms:</span>
-					<input type="text" placeholder="Beds" data-key="beds" value={this.props.model.get('beds')} ref="beds"/>
-					<span>Bathrooms:</span>
-					<input type="text" placeholder="Baths" data-key="baths" value={this.props.model.get('baths')} ref="baths"/>
-					<span>Square Feet:</span>
-					<input type="text" placeholder="Square Feet" data-key="sqft" value={this.props.model.get('sqft')} ref="sqft"/>
-					<span>Acres:</span>
-					<input type="text" placeholder="Acres" data-key="acres" value={this.props.model.get('acres')} ref="acres"/>
-					<span>Property Type:</span>
-					<select name="typedropdown" data-key="type" ref="type" value={this.props.model.get('type')}>
-						<option>Choose Type</option>
-						<option>House</option>
-						<option>Condo</option>
-						<option>Townhouse</option>
-						<option>Apartment</option>
-						<option>Multifamily</option>
-					</select>
-					<span>For Rent/Sale:</span>
-					<select name="rentSaleDropdown" data-key="rentSale" value={this.props.model.get('rentSale')}>
-						<option>Choose Rent/Sale</option>
-						<option>For Sale</option>
-						<option>For Rent</option>
-					</select>
-					<span>Stories:</span>
-					<input type="text" placeholder="Stories" data-key="stories" value={this.props.model.get('stories')} ref="stories"/>
-					<span>Year Built:</span>
-					<input type="text" placeholder="Year Built" data-key="year" value={this.props.model.get('year')} ref="year"/>
-					<span>Description:</span>
-					<input type="textarea" placeholder="Description" data-key="blurb" value={this.props.model.get('blurb')} ref="blurb" />
+					<div className="inputLine">
+						<span>Address:</span>
+						<input type="text" placeholder="Address" data-key="address" value={this.props.model.get('address')} ref="address"/>
+					</div>
+					<div className="inputLine">
+						<span>Price:</span>	
+						<input type="text" placeholder="Price" data-key="price" value={this.props.model.get('price')} ref="price"/>
+					</div>
+					<div className="inputLine">
+						<span>Bedrooms:</span>
+						<input type="text" placeholder="Beds" data-key="beds" value={this.props.model.get('beds')} ref="beds"/>
+					</div>
+					<div className="inputLine">
+						<span>Bathrooms:</span>
+						<input type="text" placeholder="Baths" data-key="baths" value={this.props.model.get('baths')} ref="baths"/>
+					</div>
+					<div className="inputLine">
+						<span>Square Feet:</span>
+						<input type="text" placeholder="Square Feet" data-key="sqft" value={this.props.model.get('sqft')} ref="sqft"/>
+					</div>
+					<div className="inputLine">
+						<span>Acres:</span>
+						<input type="text" placeholder="Acres" data-key="acres" value={this.props.model.get('acres')} ref="acres"/>
+					</div>
+					<div className="inputLine">
+						<span>Property Type:</span>
+						<select name="typedropdown" data-key="type" ref="type" value={this.props.model.get('type')}>
+							<option>Choose Type</option>
+							<option>House</option>
+							<option>Condo</option>
+							<option>Townhouse</option>
+							<option>Apartment</option>
+							<option>Multifamily</option>
+						</select>
+					</div>
+					<div className="inputLine">
+						<span>For Rent/Sale:</span>
+						<select name="rentSaleDropdown" data-key="rentSale" value={this.props.model.get('rentSale')}>
+							<option>Choose Rent/Sale</option>
+							<option>For Sale</option>
+							<option>For Rent</option>
+						</select>
+					</div>
+					<div className="inputLine">
+						<span>Stories:</span>
+						<input type="text" placeholder="Stories" data-key="stories" value={this.props.model.get('stories')} ref="stories"/>
+					</div>
+					<div className="inputLine">
+						<span>Year Built:</span>
+						<input type="text" placeholder="Year Built" data-key="year" value={this.props.model.get('year')} ref="year"/>
+					</div>
+					<div className="inputLine">
+						<span>Description:</span>
+						<textarea placeholder="Property Description (500 char max)" data-key="blurb" value={this.props.model.get('blurb')} ref="blurb" />
+					</div>
 				</div>
 				<div className="propFormButtons">
+					<button onClick={this.props.picSubmit}>Choose Photos</button>
 					<input type="button" onClick={this.props.clearForm} value="Clear"/>
 					{deleteButton}
 					<input type="submit" value="Submit"/>

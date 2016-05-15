@@ -29,8 +29,7 @@ export default React.createClass({
 			<div>
 				<div className="dashboardDiv pageDiv">
 					<a className="breadCrumbs crumbOne" href="/">Home</a>
-					<h1>Dashboard Main</h1>
-					<h2>Manage Listings</h2>
+					<h2>Agent Dashboard</h2>
 					<Link to="/dashboard/newlisting">New Listing</Link>
 					<Link to="/dashboard/editlisting">Edit Listing</Link>
 					<a onClick={this.profileOpenModal}>Edit Profile</a>
