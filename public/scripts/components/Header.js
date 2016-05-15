@@ -61,7 +61,7 @@ export default React.createClass({
 					<div>
 						<div className="logoDiv">
 							<a href="/">
-								<img src="./../../images/homefinder_logo.png" className="homeFinderLogo navLeft" />
+								<img src="/images/homefinder_logo.png" className="homeFinderLogo navLeft" />
 							</a>
 							<a href="/">
 								<h3 className="homeFinderName navLeft">Home Finder Lite</h3>
