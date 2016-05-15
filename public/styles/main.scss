@@ -227,10 +227,6 @@ li {
 
 			li {
 				margin: 0.2em 0;
-
-				p {
-					color: #000;
-				}
 			}
 
 			.rentColor {
@@ -249,22 +245,31 @@ li {
 }
 
 .propEntryForm {
-	width: 100%;
+
+	form {
+		padding: 1em;
 
 	.propFormInput {
+		width: 100%;
 
 		.inputLine {
 			width: 100%;
 
 			span {
-				font-size: 0.5em;
-				vertical-align: middle;
-				margin-right: 0.3em;
-				width: 15%;
+				font-size: 0.7em;
+				display: block;
 			}
 
 			input {
-				width: 80%;
+				width: 100%;
+			}
+
+			select {
+				width: 100%;
+			}
+
+			.propTextarea {
+				width: 100%;
 			}
 		}
 		
@@ -274,7 +279,7 @@ li {
 		
 	}
 }
-
+}
 .detailsList {
 
 	li {
