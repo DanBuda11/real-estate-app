@@ -106,7 +106,10 @@ export default React.createClass({
 	formSubmit: function(e) {
 		e.preventDefault();
 		this.state.listing.save({userId: window.user.id}, {
-			success: this.clearForm
+			success: function() {
+				this.clearForm;
+				this.setState({photos: []});
+			}
 		});
 	},
 	clearForm: function() {

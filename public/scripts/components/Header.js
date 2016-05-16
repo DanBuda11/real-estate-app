@@ -192,6 +192,7 @@ export default React.createClass({
 			},
 			success: (data) => {
 				this.state.user.set(data);
+				this.setState({image: ''});
 				console.log('success');
 				console.log(data);
 				this.regCloseModal();

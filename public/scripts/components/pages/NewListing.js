@@ -51,15 +51,8 @@ export default React.createClass({
 			cropForce: true,
 			mimetype: 'image/*'},
   			(Blob) => {
-  				if (Blob === []) {
-  					Blob = ['https://www.drphillipscenter.org/resources/images/default.jpg'];
-  				} else {
-
-  			console.log('Blob no pics selected: ', Blob);
-  			console.log('photo url in blob: ',Blob[0].url);
-    		this.setState({photos: Blob});
-    	}
-  		});
+    			this.setState({photos: Blob});
+    	});
 	},
 	formChange: function(e) {
 		this.state.listing.set(e.target.dataset.key, e.target.value);
@@ -71,7 +64,10 @@ export default React.createClass({
 		e.preventDefault();
 		this.state.listing.save({userId: window.user.id}, {
 			// need to grab newly created listingId
-			success: this.savePhotos
+			success: function() {
+				this.savePhotos;
+				this.setState({photos: []});
+			}
 		});
 		console.log('formSubmit');
 		this.clearForm();
