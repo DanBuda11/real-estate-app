@@ -1,6 +1,6 @@
 # Home Finder Lite
 ## Why This Project
-I have been involved in real estate in different capacities for over 10 years, and during the 4+ years of that time span I have acted in the capcacity of a Realtor, and the 7 years I have spent as a real estate investor, I have been increasingly disappointed by the lack of innovation in real estate technology. While this project is in no way going to reshape the MLS, I hope that it shows that, at least in a relatively simple way with limited functionality, that the digital tools for a Realtor, both in a digital marketing capacity as well as when listing properties for sale or rent, can be simple, useful and powerful.
+I have been involved in real estate in different capacities for over 10 years, and during the 4+ years of that time span I have acted in the capcacity of a Realtor, and the 7 years I have spent as a real estate investor, I have been increasingly disappointed by the lack of innovation in real estate technology. While this project is in no way going to reshape the MLS, I hope that it shows that, at least in a relatively simple way with limited functionality, that the digital tools for a Realtor, both in a digital marketing capacity as well as when listing properties for sale or rent, can be simple, useful and powerful. It should also serve as an easy way for a small-scale investor such as myself to have a place to store and advertise the properties I have for rent or sale.
 
 ## Scope of Project
 ### Version 1.0
@@ -35,11 +35,13 @@ I have been involved in real estate in different capacities for over 10 years, a
 ### Version 1.0
 * FileStack for photo storage and linking to app
 * Perk framework including Knex, React, Backbone, Underscore
+* PostgreSQL & Express
 
 ### Future Versions
 * APIs for neighborhood information, housing market data, crime statistics, school info, property location
 
 ## Additional Project Information/Links
+* [Link to launched app] (http://home-finder-lite.herokuapp.com/)
 * [Trello User Stories] (https://trello.com/b/R882AM3Y/real-estate-website)
 
 ## Contact Dan 
