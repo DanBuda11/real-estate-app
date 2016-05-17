@@ -653,6 +653,10 @@ li {
 }
 
 @media (min-width: 350px) {
+	.dashboardButtons {
+		padding-bottom: 16em;
+	}
+
 	.homeContainer {
 
 		.homeBoxes {
@@ -796,5 +800,35 @@ li {
 @media (min-width: 925px) {
 	.homeContainer {
 		background-position: 0 -150px;
+	}
+}
+
+@media (min-width: 1000px) {
+	.homeContainer {
+		background-position: 0 -200px;
+	}
+}
+
+@media (min-width: 1075px) {
+	.homeContainer {
+		background-position: 0 -250px;
+	}
+}
+
+@media (min-width: 1150px) {
+	.homeContainer {
+		background-position: 0 -300px;
+	}
+}
+
+@media (min-width: 1225px) {
+	.homeContainer {
+		background-position: 0 -350px;
+	}
+}
+
+@media (min-width: 1300px) {
+	.homeContainer {
+		background-position: 0 -400px;
 	}
 }
