@@ -76,7 +76,7 @@ export default React.createClass({
 					</div>
 					<div className="inputLine">
 						<span>Description:</span>
-						<textarea className="propTextarea" placeholder="Property Description (500 char max)" data-key="blurb" value={this.props.model.get('blurb')} ref="blurb" />
+						<textarea rows="4" className="propTextarea" placeholder="Property Description (500 char max)" data-key="blurb" value={this.props.model.get('blurb')} ref="blurb" />
 					</div>
 				</div>
 				<div className="propFormButtons">

@@ -15,7 +15,6 @@ export default React.createClass({
 	},
 	componentDidMount: function() {
 		listings.on('update change', this.updateListings);
-		// this.state.listings.on('change', this.updateListings);
 		listings.fetch();
 	},
 	componentWillUnmount: function() {
@@ -86,8 +85,6 @@ export default React.createClass({
 			cropForce: true,
 			mimetype: 'image/*'},
   			(Blob) => {
-  			// console.log(Blob);
-  			console.log('photo url in blob: ',Blob[0].url);
     		this.setState({photos: Blob});
   		});
 	},
@@ -97,7 +94,6 @@ export default React.createClass({
 		});
 	},
 	formChange: function(e) {
-		console.log('formChange', e.target.dataset.key, e.target.value);
 		this.state.listing.set(e.target.dataset.key, e.target.value);
 		this.setState({
 			listing: this.state.listing

@@ -21,7 +21,6 @@ export default React.createClass({
 		this.state.listing.off('change');
 	},
 	render: function() {
-		console.log(this.state.listing.get('photos'));
 		return (
 			<div className="listingPage pageDiv">
 				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/listings">Listings</a>
@@ -35,18 +34,16 @@ export default React.createClass({
 				</div>
 				<div className="propDetailsBlock">
 					<ul className="detailsList">
-						<li>{this.state.listing.get('rentSale')}</li>
-						<li>${this.state.listing.get('price')}</li>
-						<li>{this.state.listing.get('beds')} Bedrooms</li>
-						<li>{this.state.listing.get('baths')} Bathrooms</li>
-						<li>{this.state.listing.get('sqft')} Square Feet</li>
-						<li>{this.state.listing.get('acres')} Acres</li>
-						<li>{this.state.listing.get('type')}</li>
-						<li>{this.state.listing.get('stories')} Story</li>
+						<li>{this.state.listing.get('rentSale')} for ${this.state.listing.get('price')}</li>
+						<li>{this.state.listing.get('stories')} Story {this.state.listing.get('type')} with {this.state.listing.get('beds')} Bedrooms and {this.state.listing.get('baths')} Bathrooms</li>
+						
+						<li>Total of {this.state.listing.get('sqft')} Square Feet and sits on {this.state.listing.get('acres')} Acres</li>
+						
 						<li>Built in {this.state.listing.get('year')}</li>
-						<li>{this.state.listing.get('blurb')}</li>
+						<li>About This Listing: {this.state.listing.get('blurb')}</li>
 						<li>Offered By: {this.state.listing.get('user').firstName} {this.state.listing.get('user').lastName}</li>
-						<li>Phone: {this.state.listing.get('user').phone} Email: {this.state.listing.get('user').email}</li>
+						<li>Phone: {this.state.listing.get('user').phone}</li>
+						<li>Email: {this.state.listing.get('user').email}</li>
 					</ul>
 				</div>
 			</div>

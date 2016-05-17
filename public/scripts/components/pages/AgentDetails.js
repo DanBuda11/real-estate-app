@@ -28,9 +28,9 @@ export default React.createClass({
 						<li>Email: {this.state.agent.get('email')}</li>
 					</ul>
 					<div className="socialButtons">
-						{this.state.agent.get('facebook') ? <a className="socialButton" href={this.state.agent.get('facebook')}><i className="fa fa-facebook-square fa-2x"></i></a> : ''}
-						{this.state.agent.get('twitter') ? <a className="socialButton" href={this.state.agent.get('twitter')}><i className="fa fa-twitter-square fa-2x"></i></a> : ''}
-						{this.state.agent.get('linkedin') ? <a className="socialButton" href={this.state.agent.get('linkedin')}><i className="fa fa-linkedin-square fa-2x"></i></a> : ''}
+						{this.state.agent.get('facebook') ? <a className="socialButton" href={this.state.agent.get('facebook')}><i className="fa fa-facebook-square fa-3x"></i></a> : ''}
+						{this.state.agent.get('twitter') ? <a className="socialButton" href={this.state.agent.get('twitter')}><i className="fa fa-twitter-square fa-3x"></i></a> : ''}
+						{this.state.agent.get('linkedin') ? <a className="socialButton" href={this.state.agent.get('linkedin')}><i className="fa fa-linkedin-square fa-3x"></i></a> : ''}
 					</div>
 				</div>
 			</div>

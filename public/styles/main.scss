@@ -5,6 +5,21 @@
 @import 'node_modules/rayon/src/styles/rayon';
 @import 'node_modules/rayon/src/styles/theme';
 
+html, body {
+	height: 100%;
+}
+
+.page-wrap {
+	min-height: 100%;
+	margin-bottom: 5em;
+}
+
+.page-wrap:after {
+	content: "";
+	display: block;
+	height: 5em;
+}
+
 h1, h2 {
 	text-align: center;
 }
@@ -32,6 +47,7 @@ li {
 		float: right;
 		line-height: 4em;
 		margin-right: 1em;
+		text-align: right;
 
 		.fa-bars {
 			cursor: pointer;
@@ -41,14 +57,13 @@ li {
 
 		.mobile-menu {
 			display: none;
-			background-color: #FFF;
-		}
-	}
 
-	.regForm {
+			.mobileLinkNavDiv {
 
-		span {
-			color: #000;
+				.mobileNavLink {
+					color: $buttonBlue;
+				}
+			}
 		}
 	}
 
@@ -101,7 +116,110 @@ li {
 	}
 }
 
+.regFormDiv {
+	padding: 1em;
+	
+		span {
+			color: #000;
+			font-size: 1em;
+			display: block;
+		}
+
+		input {
+			width: 100%;
+			margin-bottom: 1em;
+		}
+
+		textarea {
+			width: 100%;
+			margin-bottom: 1em;
+		}
+
+		button {
+			padding: 1em;
+			width: 100%;
+			color: #fff;
+			background-color: $buttonBlue;;
+			margin: 0.1em auto;
+			text-align: center;
+			border-radius: 0.3em;
+			cursor: pointer;
+			border: none;
+			max-width: 12em;
+			display: block;
+		}
+}
+
+.loginFormDiv {
+	padding: 1em;
+	text-align: center;
+
+	input {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+
+	button {
+		padding: 1em;
+		width: 100%;
+		color: #fff;
+		background-color: $buttonBlue;;
+		margin: 0.1em auto;
+		text-align: center;
+		border-radius: 0.3em;
+		cursor: pointer;
+		border: none;
+		max-width: 12em;
+		display: block;
+	}
+}
+
+.regPhotoDiv {
+	padding-bottom: 1em;
+}
+
+.loginCancelDiv {
+	padding-bottom: 1em;
+
+	.loginCancelButton {
+		padding: 1em;
+		width: 100%;
+		color: #fff;
+		background-color: $buttonBlue;;
+		margin: 0.1em auto;
+		text-align: center;
+		border-radius: 0.3em;
+		cursor: pointer;
+		border: none;
+		max-width: 12em;
+		display: block;
+	}
+}
+
+.otherRegButton {
+	padding: 1em;
+	width: 100%;
+	color: #fff;
+	background-color: $buttonBlue;;
+	margin: 0 auto 1em auto;
+	text-align: center;
+	border-radius: 0.3em;
+	cursor: pointer;
+	border: none;
+	max-width: 12em;
+	display: block;
+}
+
 .agentDetailsBlock {
+	padding: 1.2em;
+	background-color: #fff;
+	margin: 1em;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.25);
+	
+	li {
+		margin-bottom: 1em;
+		font-size: 1.2em;
+	}
 
 	.detailsList {
 		padding: 0;
@@ -134,35 +252,40 @@ li {
 
 .homeContainer {
 	width: 100%;
-	height: 40em;
+	// height: 40em;
 	background-image: url(./../images/bgPhoto.jpeg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	overflow: hidden;
+	background-position: bottom;
 
 	.welcomeBox {
 
 		.homeFinderNameMobile {
 			color: #fff;
-			padding: 1em 0;
+			padding: 0.6em 0;
 			text-align: center;
+			font-size: 26px;
 		}
 
 		.welcome {
 			color: #FFF;
 			text-align: center;
+			font-size: 20px;
+			padding-bottom: 0.4em;
 		}
 	}
 
 	.homeBoxes {
-		width: 65%;
-		margin: 0 auto;
+		width: 50%;
+		margin: 0 auto 18em auto;
 		padding: 1.7em;
 		background: rgba(255,255,255,0.4);
     	box-shadow: 1px 2px 4px rgba(0,0,0,0.3);
     	overflow: hidden;
    		border-radius: 0.3em;
    		margin-top: 2em;
+   		max-width: 12em;
 
 		.homeBoxLink {
 			color: #fff;
@@ -233,7 +356,8 @@ li {
 			margin: 0.3em 0;
 
 			li {
-				margin: 0.2em 0;
+				margin: 0.5em 0;
+				font-size: 1.2em;
 			}
 
 			.rentColor {
@@ -261,12 +385,13 @@ li {
 			width: 100%;
 			color: #fff;
 			background-color: $buttonBlue;;
-			margin: 0.1em;
-			// padding: 0.5em;
+			margin: 0.1em auto;
 			text-align: center;
 			border-radius: 0.3em;
 			cursor: pointer;
 			border: none;
+			max-width: 12em;
+			display: block;
 		}
 	}
 
@@ -280,12 +405,14 @@ li {
 				width: 100%;
 				color: #fff;
 				background-color: $buttonBlue;;
-				margin: 0.1em;
+				margin: 0.7em auto;
 				padding: 0.5em;
 				text-align: center;
 				border-radius: 0.3em;
 				cursor: pointer;
 				border: none;
+				max-width: 12em;
+				display: block;
 			}
 		}
 
@@ -296,12 +423,14 @@ li {
 				width:100%;
 				color: #fff;
 				background-color: $buttonBlue;;
-				margin: 0.1em;
+				margin: 0.7em auto;
+				display: block;
 				padding: 0.5em;
 				text-align: center;
 				border-radius: 0.3em;
 				cursor: pointer;
 				border: none;
+				max-width: 12em;
 			}
 		}
 
@@ -310,22 +439,26 @@ li {
 
 		.inputLine {
 			width: 100%;
+			margin-bottom: 1em;
 
 			span {
-				font-size: 0.7em;
+				font-size: 1em;
 				display: block;
 			}
 
 			input {
 				width: 100%;
+				max-width: 30em;
 			}
 
 			select {
 				width: 100%;
+				max-width: 30em;
 			}
 
 			.propTextarea {
 				width: 100%;
+				max-width: 30em;
 			}
 		}
 		
@@ -336,10 +469,19 @@ li {
 	}
 }
 }
+
+.propDetailsBlock {
+	background-color: #fff;
+	margin: 1em;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.25);
+}
+
 .detailsList {
+	padding: 1.2em;
 
 	li {
-		margin-bottom: 0.4em;
+		margin-bottom: 1em;
+		font-size: 1.2em;
 	}
 }
 
@@ -372,12 +514,14 @@ li {
 .footer {
 	background-color: $slateGrey;
 	color: #FFF;
+	height: 5em;
 
 	.footerText {
 		text-align: center;
 		font-weight: lighter;
 		padding: 1em 0;
 		margin: 0;
+		line-height: 3em;
 	}
 }
 
@@ -387,6 +531,7 @@ li {
 
 	.editDropdown {
 		width:100%;
+		max-width: 30em;
 	}
 }
 
@@ -404,7 +549,7 @@ li {
 }
 
 .rayon-spacer {
-	padding: 1em;
+	padding: 5em 1em;
 }
 
 .delConfirmBox {
@@ -435,16 +580,18 @@ li {
 	padding: 0.5em;
 
 	span {
-		font-size: 0.7em;
+		font-size: 1em;
 		display: block;
 	}
 
 	input {
 		width: 100%;
+		margin-bottom: 1em;
 	}
 
 	textarea {
 		width: 100%;
+		margin-bottom: 1em;
 	}
 
 	.updateButtonDiv {
@@ -454,12 +601,14 @@ li {
 			width:100%;
 			color: #fff;
 			background-color: $buttonBlue;;
-			margin: 0.1em;
+			margin: 0.1em auto;
 			padding: 0.5em;
 			text-align: center;
 			border-radius: 0.3em;
 			cursor: pointer;
 			border: none;
+			max-width: 12em;
+			display: block;
 		}
 	}
 }
@@ -473,18 +622,21 @@ li {
 		width:100%;
 		color: #fff;
 		background-color: $buttonBlue;;
-		margin: 0.1em;
+		margin: 0.1em auto;
 		padding: 0.5em;
 		text-align: center;
 		border-radius: 0.3em;
 		cursor: pointer;
 		border: none;
+		max-width: 12em;
+		display: block;
 	}
 }
 
 .dashboardButtons {
 	width: 100%;
 	text-align: center;
+	padding-bottom: 5em;
 
 	.dashboardButton {
 		width:75%;
@@ -496,12 +648,27 @@ li {
 		border-radius: 0.3em;
 		cursor: pointer;
 		border: none;
+		max-width: 12em;
 	}
 }
 
+@media (min-width: 350px) {
+	.homeContainer {
 
+		.homeBoxes {
+			width: 45%;
+			margin: 0 auto 18em auto;
+			padding: 1.7em;
+			background: rgba(255,255,255,0.4);
+	    	box-shadow: 1px 2px 4px rgba(0,0,0,0.3);
+	    	overflow: hidden;
+	   		border-radius: 0.3em;
+	   		margin-top: 2em;
+		}
+	}
+}
 
-@media (min-width: 400px) {
+@media (min-width: 504px) {
 
 	.navBar {
 
@@ -518,6 +685,12 @@ li {
 		}
 	}
 
+	.homeContainer {
+
+		.homeBoxes {
+			width:35%;
+		}
+	}
 	.propThumb {
 		width: 45%;
 		float: left;
@@ -542,16 +715,14 @@ li {
 
 @media (min-width: 600px) {
 
-	.navBar {
-
-		.logoDiv {
-
-			.homeFinderName {
-				display: block;
-			}
-		}
+	.propFormInput {
+		padding-left: 3em;
 	}
-	
+
+	.editDropdownDiv {
+		padding-left: 4em;
+	}
+
 	.propThumb {
 		width: 30%;
 	}
@@ -559,11 +730,7 @@ li {
 	.homeContainer {
 
 		.welcomeBox {
-			margin-top: 5em;
-
-			.homeFinderNameMobile {
-				display: none;
-			}
+			// margin-top: 5em;
 		}
 	}
 
@@ -574,5 +741,60 @@ li {
 			margin: 0.5em;
 			float: left;
 		}
+	}
+}
+
+@media (min-width: 670px) {
+	.propFormInput {
+		padding-left: 5em;
+	}
+
+	.editDropdownDiv {
+		padding-left: 6em;
+	}
+
+	.navBar {
+
+		.logoDiv {
+
+			.homeFinderName {
+				display: block;
+			}
+		}
+	}
+
+	.homeContainer {
+
+		.welcomeBox {
+
+			.welcome {
+				padding-top: 1em;
+			}
+
+			.homeFinderNameMobile {
+				display: none;
+			}
+		}
+	}
+}
+
+@media (min-width: 800px) {
+
+	.propFormInput {
+		padding-left: 8em;
+	}
+
+	.editDropdownDiv {
+		padding-left: 9em;
+	}
+
+	.homeContainer {
+		background-position: 0 -100px;
+	}
+}
+
+@media (min-width: 925px) {
+	.homeContainer {
+		background-position: 0 -150px;
 	}
 }

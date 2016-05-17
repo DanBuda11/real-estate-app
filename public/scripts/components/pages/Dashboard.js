@@ -31,9 +31,15 @@ export default React.createClass({
 					<a className="breadCrumbs crumbOne" href="/">Home</a>
 					<h2>Agent Dashboard</h2>
 					<div className="dashboardButtons">
-						<button className="dashboardButton" onClick={this.newListing}>New Listing</button>
-						<button className="dashboardButton" onClick={this.editListing}>Edit Listing</button>
-						<button className="dashboardButton" onClick={this.profileOpenModal}>Edit Profile</button>
+						<div>
+							<button className="dashboardButton" onClick={this.newListing}>New Listing</button>
+						</div>
+						<div>
+							<button className="dashboardButton" onClick={this.editListing}>Edit Listing</button>
+						</div>
+						<div>				
+							<button className="dashboardButton" onClick={this.profileOpenModal}>Edit Profile</button>
+						</div>
 					</div>
 				</div>
 				<Rayon className="profileForm" isOpen={this.state.profileModalVisible} onClose={this.profileCloseModal}>
@@ -94,7 +100,6 @@ export default React.createClass({
 		});
 	},
 	formChange: function(e) {
-		// console.log(e.target.dataset.key);
 		this.state.user.set(e.target.dataset.key, e.target.value);
 		this.setState({
 			user: this.state.user
@@ -111,6 +116,3 @@ export default React.createClass({
 		browserHistory.push('/dashboard/editlisting');
 	}
 });
-
-
-

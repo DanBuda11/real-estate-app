@@ -40,7 +40,6 @@ export default React.createClass({
 				{listingPhotos}
 			</div>
 			);
-		
 	},
 	update: function(listing) {
 		this.setState({listing: listing});

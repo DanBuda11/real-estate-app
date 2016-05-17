@@ -36,10 +36,18 @@ export default React.createClass({
 						<div className="hamburger">
 							<i className="fa fa-bars fa-3x" onClick={this.burgerToggle}></i>
 							<div className="mobile-menu">
-								<Link to="listings" onClick={this.burgerToggle}>Find a Home</Link>
-								<Link to="agents" onClick={this.burgerToggle}>Find an Agent</Link>
-								<Link to="dashboard" onClick={this.burgerToggle}>Dashboard</Link>
-								<a className="signOut" onClick={this.burgerLogout}>Sign Out</a> 
+								<div className="mobileNavLinkDiv">
+								<Link className="mobileNavLinK" to="listings" onClick={this.burgerToggle}>Find a Home</Link>
+								</div>
+								<div className="mobileNavLinkDiv">
+								<Link className="mobileNavLinK" to="agents" onClick={this.burgerToggle}>Find an Agent</Link>
+								</div>
+								<div className="mobileNavLinkDiv">
+								<Link className="mobileNavLinK" to="dashboard" onClick={this.burgerToggle}>Dashboard</Link>
+								</div>
+								<div className="mobileNavLinkDiv">
+								<a className="signOut mobileNavLink" onClick={this.burgerLogout}>Sign Out</a> 
+								</div>
 							</div>
 						</div>
 						<div className="navLinks">
@@ -89,6 +97,7 @@ export default React.createClass({
 					</div>
 					<Rayon className="regForm" isOpen={this.state.regModalVisible} onClose={this.regCloseModal} bodyClass="rayon-no-overflow">
 						<form onSubmit={this.register}>
+						<div className="regFormDiv">
 							<div>
 								<span>First Name</span>
 								<input type="text" placeholder="Jon" name="firstName" ref="firstName"/>
@@ -125,13 +134,19 @@ export default React.createClass({
 								<span>Password</span>
 								<input type="password" placeholder="******" name="password" ref="password"/>
 							</div>
+
 							<button>Register</button>
+							</div>
 						</form>
-						<button onClick={this.regCloseModal}>Cancel</button>
-						<button onClick={this.picSubmit}>Choose Profile Photo</button>
+						
+						<button className="otherRegButton" onClick={this.regCloseModal}>Cancel</button>
+						<div className="regPhotoDiv">
+						<button className="otherRegButton" onClick={this.picSubmit}>Choose Profile Photo</button>
+						</div>
 					</Rayon>
 					<Rayon className="loginForm" isOpen={this.state.logModalVisible} onClose={this.logCloseModal} bodyClass="rayon-no-overflow">
 						<form onSubmit={this.login}>
+						<div className="loginFormDiv">
 							<div>
 								<input type="email" placeholder="email@example.com" name="email" ref="email"/>
 							</div>
@@ -139,8 +154,11 @@ export default React.createClass({
 								<input type="password" placeholder="password" name="password" ref="password"/>
 							</div>
 							<button>Log in</button>
+						</div>
 						</form>
-						<button onClick={this.logCloseModal}>Cancel</button>
+						<div className="loginCancelDiv">
+						<button className="loginCancelButton" onClick={this.logCloseModal}>Cancel</button>
+						</div>
 					</Rayon>
 				</div>
 				);
@@ -159,8 +177,6 @@ export default React.createClass({
 			},
 			success: (data) => {
 				this.state.user.set(data);
-				console.log('success');
-				console.log(data);
 				this.logCloseModal();
 				browserHistory.push('/dashboard');
 			},
@@ -193,8 +209,6 @@ export default React.createClass({
 			success: (data) => {
 				this.state.user.set(data);
 				this.setState({image: ''});
-				console.log('success');
-				console.log(data);
 				this.regCloseModal();
 				browserHistory.push('/dashboard');
 			}
@@ -205,7 +219,6 @@ export default React.createClass({
 		this.setState({
 			regModalVisible: true
 		});
-		console.log(this.state.user.get('id'));
 	},
 	burgerRegOpenModal: function(e) {
 		e.preventDefault();
@@ -218,15 +231,11 @@ export default React.createClass({
 		this.setState({
 			regModalVisible: false
 		});
-				console.log(this.state.user.get('id'));
-
 	},
 	logOpenModal: function() {
 		this.setState({
 			logModalVisible: true
 		});
-				console.log(this.state.user);
-
 	},
 	burgerLogOpenModal: function() {
 		this.setState({
@@ -238,30 +247,24 @@ export default React.createClass({
 		this.setState({
 			logModalVisible: false
 		});
-				console.log(this.state.user);
-
 	},		
 	logout: function(e) {
-		console.log('logout function running');
 		e.preventDefault();
 		$.ajax({
 			type: 'POST',
 			url: '/auth/logout',
 			success: () => {
-				console.log('logout function success');
 				this.state.user.clear();
 				browserHistory.push('/');
 			}
 		});
 	},
 	burgerLogout: function(e) {
-		console.log('burgerLogout running');
 		e.preventDefault();
 		$.ajax({
 			type: 'POST',
 			url: '/auth/logout',
 			success: () => {
-				console.log('burgerLogout success');
 				this.state.user.clear();
 				this.burgerToggle();
 				browserHistory.push('/');

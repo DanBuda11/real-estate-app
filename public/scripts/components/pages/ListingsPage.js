@@ -41,8 +41,7 @@ export default React.createClass({
 				lastName={listing.get('user').lastName}
 				photos={listing.get('photos')}
 				 />
-				
-			);
+				);
 		});
 		return (
 			<div className="listingPage pageDiv">
@@ -59,30 +58,24 @@ export default React.createClass({
 	},
 	showRent: function() {
 		let rentListings = this.state.Listings.filter((listing, i , array) => {
-			console.log('listing.type: ', listing.type);
-			console.log('listing.get(type): ', listing.get('type'));
 			if (listing.get('rentSale') === 'For Rent') {
 				return true;
 			} else {
 				return false;
 			}		
 		});
-		console.log('rentListings: ', rentListings);
 		this.setState({
 			Listings: rentListings
 		});
 	},
 	showSale: function() {
 		let rentListings = this.state.Listings.filter((listing, i , array) => {
-			console.log('listing.type: ', listing.type);
-			console.log('listing.get(type): ', listing.get('type'));
 			if (listing.get('rentSale') === 'For Sale') {
 				return true;
 			} else {
 				return false;
 			}		
 		});
-		console.log('rentListings: ', rentListings);
 		this.setState({
 			Listings: rentListings
 		});

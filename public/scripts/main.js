@@ -7,7 +7,6 @@ import Home from './components/pages/Home';
 import ListingsPage from './components/pages/ListingsPage';
 import ListingDetails from './components/pages/ListingDetails';
 import ListingPhotos from './components/pages/ListingPhotos';
-import Register from './components/pages/Register';
 import Dashboard from './components/pages/Dashboard';
 import NewListing from './components/pages/NewListing';
 import EditListing from './components/pages/EditListing';
@@ -23,7 +22,6 @@ const router = (
 			<Route path="/listings" component={ListingsPage} />
 			<Route path="/listings/:listingId/details" component={ListingDetails} />
 			<Route path="/listings/:listingId/details/photos" component={ListingPhotos} />
-			<Route path="/auth/register" component={Register} />
 			<Route path="/dashboard" component={Dashboard} />
 			<Route path="/dashboard/newlisting" component={NewListing} />
 			<Route path="/dashboard/editlisting" component={EditListing} />
