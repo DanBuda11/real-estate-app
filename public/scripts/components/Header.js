@@ -78,10 +78,18 @@ export default React.createClass({
 						<div className="hamburger">
 							<i className="fa fa-bars fa-3x" onClick={this.burgerToggle}></i>
 							<div className="mobile-menu">
-								<Link to="listings" onClick={this.burgerToggle}>Find a Home</Link>
-								<Link to="agents" onClick={this.burgerToggle}>Find an Agent</Link>
-								<a href="#" onClick={this.burgerRegOpenModal}>Sign Up</a>
-								<a href="#" onClick={this.burgerLogOpenModal}>Sign In</a> 
+								<div className="mobileNavLinkDiv">
+								<Link className="mobileNavLinK" to="listings" onClick={this.burgerToggle}>Find a Home</Link>
+								</div>
+								<div className="mobileNavLinkDiv">
+								<Link className="mobileNavLinK" to="agents" onClick={this.burgerToggle}>Find an Agent</Link>
+								</div>
+								<div className="mobileNavLinkDiv">
+								<Link className="mobileNavLinK" to="dashboard" onClick={this.burgerToggle}>Dashboard</Link>
+								</div>
+								<div className="mobileNavLinkDiv">
+								<a className="signOut mobileNavLink" onClick={this.burgerLogout}>Sign Out</a> 
+								</div>
 							</div>
 						</div>
 						<div className="navLinks">
