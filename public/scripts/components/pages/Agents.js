@@ -19,7 +19,7 @@ export default React.createClass({
 	render: function() {
 		const agents = this.state.Agents.map((agent, i, array) => {
 			return (
-				<div  id="content">
+				<div>
 				<AgentThumb
 					key={i}
 					id={agent.get('id')}
@@ -36,7 +36,7 @@ export default React.createClass({
 				);
 		});
 		return (
-			<div className="listingPage pageDiv">
+			<div className="listingPage pageDiv" id="content">
 				<a className="breadCrumbs crumbOne" href="/">Home</a>
 				<h2>Agents</h2>
 				{agents}
