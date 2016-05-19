@@ -85,10 +85,10 @@ export default React.createClass({
 								<Link className="mobileNavLinK" to="agents" onClick={this.burgerToggle}>Find an Agent</Link>
 								</div>
 								<div className="mobileNavLinkDiv">
-								<Link className="mobileNavLinK" to="dashboard" onClick={this.burgerToggle}>Dashboard</Link>
+								<a className="mobileNavLink signOut" onClick={this.burgerRegOpenModal}>Sign Up</a>
 								</div>
 								<div className="mobileNavLinkDiv">
-								<a className="signOut mobileNavLink" onClick={this.burgerLogout}>Sign Out</a> 
+								<a className="signOut mobileNavLink" onClick={this.burgerLogOpenModal}>Sign In</a> 
 								</div>
 							</div>
 						</div>

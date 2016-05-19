@@ -22,14 +22,14 @@ export default React.createClass({
 	},
 	render: function() {
 		return (
-			<div className="listingPage pageDiv">
+			<div className="listingPage pageDiv" id="content">
 				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/listings">Listings</a>
 				<h2>{this.state.listing.get('address')}</h2>
 				<div className="detailsPhotoBox">
 					{this.state.listing.get('photos')[0] ? (<img  className="detailsPhoto" src={this.state.listing.get('photos')[0].url} />) : (<img  className="detailsPhoto" src='./../../images/no_image_avail.png' />)}
 				</div>
 				<div className="morePhotos">
-					{this.state.listing.get('photos')[0] ? <a href={`/listings/${this.state.listing.get('id')}/details/photos`}>View All Photos</a> : ''}
+					{this.state.listing.get('photos')[0] ? <a className="morePhotosLink" href={`/listings/${this.state.listing.get('id')}/details/photos`}>View All Photos</a> : ''}
 					
 				</div>
 				<div className="propDetailsBlock">

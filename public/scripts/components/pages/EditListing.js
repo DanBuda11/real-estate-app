@@ -15,7 +15,11 @@ export default React.createClass({
 	},
 	componentDidMount: function() {
 		listings.on('update change', this.updateListings);
-		listings.fetch();
+		listings.fetch({
+			data: {
+				withRelated: ['user', 'photos']
+			}
+		});
 	},
 	componentWillUnmount: function() {
 		listings.off('update change');
@@ -51,7 +55,7 @@ export default React.createClass({
 				);
 			});
 		return (
-			<div className="dashboardDiv pageDiv">
+			<div className="dashboardDiv pageDiv" id="content">
 				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/dashboard">Dashboard</a>
 				<h1>Edit Listing</h1>
 				<div className="editDropdownDiv">

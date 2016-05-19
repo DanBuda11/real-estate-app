@@ -6,18 +6,22 @@
 @import 'node_modules/rayon/src/styles/theme';
 
 html, body {
-	height: 100%;
+	margin:0;
+	padding:0;
+	height:100%;
 }
 
-.page-wrap {
-	min-height: 100%;
-	margin-bottom: 5em;
+#wrapper {
+	min-height:100%;
+	position:relative;
 }
 
-.page-wrap:after {
-	content: "";
-	display: block;
-	height: 5em;
+// #header {
+// 	padding:10px;
+// }
+
+#content {
+	padding-bottom: 5em;
 }
 
 h1, h2 {
@@ -303,6 +307,10 @@ li {
 	
 }
 
+.photoContainer {
+	// text-align: center;
+}
+
 .listingPage {
 	background-color: $lGrey;
 	overflow: hidden;
@@ -323,6 +331,11 @@ li {
 		width: 80%;
 		margin: 0 auto;
 		text-align: center;
+
+		.morePhotosLink {
+			font-size: 1.5em;
+			margin-top: 0.5em;
+		}
 	}
 }
 
@@ -377,12 +390,15 @@ li {
 }
 
 .propEntryForm {
+	margin: 0 auto;
+	width: 90%;
+	max-width: 35em;
 
 	.photoButtonDiv {
 		padding: 0 1em;
 
 		.photoButton {
-			padding: 1em;
+			padding: 0.5em;
 			width: 100%;
 			color: #fff;
 			background-color: $buttonBlue;;
@@ -397,7 +413,7 @@ li {
 	}
 
 	form {
-		padding: 1em;
+		padding-top: 1em;
 
 		.propFormButtons {
 			width:100%;
@@ -438,6 +454,46 @@ li {
 	.propFormInput {
 		width: 100%;
 
+		.inputLineSale {
+			width:100%;
+			margin-bottom: 1em;
+
+			span {
+				font-size: 1em;
+				display: block;
+			}
+
+			input {
+				width:100%;
+				max-width:100%;
+			}
+
+			select {
+				width:100%;
+				max-width:100%;
+			}
+		}
+
+		.inputLineType {
+			width:100%;
+			margin-bottom: 1em;
+
+			span {
+				font-size: 1em;
+				display: block;
+			}
+
+			input {
+				width:100%;
+				max-width:100%;
+			}
+
+			select {
+				width:100%;
+				max-width:100%;
+			}
+		}
+
 		.inputLine {
 			width: 100%;
 			margin-bottom: 1em;
@@ -449,24 +505,134 @@ li {
 
 			input {
 				width: 100%;
-				max-width: 30em;
+				max-width: 100%;
 			}
 
 			select {
 				width: 100%;
-				max-width: 30em;
+				max-width: 100%;
 			}
 
 			.propTextarea {
 				width: 100%;
-				max-width: 30em;
-			}
-		}
-		
+				max-width: 100%;
+			}	
 	}
 
 	.propFormButtons {
 		
+	}
+
+	.priceBedBath {
+
+			.inputPrice {
+				width:100%;
+				margin-bottom: 1em;
+
+				span {
+					font-size: 1em;
+					display: block;
+				}
+
+				input {
+					width:100%;
+					max-width:100%;
+				}
+			}
+
+			.inputBed {
+				width:100%;
+				margin-bottom: 1em;
+
+				span {
+					font-size: 1em;
+					display: block;
+				}
+
+				input {
+					width:100%;
+					max-width:100%;
+				}
+			}
+
+			.inputBath {
+				width:100%;
+				margin-bottom: 1em;
+
+				span {
+					font-size: 1em;
+					display: block;
+				}
+
+				input {
+					width:100%;
+					max-width:100%;
+				}
+			}
+		}
+
+		.entryLastRow {
+
+			.inputSqft {
+				width:100%;
+				margin-bottom: 1em;
+
+				span {
+					font-size: 1em;
+					display: block;
+				}
+
+				input {
+					width:100%;
+					max-width:100%;
+				}
+			}
+
+			.inputAcres {
+				width:100%;
+				margin-bottom: 1em;
+
+				span {
+					font-size: 1em;
+					display: block;
+				}
+
+				input {
+					width:100%;
+					max-width:100%;
+				}
+			}
+
+			.inputStories {
+				width:100%;
+				margin-bottom: 1em;
+
+				span {
+					font-size: 1em;
+					display: block;
+				}
+
+				input {
+					width:100%;
+					max-width:100%;
+				}
+			}
+
+			.inputYear {
+				width:100%;
+				margin-bottom: 1em;
+
+				span {
+					font-size: 1em;
+					display: block;
+				}
+
+				input {
+					width:100%;
+					max-width:100%;
+				}
+			}
+		}
 	}
 }
 }
@@ -504,18 +670,28 @@ li {
 	}
 
 .bigPhotoBox {
-	width: 95%;
-	margin: 0 auto;
+	width: 100%;
+	margin: 1em;
 
 	.bigPhoto {
 		width: 100%;
+		box-shadow: 2px 2px 2px rgba(0,0,0,0.25);
+
 	}
+}
+
+.propEntryDiv {
+	width: 100%;
 }
 
 .footer {
 	background-color: $slateGrey;
 	color: #FFF;
 	height: 5em;
+	width:100%;
+	position:absolute;
+	bottom:0;
+	left:0;
 
 	.footerText {
 		text-align: center;
@@ -527,12 +703,14 @@ li {
 }
 
 .editDropdownDiv {
-	width:88%;
-	padding: 1em;
+	width:90%;
+	padding: 1em 0;
+	margin: 0 auto;
+	max-width: 35em;
 
 	.editDropdown {
 		width:100%;
-		max-width: 30em;
+		max-width: 100%;
 	}
 }
 
@@ -673,6 +851,76 @@ li {
 	}
 }
 
+@media (min-width: 450px) {
+	.propEntryForm {
+
+		form {
+
+			.propFormInput {
+
+				.inputLineSale {
+					float: left;
+					width: 48%;
+					margin-bottom: 1em;
+				}
+
+				.inputLineType {
+					float: right;
+					width: 48%;
+					margin-bottom: 1em;
+				}
+
+				.priceBedBath {
+
+					.inputPrice {
+						float: left;
+						width: 30%;
+						margin-bottom: 1em;
+					}
+
+					.inputBed {
+						float: left;
+						width: 30%;
+						margin-bottom: 1em;
+						margin-left:5%;
+					}
+
+					.inputBath {
+						float: right;
+						width: 30%;
+						margin-bottom: 1em;
+					}
+				}
+
+				.entryLastRow {
+
+					.inputSqft {
+						width: 22%;
+						float: left;
+					}
+
+					.inputAcres {
+						width: 22%;
+						float: left;
+						margin-left: 4%;
+					}
+
+					.inputStories {
+						width: 22%;
+						float: left;
+						margin-left: 4%;
+					}
+
+					.inputYear {
+						width: 22%;
+						float: right;
+					}
+				}
+			}
+		}
+	}
+}
+
 @media (min-width: 504px) {
 
 	.navBar {
@@ -720,14 +968,6 @@ li {
 
 @media (min-width: 600px) {
 
-	.propFormInput {
-		padding-left: 3em;
-	}
-
-	.editDropdownDiv {
-		padding-left: 4em;
-	}
-
 	.propThumb {
 		width: 30%;
 	}
@@ -750,13 +990,6 @@ li {
 }
 
 @media (min-width: 670px) {
-	.propFormInput {
-		padding-left: 5em;
-	}
-
-	.editDropdownDiv {
-		padding-left: 6em;
-	}
 
 	.navBar {
 
@@ -784,14 +1017,6 @@ li {
 }
 
 @media (min-width: 800px) {
-
-	.propFormInput {
-		padding-left: 8em;
-	}
-
-	.editDropdownDiv {
-		padding-left: 9em;
-	}
 
 	.homeContainer {
 		background-position: 0 -100px;

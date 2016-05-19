@@ -26,7 +26,7 @@ export default React.createClass({
 	},
 	render: function() {
 		return (
-			<div>
+			<div id="content">
 				<div className="dashboardDiv pageDiv">
 					<a className="breadCrumbs crumbOne" href="/">Home</a>
 					<h2>Agent Dashboard</h2>

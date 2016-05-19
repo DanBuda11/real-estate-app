@@ -5,10 +5,10 @@ import Footer from './Footer';
 export default React.createClass({
 	render: function() {
 		return (
-			<main className="page-wrap">
-				<Header />
+			<main id="wrapper">
+				<Header id="header"/>
 				{this.props.children}
-				<Footer />
+				<Footer id="footer"/>
 			</main>
 		);
 	}

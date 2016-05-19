@@ -15,18 +15,22 @@ import AgentDetails from './components/pages/AgentDetails';
 
 filepicker.setKey('AWEM8RWC9TUScrspS0Rdiz');
 
+function onEnter () {
+	window.scroll(0, 0);
+};
+
 const router = (
 	<Router history={browserHistory}>
 		<Route path="/" component={App}>
 			<IndexRoute component={Home} />
-			<Route path="/listings" component={ListingsPage} />
-			<Route path="/listings/:listingId/details" component={ListingDetails} />
-			<Route path="/listings/:listingId/details/photos" component={ListingPhotos} />
-			<Route path="/dashboard" component={Dashboard} />
-			<Route path="/dashboard/newlisting" component={NewListing} />
-			<Route path="/dashboard/editlisting" component={EditListing} />
-			<Route path="/agents" component={AgentsPage} />
-			<Route path="/agents/:agentId/details" component={AgentDetails} />
+			<Route onEnter={onEnter} path="/listings" component={ListingsPage} />
+			<Route onEnter={onEnter} path="/listings/:listingId/details" component={ListingDetails} />
+			<Route onEnter={onEnter} path="/listings/:listingId/details/photos" component={ListingPhotos} />
+			<Route onEnter={onEnter} path="/dashboard" component={Dashboard} />
+			<Route onEnter={onEnter} path="/dashboard/newlisting" component={NewListing} />
+			<Route onEnter={onEnter} path="/dashboard/editlisting" component={EditListing} />
+			<Route onEnter={onEnter} path="/agents" component={AgentsPage} />
+			<Route onEnter={onEnter} path="/agents/:agentId/details" component={AgentDetails} />
 		</Route>
 	</Router>
 );

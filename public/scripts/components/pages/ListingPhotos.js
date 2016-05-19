@@ -34,10 +34,12 @@ export default React.createClass({
 				);
 		});	
 		return (
-			<div className="listingPage pageDiv">
+			<div className="listingPage pageDiv" id="content">
 				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/listings">Listings</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href={`/listings/${this.state.listing.get('id')}/details`}>Details</a>
 				<h2>Photos for {this.state.listing.get('address')}</h2>
-				{listingPhotos}
+				<div className="photoContainer">
+					{listingPhotos}
+				</div>
 			</div>
 			);
 	},

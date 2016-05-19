@@ -30,7 +30,7 @@ export default React.createClass({
 	},
 	render: function() {
 		return (
-			<div className="dashboardDiv pageDiv">
+			<div className="dashboardDiv pageDiv" id="content">
 				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/dashboard">Dashboard</a>
 				<h2>New Listing</h2>
 				<PropEntryForm model={this.state.listing}

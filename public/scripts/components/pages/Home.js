@@ -4,7 +4,7 @@ import {browserHistory} from 'react-router';
 export default React.createClass({
 	render: function() {
 		return (
-			<div className="homeContainer">
+			<div className="homeContainer" id="content">
 				<div className="welcomeBox">
 					<h3 className="homeFinderNameMobile">Home Finder Lite</h3>
 					<p className="welcome">Welcome Home!</p>

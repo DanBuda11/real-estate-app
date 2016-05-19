@@ -19,8 +19,9 @@ export default React.createClass({
 	render: function() {
 		const agents = this.state.Agents.map((agent, i, array) => {
 			return (
+				<div  id="content">
 				<AgentThumb
-					key={agent.get('id')}
+					key={i}
 					id={agent.get('id')}
 					firstName={agent.get('firstName')}
 					lastName={agent.get('lastName')}
@@ -31,6 +32,7 @@ export default React.createClass({
 					facebook={agent.get('facebook')}
 					linkedin={agent.get('linkedin')}
 					twitter={agent.get('twitter')} />
+				</div>
 				);
 		});
 		return (

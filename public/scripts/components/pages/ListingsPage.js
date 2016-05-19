@@ -44,7 +44,7 @@ export default React.createClass({
 				);
 		});
 		return (
-			<div className="listingPage pageDiv">
+			<div className="listingPage pageDiv" id="content">
 				<a className="breadCrumbs crumbOne" href="/">Home</a>
 				<h2>Home Listings</h2>
 				<div className="filterButtons">
@@ -69,7 +69,7 @@ export default React.createClass({
 		});
 	},
 	showSale: function() {
-		let rentListings = this.state.Listings.filter((listing, i , array) => {
+		let saleListings = this.state.Listings.filter((listing, i , array) => {
 			if (listing.get('rentSale') === 'For Sale') {
 				return true;
 			} else {
@@ -77,7 +77,7 @@ export default React.createClass({
 			}		
 		});
 		this.setState({
-			Listings: rentListings
+			Listings: saleListings
 		});
 	},
 	showAll: function() {

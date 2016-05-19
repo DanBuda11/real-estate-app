@@ -4,7 +4,7 @@ export default React.createClass({
 	render: function() {
 		return (
 			<div className="footer">
-				<p className="footerText">Copyright 2016 Buda Technologies, Inc.</p>
+				<p className="footerText">©2016 BudaTech</p>
 			</div>
 			);
 	}
