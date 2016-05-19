@@ -10,7 +10,7 @@ export default React.createClass({
 				</div>
 				<div className="thumbInfo">
 					<ul className="detailsInfo">
-						<li>{this.props.address}</li>
+						<li className="propThumbAddress">{this.props.address}</li>
 						{(this.props.rentSale === 'For Rent') ? (<li className="rentColor">{this.props.rentSale} ${this.props.price}</li>) : (<li className="saleColor">{this.props.rentSale} ${this.props.price}</li>)}
 						<li>Offered By: {this.props.firstName} {this.props.lastName}</li>
 					</ul>

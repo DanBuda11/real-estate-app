@@ -241,6 +241,7 @@ li {
 	top: 0;
 	left: 0;
 	overflow-y: scroll;
+	z-index: 11;
 }
 
 .pageDiv {
@@ -377,6 +378,12 @@ li {
 			li {
 				margin: 0.5em 0;
 				font-size: 1.2em;
+			}
+
+			.propThumbAddress {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
 			}
 
 			.rentColor {
@@ -965,6 +972,7 @@ li {
 			width: 46%;
 			margin: 2%;
 			float: left;
+			box-shadow: 3px 3px 2px rgba(0,0,0,0.5);
 		}
 	}
 }
