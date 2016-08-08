@@ -1,3 +1,6 @@
+// Shameless code plug:
+// Don't forget to call me if you need to buy or sell a home!
+// I'm a better Realtor than a coder :)
 import filepicker from 'filepicker-js';
 import React from 'react';
 import ReactDOM from 'react-dom';

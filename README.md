@@ -12,7 +12,7 @@ I have been involved in real estate in different capacities for over 10 years, a
 * Fully responsive
 * Photos for properties linked from an outside source (FileStack)
 
-### Future Versions
+### Future Ideas
 * Additional information about Real Estate Agent including broker info, social media accounts & links, required industry disclosures
 * Ability to download an application for a rental listing
 * Additional tools for visitors including mortgage calculator, information on local schools, neighborhoods, crime statistics
@@ -34,11 +34,11 @@ I have been involved in real estate in different capacities for over 10 years, a
 ## Libraries & APIs
 ### Version 1.0
 * FileStack for photo storage and linking to app
-* Perk framework including Knex, React, Backbone, Underscore
+* Perk framework including Knex, React, Backbone, Underscore, Gulp
 * PostgreSQL & Express
 
-### Future Versions
-* APIs for neighborhood information, housing market data, crime statistics, school info, property location
+### Potential Future APIs
+* Neighborhood information, housing market data, crime statistics, school info, property location
 
 ## Additional Project Information/Links
 * [Link to launched app] (http://home-finder-lite.herokuapp.com/)
