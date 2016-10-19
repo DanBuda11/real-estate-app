@@ -52,7 +52,9 @@ export default React.createClass({
 					<input type="button" className="filterButton" onClick={this.showSale} value="For Sale"></input>
 					<input type="button" className="filterButton" onClick={this.showAll} value="Show All"></input>
 				</div>
+				<div className="grid">
 				{listings}
+				</div>
 			</div>
 			);
 	},

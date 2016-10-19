@@ -1,5 +1,3 @@
-// Look at airbnb search for design
-
 @import 'variables';
 @import 'node_modules/normalize.css/normalize';
 @import 'node_modules/rayon/src/styles/rayon';
@@ -19,10 +17,6 @@ html, body {
 	min-height:100%;
 	position:relative;
 }
-
-// #header {
-// 	padding:10px;
-// }
 
 #content {
 	padding-bottom: 5em;
@@ -262,7 +256,6 @@ li {
 
 .homeContainer {
 	width: 100%;
-	// height: 40em;
 	background-image: url(./../images/bgPhoto.jpeg);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -312,10 +305,6 @@ li {
 	
 }
 
-.photoContainer {
-	// text-align: center;
-}
-
 .listingPage {
 	background-color: $lGrey;
 	overflow: hidden;
@@ -353,15 +342,21 @@ li {
 	background-color: $lGrey;
 }
 
+.grid {
+	text-align: center;
+}
+
 .propThumb {
-	width: 80%;
+	width: 90%;
 	background-color: #FFF;
-	margin: 1em auto 0.5em auto;
+	margin: 1em auto;
 	padding: 1%;
+	box-sizing: border-box;
 	clear: both;
 	overflow: hidden;
 	box-shadow: 3px 3px 2px rgba(0,0,0,0.5);
 	cursor: pointer;
+	display: inline-block;
 
 	.thumbImg {
 		width: 100%;
@@ -955,10 +950,8 @@ li {
 		}
 	}
 	.propThumb {
-		width: 46%;
-		float: left;
-		clear: right;
-		margin: 1%;
+		width: 45%;
+		margin: 2%;
 	}
 
 	.detailsPhotoBox {
@@ -981,13 +974,6 @@ li {
 
 	.propThumb {
 		width: 29%;
-	}
-
-	.homeContainer {
-
-		.welcomeBox {
-			// margin-top: 5em;
-		}
 	}
 
 	.bigPhotoBox {
