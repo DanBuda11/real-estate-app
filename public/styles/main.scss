@@ -356,7 +356,6 @@ li {
 	overflow: hidden;
 	box-shadow: 3px 3px 2px rgba(0,0,0,0.5);
 	cursor: pointer;
-	display: inline-block;
 
 	.thumbImg {
 		width: 100%;
@@ -952,6 +951,7 @@ li {
 	.propThumb {
 		width: 45%;
 		margin: 2%;
+		display: inline-block;
 	}
 
 	.detailsPhotoBox {
