@@ -310,6 +310,11 @@ li {
 	overflow: hidden;
 	width: 100%;
 
+	.grid {
+		text-align: center;
+		margin: 0 auto;
+	}
+
 	.detailsPhotoBox {
 		margin-bottom: 1em;
 		max-width:25em;
@@ -342,17 +347,12 @@ li {
 	background-color: $lGrey;
 }
 
-.grid {
-	text-align: center;
-}
-
 .propThumb {
 	width: 90%;
 	background-color: #FFF;
 	margin: 1em auto;
 	padding: 1%;
 	box-sizing: border-box;
-	clear: both;
 	overflow: hidden;
 	box-shadow: 3px 3px 2px rgba(0,0,0,0.5);
 	cursor: pointer;
