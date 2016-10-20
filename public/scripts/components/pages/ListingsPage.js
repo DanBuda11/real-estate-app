@@ -53,7 +53,7 @@ export default React.createClass({
 					<input type="button" className="filterButton" onClick={this.showAll} value="Show All"></input>
 				</div>
 				<div className="grid">
-				{listings}
+					{listings}
 				</div>
 			</div>
 			);
