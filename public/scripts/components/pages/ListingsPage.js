@@ -59,7 +59,7 @@ export default React.createClass({
 			);
 	},
 	showRent: function() {
-		let rentListings = this.state.Listings.filter((listing, i , array) => {
+		let rentListings = Listings.filter((listing, i , array) => {
 			if (listing.get('rentSale') === 'For Rent') {
 				return true;
 			} else {
@@ -71,7 +71,7 @@ export default React.createClass({
 		});
 	},
 	showSale: function() {
-		let saleListings = this.state.Listings.filter((listing, i , array) => {
+		let saleListings = Listings.filter((listing, i , array) => {
 			if (listing.get('rentSale') === 'For Sale') {
 				return true;
 			} else {
