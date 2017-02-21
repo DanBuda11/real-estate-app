@@ -9,8 +9,10 @@ I have been involved in real estate in different capacities for over 10 years, a
 * Once logged in (or registered for the first time) user is sent to Dashboard with the options of creating, editing, or deleting listings or rentals
 * Login/Logout authentication
 * Any user can see all current listings & rentals and contact the listing agent, view more details about the property, and view any photos associated with listing
-* Fully responsive
-* Photos for properties linked from an outside source (FileStack)
+* Mobile-first, fully responsive design
+* Handling of photo upload/storage/deletion is done thru [FileStack](https://www.filestack.com/)
+* Features made-from-scratch responsive, mobile-friendly navbar with drop-down menu for smaller screens (much simpler stand-alone example found [here](http://codepen.io/danbuda/pen/mAVALa))
+* Grid system for layout is also "home made" without using any external grid systems such as Bootstrap (simple example found [here](http://codepen.io/danbuda/pen/XjyvAQ))
 
 ### Future Ideas
 * Additional information about Real Estate Agent including broker info, social media accounts & links, required industry disclosures
