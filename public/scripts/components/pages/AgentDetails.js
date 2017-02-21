@@ -2,18 +2,20 @@ import React from 'react';
 import Agent from './../../models/UserModel';
 
 export default React.createClass({
-	getInitialState: function() {
+	getInitialState() {
+		// Grab the info for the agent whose thumbnail was clicked on
 		let agent = new Agent({id: this.props.params.agentId});
 		return {agent: agent};
 	},
-	componentDidMount: function() {
+	componentDidMount() {
 		this.state.agent.on('change', this.update);
 		this.state.agent.fetch();
 	},
-	componentWillUnmount: function() {
+	componentWillUnmount() {
 		this.state.agent.off('change');
 	},
-	render: function() {
+	render() {
+		// Display agent's info to screen pulling from current state
 		return (
 			<div className="listingPage pageDiv" id="content">
 				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/agents">Agents</a>
@@ -36,7 +38,7 @@ export default React.createClass({
 			</div>
 			);
 	},
-	update: function(agent) {
+	update(agent) {
 		this.setState({agent: agent});
 	}
 });

@@ -3,7 +3,7 @@ import Header from './Header';
 import Footer from './Footer'; 
 
 export default React.createClass({
-	render: function() {
+	render() {
 		return (
 			<main id="wrapper">
 				<Header id="header"/>

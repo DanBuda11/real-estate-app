@@ -1,10 +1,10 @@
 import React from 'react';
 
 export default React.createClass({
-	render: function() {
+	render() {
 		return (
 			<div className="footer">
-				<p className="footerText">©2016 BudaTech</p>
+				<p className="footerText">©2017 Dan Buda</p>
 			</div>
 			);
 	}

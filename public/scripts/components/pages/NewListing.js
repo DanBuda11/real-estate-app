@@ -7,7 +7,7 @@ import Photo from './../../models/PhotoModel';
 import photos from './../../collections/PhotoCollection';
 
 export default React.createClass({
-	getInitialState: function() {
+	getInitialState() {
 		return {
 			listing: new ListingModel(),
 			listings: listings,
@@ -16,19 +16,19 @@ export default React.createClass({
 			photos: []
 		};
 	},
-	componentDidMount: function() {
+	componentDidMount() {
 		listings.on('update', this.updateListings);
 		this.state.listing.on('change', this.updateListings);
 		listings.fetch();
 	},
-	componentWillUnmount: function() {
+	componentWillUnmount() {
 		listings.off('update');
 		this.state.listing.off('change');
 	},
 	updateListings: function() {
 		this.setState({listings: listings});
 	},
-	render: function() {
+	render() {
 		return (
 			<div className="dashboardDiv pageDiv" id="content">
 				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/dashboard">Dashboard</a>
@@ -42,7 +42,7 @@ export default React.createClass({
 			</div>
 			);
 	},
-	picSubmit: function() {
+	picSubmit() {
 		filepicker.pickMultiple(
 			{
 			maxFiles: 10,
@@ -54,13 +54,13 @@ export default React.createClass({
     			this.setState({photos: Blob});
     	});
 	},
-	formChange: function(e) {
+	formChange(e) {
 		this.state.listing.set(e.target.dataset.key, e.target.value);
 		this.setState({
 			listing: this.state.listing
 		});
 	},
-	formSubmit: function(e) {
+	formSubmit(e) {
 		e.preventDefault();
 		this.state.listing.save({userId: window.user.id}, {
 			// need to grab newly created listingId
@@ -72,11 +72,11 @@ export default React.createClass({
 		console.log('formSubmit');
 		this.clearForm();
 	},
-	clearForm: function() {
+	clearForm() {
 		console.log('clearForm');
 		this.state.listing.clear();
 	},
-	savePhotos: function(listing) {
+	savePhotos(listing) {
 		console.log('savePhotos running');
 		let photoModels = this.state.photos.map((photo, i , array) => {
 			return {url: photo.url, listingId:listing.id}; 
@@ -84,11 +84,5 @@ export default React.createClass({
 		photoModels.forEach((photo, i, array)=> {
 			photos.create(photo);
 		});
-
-		// for (i=0; i< this.state.photos.length; i++) {
-			//save each photo to the database using the listingId createed by submitting the new listing
-		//where are the photos being saved to? server link?
 	}
 });
-
-// <input type="filepicker" data-fp-apikey="AWEM8RWC9TUScrspS0Rdiz" onClick={this.picSubmit} />

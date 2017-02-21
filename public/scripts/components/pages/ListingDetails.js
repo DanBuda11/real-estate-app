@@ -2,14 +2,14 @@ import React from 'react';
 import Listing from './../../models/ListingModel';
 
 export default React.createClass({
-	getInitialState: function() {
+	getInitialState() {
 		let listing = new Listing({id: this.props.params.listingId,
 			user: {},
 			photos: []
 			});
 		return {listing: listing};
 	},
-	componentDidMount: function() {
+	componentDidMount() {
 		this.state.listing.on('change', this.update);
 		this.state.listing.fetch({
 			data: {
@@ -17,10 +17,10 @@ export default React.createClass({
 			}
 		});
 	},
-	componentWillUnmount: function() {
+	componentWillUnmount() {
 		this.state.listing.off('change');
 	},
-	render: function() {
+	render() {
 		return (
 			<div className="listingPage pageDiv" id="content">
 				<a className="breadCrumbs crumbOne" href="/">Home</a><i className="fa fa-angle-right"></i><a className="breadCrumbs" href="/listings">Listings</a>
@@ -49,7 +49,7 @@ export default React.createClass({
 			</div>
 			);
 	},
-	update: function(listing) {
+	update(listing) {
 		this.setState({listing: listing});
 	}
 });

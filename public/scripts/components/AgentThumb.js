@@ -1,8 +1,8 @@
 import React from 'react';
-import {browserHistory}from 'react-router';
+import { browserHistory }from 'react-router';
 
 export default React.createClass({
-	render: function() {
+	render() {
 		return (
 			<div onClick={this.goDetails} className="propThumb">
 				<div>
@@ -18,7 +18,7 @@ export default React.createClass({
 			</div>
 			);
 	},
-	goDetails: function(e) {
+	goDetails(e) {
 		browserHistory.push(`/agents/${this.props.id}/details`);
 	}
 });

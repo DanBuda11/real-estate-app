@@ -3,21 +3,24 @@ import Agents from './../../collections/UserCollection';
 import AgentThumb from './../AgentThumb';
 
 export default React.createClass({
-	getInitialState: function() {
+	getInitialState() {
+		// Set state of Agents to the complete list of agents in the databasea
 		return {Agents: Agents};
 	},
-	componentDidMount: function() {
+	componentDidMount() {
 		Agents.on('update', this.updateAgents);
 		Agents.fetch();
 	},
-	componentWillUnmount: function() {
+	componentWillUnmount() {
 		Agents.off('update');
 	},
-	updateAgents: function() {
+	updateAgents() {
 		this.setState({Agents: Agents});
 	},
-	render: function() {
-		const agents = this.state.Agents.map((agent, i, array) => {
+	render() {
+		// Render thumbnail views of all agents to the screen and add props to AgentThumbs
+		console.log(this.state.Agents);
+		const agents = this.state.Agents.map((agent, i) => {
 			return (
 				<AgentThumb
 					key={agent.get('id')}

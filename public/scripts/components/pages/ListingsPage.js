@@ -3,10 +3,10 @@ import Listings from './../../collections/ListingCollection';
 import PropertyThumb from './../PropertyThumb.js';
 
 export default React.createClass({
-	getInitialState: function() {
+	getInitialState() {
 		return {Listings: Listings};
 	},
-	componentDidMount: function() {
+	componentDidMount() {
 		Listings.on('update', this.updateListings);
 		Listings.fetch({
 			data: {
@@ -14,13 +14,14 @@ export default React.createClass({
 			}
 		});
 	},
-	componentWillUnmount: function() {
+	componentWillUnmount() {
 		Listings.off('update');
 	},
-	updateListings: function() {
+	updateListings() {
 		this.setState({Listings: Listings});
 	},
-	render: function() {
+	render() {
+		// Render listings to screen and add props to PropertyThumb components
 		const listings = this.state.Listings.map((listing, i, array) => {
 		return (
 			<PropertyThumb
@@ -58,7 +59,7 @@ export default React.createClass({
 			</div>
 			);
 	},
-	showRent: function() {
+	showRent() {
 		let rentListings = Listings.filter((listing, i , array) => {
 			if (listing.get('rentSale') === 'For Rent') {
 				return true;
@@ -70,7 +71,7 @@ export default React.createClass({
 			Listings: rentListings
 		});
 	},
-	showSale: function() {
+	showSale() {
 		let saleListings = Listings.filter((listing, i , array) => {
 			if (listing.get('rentSale') === 'For Sale') {
 				return true;
@@ -82,7 +83,7 @@ export default React.createClass({
 			Listings: saleListings
 		});
 	},
-	showAll: function() {
+	showAll() {
 		Listings.fetch();
 	}
 });
