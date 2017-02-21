@@ -1,8 +1,8 @@
 import React from 'react';
-import {browserHistory} from 'react-router';
+import { browserHistory } from 'react-router';
 
 export default React.createClass({
-	render: function() {
+	render() {
 		return (
 			<div className="homeContainer" id="content">
 				<div className="welcomeBox">
@@ -16,10 +16,10 @@ export default React.createClass({
 			</div>
 			);
 	},
-	toListings: function() {
+	toListings() {
 		browserHistory.push('/listings');
 	},
-	toAgents: function() {
+	toAgents() {
 		browserHistory.push('/agents');
 	}
 });

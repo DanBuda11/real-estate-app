@@ -2,7 +2,7 @@ import React from 'react';
 import Listing from './../../models/ListingModel';
 
 export default React.createClass({
-	getInitialState: function() {
+	getInitialState() {
 		let listing = new Listing({
 			id: this.props.params.listingId,
 			user:{},
@@ -10,7 +10,7 @@ export default React.createClass({
 		});
 		return {listing: listing};
 	},
-	componentDidMount: function() {
+	componentDidMount() {
 		this.state.listing.on('change', this.update);
 		this.state.listing.fetch({
 			data: {
@@ -18,10 +18,11 @@ export default React.createClass({
 			}
 		});
 	},
-	componentWillUnmount: function() {
+	componentWillUnmount() {
 		this.state.listing.off('change');
 	},
-	render: function() {
+	render() {
+		// Render all listing images to screen after mapping into photo thumbnails
 		const listingPhotos = this.state.listing.get('photos').map((photo, i, array) => {
 			return (
 				<div 
@@ -43,7 +44,7 @@ export default React.createClass({
 			</div>
 			);
 	},
-	update: function(listing) {
+	update(listing) {
 		this.setState({listing: listing});
 	}
 });

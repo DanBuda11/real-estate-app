@@ -1,17 +1,17 @@
 import React from 'react';
 
 export default React.createClass({
-	getInitialState: function() {
+	getInitialState() {
 		return {
 			formData: {}
 		};
 	},
-	componentDidMount: function() {
+	componentDidMount() {
 		this.props.model.on('change', () => {
 			this.forceUpdate();
 		});
 	},
-	render: function() {
+	render() {
 		let deleteButton = null;
 		if (this.props.model.id) {
 			deleteButton = <input type="button" className="entryButton" onClick={this.props.deleteConfirm} value="Delete" />;

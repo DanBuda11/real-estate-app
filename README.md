@@ -3,7 +3,7 @@
 I have been involved in real estate in different capacities for over 10 years, and during the 4+ years of that time span I have acted in the capcacity of a Realtor, and the 7 years I have spent as a real estate investor, I have been increasingly disappointed by the lack of innovation in real estate technology. While this project is in no way going to reshape the MLS, I hope that it shows that, at least in a relatively simple way with limited functionality, that the digital tools for a Realtor, both in a digital marketing capacity as well as when listing properties for sale or rent, can be simple, useful and powerful. It should also serve as an easy way for a small-scale investor such as myself to have a place to store and advertise the properties I have for rent or sale.
 
 ## Scope of Project
-### Version 1.0
+### Current Version
 * Home Page includes ability for anyone to view Listings & Rentals (with varying levels of detail), and search for a Real Estate Agent
 * Home Page allows a visitor to register for a Real Estate Agent account or login to an existing account
 * Once logged in (or registered for the first time) user is sent to Dashboard with the options of creating, editing, or deleting listings or rentals
@@ -32,7 +32,7 @@ I have been involved in real estate in different capacities for over 10 years, a
 ![](./Mockups_Mobile_Listings_Rentals.png)
 
 ## Libraries & APIs
-### Version 1.0
+### Current Version
 * FileStack for photo storage and linking to app
 * Perk framework including Knex, React, Backbone, Underscore, Gulp
 * PostgreSQL & Express
@@ -41,9 +41,11 @@ I have been involved in real estate in different capacities for over 10 years, a
 * Neighborhood information, housing market data, crime statistics, school info, property location
 
 ## Additional Project Information/Links
-* [Link to launched app] (http://home-finder-lite.herokuapp.com/)
-* [Trello User Stories] (https://trello.com/b/R882AM3Y/real-estate-website)
+* [Link to launched app](http://home-finder-lite.herokuapp.com/)
+* [Trello User Stories](https://trello.com/b/R882AM3Y/real-estate-website)
 
 ## Contact Dan 
-* [Dan's LinkedIn] (https://www.linkedin.com/in/danbuda)
-* [Dan's Twitter] (https://twitter.com/danielbuda)
+* [Dan's Portfolio](http://danbuda.com/#/?_k=w19b90)
+* [Dan's LinkedIn](https://www.linkedin.com/in/danbuda)
+* [Dan's Twitter](https://twitter.com/danielbuda)
+* [Dan on CodePen](http://codepen.io/danbuda/)

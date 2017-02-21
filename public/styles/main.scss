@@ -1,3 +1,4 @@
+// import color variables & other styles
 @import 'variables';
 @import 'node_modules/normalize.css/normalize';
 @import 'node_modules/rayon/src/styles/rayon';
@@ -835,6 +836,7 @@ li {
 	}
 }
 
+// Responsive design style changes start here
 @media (min-width: 350px) {
 	.dashboardButtons {
 		padding-bottom: 16em;
@@ -1013,6 +1015,10 @@ li {
 	}
 }
 
+// Responsive design styles changes end here
+
+// Following media queries are fixes for the home background image sizing
+// and screen location
 @media (min-width: 800px) {
 
 	.homeContainer {

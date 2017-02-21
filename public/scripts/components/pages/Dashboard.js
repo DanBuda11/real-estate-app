@@ -1,11 +1,11 @@
 import React from 'react';
-import {browserHistory} from 'react-router';
+import { browserHistory } from 'react-router';
 import Rayon from 'rayon';
 import SessionModel from './../../models/SessionModel';
 import users from './../../collections/UserCollection';
 
 export default React.createClass({
-	getInitialState: function() {
+	getInitialState() {
 		return {
 			profileModalVisible: false,
 			user: SessionModel,
@@ -13,18 +13,18 @@ export default React.createClass({
 			editingPropId: null
 		};
 	},
-	componentDidMount: function() {
+	componentDidMount() {
 		users.on('update', this.updateUsers);
 		this.state.users.on('change', this.updateUsers);
 		users.fetch();
 	},
-	componentWillUnmount: function() {
+	componentWillUnmount() {
 		users.off('update');
 	},
-	updateUsers: function() {
+	updateUsers() {
 		this.setState({users: users});
 	},
-	render: function() {
+	render() {
 		return (
 			<div id="content">
 				<div className="dashboardDiv pageDiv">
@@ -89,30 +89,30 @@ export default React.createClass({
 			</div>
 			);
 	},
-	profileOpenModal: function() {
+	profileOpenModal() {
 		this.setState({
 			profileModalVisible: true
 		});
 	},
-	profileCloseModal: function() {
+	profileCloseModal() {
 		this.setState({
 			profileModalVisible: false
 		});
 	},
-	formChange: function(e) {
+	formChange(e) {
 		this.state.user.set(e.target.dataset.key, e.target.value);
 		this.setState({
 			user: this.state.user
 		});
 	},
-	formSubmit: function(e) {
+	formSubmit(e) {
 		e.preventDefault();
 		this.state.user.save(null, {success: this.profileCloseModal});
 	},
-	newListing: function() {
+	newListing() {
 		browserHistory.push('/dashboard/newlisting');
 	},
-	editListing: function() {
+	editListing() {
 		browserHistory.push('/dashboard/editlisting');
 	}
 });

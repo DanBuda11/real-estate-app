@@ -6,14 +6,14 @@ import Rayon from 'rayon';
 import filepicker from 'filepicker-js';
 
 export default React.createClass({
-	getInitialState: function() {
+	getInitialState() {
 		return {
 			listing: new ListingModel(),
 			listings: listings,
 			delModalVisible: false
 		};
 	},
-	componentDidMount: function() {
+	componentDidMount() {
 		listings.on('update change', this.updateListings);
 		listings.fetch({
 			data: {
@@ -21,20 +21,20 @@ export default React.createClass({
 			}
 		});
 	},
-	componentWillUnmount: function() {
+	componentWillUnmount() {
 		listings.off('update change');
 	},
-	updateListings: function() {
+	updateListings() {
 		this.setState({listings: listings});
 	},
-	render: function() {
-		const userListings = this.state.listings.filter((val, i, array) => {
+	render() {
+		const userListings = this.state.listings.filter((val, i) => {
 			if(val.get('userId') === window.user.id) {
 				return true;
 			} else {
 				return false;
 			}
-		}).map((val, i, array) => {
+		}).map((val, i) => {
 			return (
 				<option
 					label={val.get('address')}
@@ -80,7 +80,7 @@ export default React.createClass({
 			</div>
 			);
 	},
-	picSubmit: function() {
+	picSubmit() {
 		filepicker.pickMultiple(
 			{
 			maxFiles: 10,
@@ -92,18 +92,18 @@ export default React.createClass({
     		this.setState({photos: Blob});
   		});
 	},
-	fillForm: function(e) {
+	fillForm(e) {
 		this.setState({
 			listing: this.state.listings.get(e.target.value)
 		});
 	},
-	formChange: function(e) {
+	formChange(e) {
 		this.state.listing.set(e.target.dataset.key, e.target.value);
 		this.setState({
 			listing: this.state.listing
 		});
 	},
-	formSubmit: function(e) {
+	formSubmit(e) {
 		e.preventDefault();
 		this.state.listing.save({userId: window.user.id}, {
 			success: function() {
@@ -112,23 +112,23 @@ export default React.createClass({
 			}
 		});
 	},
-	clearForm: function() {
+	clearForm() {
 		this.state.listing.clear();
 	},
-	deleteConfirm: function() {
+	deleteConfirm() {
 		this.delOpenModal();
 	},
-	delOpenModal: function() {
+	delOpenModal() {
 		this.setState({
 			delModalVisible: true
 		});
 	},
-	deleteListing: function() {		
+	deleteListing() {		
 		this.state.listing.destroy();
 		this.delCloseModal();
 		this.clearForm();
 	},
-	delCloseModal: function() {
+	delCloseModal() {
 		this.setState({
 			delModalVisible: false
 		});

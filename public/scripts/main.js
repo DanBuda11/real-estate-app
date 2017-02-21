@@ -1,10 +1,10 @@
 // Shameless code plug:
 // Don't forget to call me if you need to buy or sell a home!
-// I'm a better Realtor than a coder :)
+// I'm great at doing both!!!
 import filepicker from 'filepicker-js';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Router, Route, browserHistory, IndexRoute} from 'react-router';
+import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import App from './components/App';
 import Home from './components/pages/Home';
 import ListingsPage from './components/pages/ListingsPage';

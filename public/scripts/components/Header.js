@@ -1,26 +1,27 @@
 import React from 'react';
 import Rayon from 'rayon';
 import session from './../models/SessionModel';
-import {browserHistory, Link} from 'react-router';
+import { browserHistory, Link } from 'react-router';
 import $ from 'jquery';
 import filepicker from 'filepicker-js';
 
 export default React.createClass({
-	getInitialState: function() {
+	getInitialState() {
 		return {
 			regModalVisible: false,
 			logModalVisible: false,
 			user: session
 		};
 	},
-	componentDidMount: function() {
+	componentDidMount() {
 		this.state.user.on('change', (user) => {
 			this.setState({
 				user: user
 			});
 		});
 	},
-	render: function() {
+	render() {
+		// Determine navbar status of logged in/out user
 		if (this.state.user.get('id')) {
 			return (
 				<div className="navBar">
@@ -222,41 +223,41 @@ export default React.createClass({
 			}
 		});
 	},
-	regOpenModal: function(e) {
+	regOpenModal(e) {
 		e.preventDefault();
 		this.setState({
 			regModalVisible: true
 		});
 	},
-	burgerRegOpenModal: function(e) {
+	burgerRegOpenModal(e) {
 		e.preventDefault();
 		this.setState({
 			regModalVisible: true
 		});
 		this.burgerToggle();
 	},
-	regCloseModal: function() {
+	regCloseModal() {
 		this.setState({
 			regModalVisible: false
 		});
 	},
-	logOpenModal: function() {
+	logOpenModal() {
 		this.setState({
 			logModalVisible: true
 		});
 	},
-	burgerLogOpenModal: function() {
+	burgerLogOpenModal() {
 		this.setState({
 			logModalVisible: true
 		});
 		this.burgerToggle();
 	},
-	logCloseModal: function() {
+	logCloseModal() {
 		this.setState({
 			logModalVisible: false
 		});
 	},		
-	logout: function(e) {
+	logout(e) {
 		e.preventDefault();
 		$.ajax({
 			type: 'POST',
@@ -267,7 +268,7 @@ export default React.createClass({
 			}
 		});
 	},
-	burgerLogout: function(e) {
+	burgerLogout(e) {
 		e.preventDefault();
 		$.ajax({
 			type: 'POST',
@@ -279,10 +280,10 @@ export default React.createClass({
 			}
 		});
 	},
-	dashboard: function() {
+	dashboard() {
 		browserHistory.push('/dashboard');
 	},
-	picSubmit: function() {
+	picSubmit() {
 		filepicker.pick({
 			conversions: ['crop', 'rotate'],
 			cropRatio: 1,
@@ -292,7 +293,7 @@ export default React.createClass({
 				this.setState({image: Blob.url});
 			});
 	},
-	burgerToggle: function() {
+	burgerToggle() {
 		$('.mobile-menu').toggle();
 	}
 });
