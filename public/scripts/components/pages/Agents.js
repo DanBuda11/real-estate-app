@@ -19,7 +19,6 @@ export default React.createClass({
 	},
 	render() {
 		// Render thumbnail views of all agents to the screen and add props to AgentThumbs
-		console.log(this.state.Agents);
 		const agents = this.state.Agents.map((agent, i) => {
 			return (
 				<AgentThumb
