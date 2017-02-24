@@ -373,6 +373,13 @@ li {
 			li {
 				margin: 0.5em 0;
 				font-size: 1.2em;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+
+			.agentPhone{
+				min-height: 1.3rem;
 			}
 
 			.propThumbAddress {
@@ -820,7 +827,7 @@ li {
 .dashboardButtons {
 	width: 100%;
 	text-align: center;
-	padding-bottom: 5em;
+	padding-bottom: 14em;
 
 	.dashboardButton {
 		width:75%;
@@ -839,7 +846,7 @@ li {
 // Responsive design style changes start here
 @media (min-width: 350px) {
 	.dashboardButtons {
-		padding-bottom: 16em;
+		padding-bottom: 14em;
 	}
 
 	.homeContainer {
@@ -857,7 +864,7 @@ li {
 	}
 }
 
-@media (min-width: 450px) {
+@media (min-width: 480px) {
 	.propEntryForm {
 
 		form {
@@ -972,22 +979,6 @@ li {
 	}
 }
 
-@media (min-width: 600px) {
-
-	.propThumb {
-		width: 29%;
-	}
-
-	.bigPhotoBox {
-
-		.bigPhoto {
-			width: 30%;
-			margin: 1.66%;
-			float: left;
-		}
-	}
-}
-
 @media (min-width: 670px) {
 
 	.navBar {
@@ -1011,6 +1002,19 @@ li {
 			.homeFinderNameMobile {
 				display: none;
 			}
+		}
+	}
+
+	.propThumb {
+		width: 29%;
+	}
+
+	.bigPhotoBox {
+
+		.bigPhoto {
+			width: 30%;
+			margin: 1.66%;
+			float: left;
 		}
 	}
 }

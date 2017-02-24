@@ -11,7 +11,7 @@ export default React.createClass({
 				<div className="thumbInfo">
 					<ul className="detailsInfo">
 						<li>{this.props.firstName} {this.props.lastName}</li>
-						<li>{this.props.phone}</li>
+						<li className="agentPhone">{this.props.phone}</li>
 						<li>{this.props.email}</li>
 					</ul>
 				</div>

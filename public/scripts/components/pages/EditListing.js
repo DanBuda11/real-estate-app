@@ -97,13 +97,13 @@ export default React.createClass({
 			listing: this.state.listings.get(e.target.value)
 		});
 	},
-	formChange(e) {
+	formChange: function(e) {
 		this.state.listing.set(e.target.dataset.key, e.target.value);
 		this.setState({
 			listing: this.state.listing
 		});
 	},
-	formSubmit(e) {
+	formSubmit: function(e) {
 		e.preventDefault();
 		this.state.listing.save({userId: window.user.id}, {
 			success: function() {
@@ -114,6 +114,9 @@ export default React.createClass({
 	},
 	clearForm() {
 		this.state.listing.clear();
+		const propTextarea = document.querySelector('.propTextarea');
+		propTextarea.value = '';
+
 	},
 	deleteConfirm() {
 		this.delOpenModal();

@@ -54,13 +54,13 @@ export default React.createClass({
     			this.setState({photos: Blob});
     	});
 	},
-	formChange(e) {
+	formChange: function(e) {
 		this.state.listing.set(e.target.dataset.key, e.target.value);
 		this.setState({
 			listing: this.state.listing
 		});
 	},
-	formSubmit(e) {
+	formSubmit: function(e) {
 		e.preventDefault();
 		this.state.listing.save({userId: window.user.id}, {
 			// need to grab newly created listingId
@@ -69,15 +69,12 @@ export default React.createClass({
 				this.setState({photos: []});
 			}
 		});
-		console.log('formSubmit');
 		this.clearForm();
 	},
 	clearForm() {
-		console.log('clearForm');
 		this.state.listing.clear();
 	},
-	savePhotos(listing) {
-		console.log('savePhotos running');
+	savePhotos: function(listing) {
 		let photoModels = this.state.photos.map((photo, i , array) => {
 			return {url: photo.url, listingId:listing.id}; 
 		});
