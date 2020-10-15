@@ -19,7 +19,7 @@
     "config-loader": "github:alarner/config-loader",
     "config-template": "^1.0.12",
     "copy-paste": "^1.1.4",
-    "eslint": "^2.5.1",
+    "eslint": "^7.11.0",
     "eslint-plugin-react": "^4.2.3",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^2.0.4",
