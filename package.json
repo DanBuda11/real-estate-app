@@ -61,7 +61,7 @@
     "jquery": "^2.2.3",
     "knex": "^0.10.0",
     "lodash": "^4.6.1",
-    "morgan": "~1.7.0",
+    "morgan": "~1.9.1",
     "node-gcm": "^0.14.0",
     "node-sass": "^4.14.1",
     "nodemailer": "^2.3.0",
