@@ -54,7 +54,7 @@
     "connect-redis": "^3.0.2",
     "cookie-parser": "~1.4.1",
     "debug": "^2.2.0",
-    "ejs": "~2.4.1",
+    "ejs": "~3.1.5",
     "express": "~4.13.4",
     "express-session": "^1.13.0",
     "fb": "github:alarner/facebook-node-sdk",
